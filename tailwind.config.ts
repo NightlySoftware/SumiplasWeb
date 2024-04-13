@@ -11,16 +11,16 @@ const config: Config = {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        spgradient: 'radial-gradient(circle at center, #003554, #022b42, #032030)',
       },
       colors: {
         spwhite: '#F2F7FB',
         spblack: '#0B151C',
-      } /* 
-      fontFamily: {
-        tinos: ['Tinos', 'sans-serif'],
-      }, */,
+        spblue: '#003366',
+      },
     },
   },
   plugins: [],
 };
+
 export default config;

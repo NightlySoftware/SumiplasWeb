@@ -26,7 +26,3 @@ body {
     text-wrap: balance;
   }
 }
-
-.diamond-gradient {
-  background: radial-gradient(circle at center, #003554, #022b42, #032030);
-}

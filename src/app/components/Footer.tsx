@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col w-full diamond-gradient text-spwhite p-5 pb-28 gap-10">
+    <footer className="flex flex-col w-full bg-spgradient text-spwhite p-5 pb-28 gap-10">
       <div className="flex flex-col w-full gap-4">
         <p className="font-medium">
           Encuéntranos
