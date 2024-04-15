@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import IconRoundedArrow from './IconRoundedArrow';
+import Image from 'next/image';
 
 interface ProductButtonProps {
   href: string;
@@ -10,17 +11,13 @@ interface ProductButtonProps {
 
 const ProductButton: React.FC<ProductButtonProps> = ({ href, title, bgImage }) => {
   return (
-    <Link
-      href={href}
-      className={`flex w-full bg-black bg-opacity-40 rounded justify-between items-center p-4 bg-cover`}
-      /* we use linear-gradient because filter:brightness darkens the text as well */
-      style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${bgImage})` }}
-    >
-      <p className="flex flex-col justify-start items-start text-spwhite font-medium leading-5">
+    <Link href={href} className={`flex w-full relative rounded justify-between items-center p-4`}>
+      <Image className="rounded-md brightness-[60%]" src={bgImage} alt="Product card" objectFit="cover" fill />
+      <p className="flex flex-col z-10 justify-start items-start text-spwhite font-medium leading-5">
         Bolsas
         <span className="font-bold">{title}</span>
       </p>
-      <IconRoundedArrow fill="#fff" />
+      <IconRoundedArrow className="z-10" fill="#fff" />
     </Link>
   );
 };
