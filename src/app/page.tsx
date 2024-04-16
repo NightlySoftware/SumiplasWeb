@@ -7,13 +7,38 @@ import InfoCard from './components/InfoCard';
 import ArrowButton from './components/ArrowButton';
 import ProductButton from './components/ProductButton';
 import Image from 'next/image';
+import MapComponent from './components/MapComponent';
+import { Circle, GoogleMap, Marker, useLoadScript } from '@react-google-maps/api';
+import { useMemo } from 'react';
 
 export default function Home() {
+  /*   const libraries = useMemo(() => ['places'], []);
+  const mapCenter = useMemo(() => ({ lat: 20.675285, lng: -101.355475 }), []);
+  const mapOptions = useMemo(
+    () => ({
+      disableDefaultUI: true,
+      zoomControl: true,
+      scrollwheel: false,
+    }),
+    []
+  );
+
+  const { isLoaded } = useLoadScript({
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string,
+    libraries: libraries as any,
+  });
+
+  if (!isLoaded) {
+    return <div>Loading...</div>;
+  } */
+
   return (
     <main className="flex flex-col items-center">
       <Header />
+
       {/* Hero section */}
-      <div className="flex flex-col text-spwhite min-h-screen gap-8 py-16 pt-32">
+
+      <div className="flex flex-col relative w-full text-spwhite min-h-screen gap-8 py-16 pt-32">
         <p className="text-center text-[32px] font-semibold leading-10">
           Bolsas a tu <span className="font-serif italic font-normal">medida</span>
           <br />
@@ -29,7 +54,7 @@ export default function Home() {
         </p>
         <Image
           className="-z-10"
-          objectFit="cover"
+          style={{ objectFit: 'cover' }}
           src="/images/hero_bg/main.webp"
           alt="hero"
           quality={100}
@@ -37,7 +62,9 @@ export default function Home() {
           fill
         />
       </div>
+
       {/* Main content card */}
+
       <MainSection
         title="Te contamos lo que hacemos"
         description="En Sumiplas nos dedicamos a la fabricación y distribución de bolsas de polietileno, así como brindamos soluciones de empaque y embalaje excepcionales para el sector agropecuario, automotriz, de alimentos e industrial."
@@ -54,6 +81,9 @@ export default function Home() {
           image="/images/info_card/technology.jpg"
         />
         <ArrowButton href="/nosotros" text="Conócenos más" />
+
+        {/* Products section */}
+
         <div className="flex flex-col text-spblack text-center text-pretty gap-4">
           <p className="text-3xl font-medium py-8">Productos</p>
           <p className="leading-5">
@@ -72,6 +102,9 @@ export default function Home() {
           />
         </div>
         <ArrowButton href="/productos" text="Ver más productos" />
+
+        {/* Our clients section */}
+
         <div className="flex flex-col text-spblack text-center text-pretty gap-4">
           <p className="text-3xl font-medium py-8">Nuestros clientes</p>
           <p className="leading-5">
@@ -80,13 +113,70 @@ export default function Home() {
           </p>
         </div>
         <div className="flex flex-wrap justify-center gap-8 px-8">
-          <img src="/images/logos/zkw.png" className="saturate-0 h-10 brightness-0" alt="logo" />
-          <img src="/images/logos/campo_fresco.png" className="saturate-0 h-10 brightness-0" alt="logo" />
-          <img src="/images/logos/nifco.png" className="saturate-0 h-10" alt="logo" />
-          <img src="/images/logos/almacenes_vaca.png" className="saturate-0 h-10 brightness-0" alt="logo" />
-          <img src="/images/logos/trimex.png" className="saturate-0 h-10 brightness-0" alt="logo" />
-          <img src="/images/logos/vallen.png" className="saturate-0 h-10 brightness-0" alt="logo" />
+          <div className="flex w-full px-8">
+            <div className="relative h-10 w-full">
+              <Image
+                src="/images/logos/zkw.png"
+                alt="logo"
+                className="saturate-0 brightness-0 h-10 w-auto"
+                style={{ objectFit: 'contain' }}
+                fill
+              />
+            </div>
+            <div className="relative h-10 w-full">
+              <Image
+                src="/images/logos/campo_fresco.png"
+                alt="logo"
+                className="saturate-0 brightness-0"
+                style={{ objectFit: 'contain' }}
+                fill
+              />
+            </div>
+          </div>
+          <div className="flex w-full px-8">
+            <div className="relative h-10 w-full">
+              <Image
+                src="/images/logos/nifco.png"
+                alt="logo"
+                className="saturate-0"
+                style={{ objectFit: 'contain' }}
+                fill
+              />
+            </div>
+            <div className="relative h-10 w-full">
+              <Image
+                src="/images/logos/almacenes_vaca.png"
+                alt="logo"
+                className="saturate-0 brightness-0"
+                style={{ objectFit: 'contain' }}
+                fill
+              />
+            </div>
+            <div className="relative h-10 w-full">
+              <Image
+                src="/images/logos/trimex.png"
+                alt="logo"
+                className="saturate-0 brightness-0"
+                style={{ objectFit: 'contain' }}
+                fill
+              />
+            </div>
+          </div>
+          <div className="flex w-full px-8">
+            <div className="relative h-10 w-full">
+              <Image
+                src="/images/logos/vallen.png"
+                alt="logo"
+                className="saturate-0 brightness-0"
+                style={{ objectFit: 'contain' }}
+                fill
+              />
+            </div>
+          </div>
         </div>
+
+        {/* Delivery section */}
+
         <div className="flex flex-col text-spblack text-center text-pretty gap-4">
           <p className="text-3xl font-medium py-8">Entregamos hasta tu negocio</p>
         </div>
@@ -99,8 +189,8 @@ export default function Home() {
           <div className="flex items-center gap-2.5 leading-5 px-2.5">
             <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M14.5528 14.106C14.7718 13.9964 15.0234 13.9711 15.2599 14.0346C15.4964 14.0982 15.7013 14.2464 15.8358 14.451L15.8938 14.553L17.8938 18.553C17.9652 18.6956 18.0014 18.8533 17.9994 19.0128C17.9974 19.1723 17.9574 19.329 17.8825 19.4698C17.8076 19.6106 17.7001 19.7315 17.569 19.8224C17.4379 19.9132 17.287 19.9714 17.1288 19.992L16.9998 20H0.999834C0.840304 20.0001 0.683077 19.9619 0.541281 19.8888C0.399485 19.8157 0.277237 19.7098 0.184743 19.5798C0.0922498 19.4498 0.0321962 19.2996 0.00959684 19.1417C-0.0130026 18.9837 0.00250824 18.8227 0.0548341 18.672L0.104834 18.552L2.10483 14.552C2.21693 14.3203 2.41406 14.1407 2.65519 14.0507C2.89632 13.9606 3.16289 13.967 3.39942 14.0686C3.63595 14.1701 3.82423 14.3589 3.92508 14.5957C4.02592 14.8325 4.03157 15.0991 3.94083 15.34L3.89383 15.447L2.61783 18H15.3818L14.1058 15.447C13.9874 15.2099 13.968 14.9354 14.0518 14.684C14.1356 14.4325 14.3158 14.2246 14.5528 14.106ZM8.99983 0C10.8563 0 12.6368 0.737498 13.9496 2.05025C15.2623 3.36301 15.9998 5.14348 15.9998 7C15.9998 9.382 14.7108 11.317 13.3768 12.69C12.6399 13.4384 11.8299 14.1111 10.9588 14.698L10.5858 14.944L10.2538 15.153C10.2018 15.184 10.1518 15.213 10.1048 15.243L9.84783 15.391C9.31983 15.691 8.67983 15.691 8.15183 15.391L7.89483 15.242L7.58483 15.053C7.52762 15.017 7.47062 14.9807 7.41383 14.944L7.04083 14.698C6.16978 14.1111 5.35973 13.4384 4.62283 12.69C3.28883 11.317 1.99983 9.382 1.99983 7C1.99983 5.14348 2.73733 3.36301 4.05009 2.05025C5.36284 0.737498 7.14332 0 8.99983 0ZM8.99983 5C8.4694 5 7.96069 5.21071 7.58562 5.58579C7.21055 5.96086 6.99983 6.46957 6.99983 7C6.99983 7.53043 7.21055 8.03914 7.58562 8.41421C7.96069 8.78929 8.4694 9 8.99983 9C9.53027 9 10.039 8.78929 10.414 8.41421C10.7891 8.03914 10.9998 7.53043 10.9998 7C10.9998 6.46957 10.7891 5.96086 10.414 5.58579C10.039 5.21071 9.53027 5 8.99983 5Z"
                 fill="#0B151C"
               />
@@ -110,23 +200,26 @@ export default function Home() {
               <p>Zona aproximada de envíos</p>
             </div>
           </div>
-          <div className="flex flex-col w-full p-1 bg-spgradient rounded-lg gap-2.5">
-            {/* replace with actual google map */}
-            <img className="rounded-md aspect-square" src="https://via.placeholder.com/343x343" />
-          </div>
+          <InfoCard>
+            <MapComponent />
+          </InfoCard>
         </div>
+
+        {/* Contact section */}
+
         <div className="flex flex-col text-spblack text-center text-pretty gap-4">
           <p className="text-3xl font-medium py-8">Estamos a un click de distancia</p>
         </div>
         <InfoCard
-          title=""
           description="¿Te interesaron nuestros productos y quieres saber más información sobre precios, medidas específicas o entregas? Envíanos tu información de contacto para responderte lo más pronto posible."
           image="/images/info_card/contact.jpg"
         />
         <ArrowButton href="/contacto" text="Contáctanos" />
       </MainSection>
       <Footer />
-      <Navbar />
+      <div className="flex justify-center fixed bottom-5 z-50 w-full">
+        <Navbar />
+      </div>
     </main>
   );
 }
