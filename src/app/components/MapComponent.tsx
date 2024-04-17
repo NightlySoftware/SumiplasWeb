@@ -20,7 +20,7 @@ const MapComponent = () => {
   });
 
   if (!isLoaded) {
-    return <div>Loading...</div>;
+    return <div className="flex relative w-full items-center justify-center aspect-square rounded">Loading Map...</div>;
   }
 
   return (
@@ -48,12 +48,12 @@ const MapComponent = () => {
 
         <Circle
           center={mapCenter}
-          radius={75000} // 15km in meters
+          radius={75000}
           onLoad={() => console.log('Circle Load...')}
           options={{
-            fillColor: 'blue',
+            fillColor: '#7eb2e0',
             fillOpacity: 0.2,
-            strokeColor: 'blue',
+            strokeColor: '#7eb2e0',
             strokeOpacity: 0.5,
             strokeWeight: 1,
           }}

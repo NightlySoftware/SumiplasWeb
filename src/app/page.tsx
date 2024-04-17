@@ -34,33 +34,33 @@ export default function Home() {
 
   return (
     <main className="flex flex-col items-center">
-      <Header />
-
       {/* Hero section */}
-
-      <div className="flex flex-col relative w-full text-spwhite min-h-screen gap-8 py-16 pt-32">
-        <p className="text-center text-[32px] font-semibold leading-10">
-          Bolsas a tu <span className="font-serif italic font-normal">medida</span>
-          <br />
-          variedad de productos
-          <br /> <span className="font-serif italic font-normal">calidad</span> garantizada
-        </p>
-        <p className="text-center text-[16px] leading-5">
-          Bolsas hechas con polietileno fabricadas
-          <br />
-          por nosotros para usos en el sector
-          <br />
-          automotriz, industrial y de alimentos.
-        </p>
-        <Image
-          className="-z-10"
-          style={{ objectFit: 'cover' }}
-          src="/images/hero_bg/main.webp"
-          alt="hero"
-          quality={100}
-          priority
-          fill
-        />
+      <div className="flex flex-col w-full sticky -z-10 top-0">
+        <Header />
+        <div className="flex flex-col relative w-full text-spwhite min-h-screen gap-8 py-16 pt-32">
+          <p className="text-center text-[32px] font-semibold leading-10">
+            Bolsas a tu <span className="font-serif italic font-normal">medida</span>
+            <br />
+            variedad de productos
+            <br /> <span className="font-serif italic font-normal">calidad</span> garantizada
+          </p>
+          <p className="text-center text-[16px] leading-5">
+            Bolsas hechas con polietileno fabricadas
+            <br />
+            por nosotros para usos en el sector
+            <br />
+            automotriz, industrial y de alimentos.
+          </p>
+          <Image
+            className="-z-10"
+            style={{ objectFit: 'cover' }}
+            src="/images/hero_bg/main.webp"
+            alt="hero"
+            quality={100}
+            priority
+            fill
+          />
+        </div>
       </div>
 
       {/* Main content card */}
