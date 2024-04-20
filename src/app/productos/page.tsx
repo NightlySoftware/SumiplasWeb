@@ -5,7 +5,6 @@ import MainSection from '../components/MainSection';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import ProductCard from '../components/ProductCard';
-import ProductDropdown from '../components/ProductDropdown';
 import SubProductsList from '../components/SubProductsList';
 
 const page = () => {

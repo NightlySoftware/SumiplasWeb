@@ -52,7 +52,7 @@ const MapComponent = () => {
           onLoad={() => console.log('Circle Load...')}
           options={{
             fillColor: '#7eb2e0',
-            fillOpacity: 0.2,
+            fillOpacity: 0.4,
             strokeColor: '#7eb2e0',
             strokeOpacity: 0.5,
             strokeWeight: 1,
