@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import ProductCard from '../components/ProductCard';
 import ProductDropdown from '../components/ProductDropdown';
+import SubProductsList from '../components/SubProductsList';
 
 const page = () => {
   return (
@@ -118,15 +119,7 @@ const page = () => {
             compra en un solo lugar.
           </p>
         </div>
-        <div className="flex flex-col w-full gap-8">
-          <ProductDropdown
-            headline1="Película Stretch"
-            headline2="Para Emplayar"
-            image="/images/product_card/antistatic.webp"
-            description="Maximiza la seguridad y estabilidad de tus cargas con nuestra Película Stretch de alta resistencia. Ideal para envolver palets y asegurar productos durante el transporte y almacenaje. Su flexibilidad y adherencia superior garantizan una protección eficaz contra polvo, humedad y daños."
-            href="/productos/aditivos"
-          />
-        </div>
+        <SubProductsList />
       </MainSection>
       <Footer />
       <div className="flex justify-center fixed bottom-5 z-50 w-full">

@@ -13,7 +13,7 @@ const IconRoundedArrow: React.FC<IconRoundedArrowProps> = ({ classNames = 'w-8',
       rotationClass = 'rotate-90';
       break;
     case 'up':
-      rotationClass = 'rotate-270';
+      rotationClass = '-rotate-90';
       break;
     case 'left':
       rotationClass = 'rotate-180';
@@ -27,7 +27,7 @@ const IconRoundedArrow: React.FC<IconRoundedArrowProps> = ({ classNames = 'w-8',
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className={`flex aspect-square ${classNames} ${rotationClass} min-h-auto items-center justify-center`}
+      className={`flex aspect-square ${classNames} ${rotationClass} min-h-auto items-center justify-center transition-transform duration-300 ease-in-out`}
       fill="none"
       viewBox="0 0 33 33"
       {...props}

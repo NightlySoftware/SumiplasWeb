@@ -23,7 +23,7 @@ const ProductButton: React.FC<ProductButtonProps> = ({ href, title, bgImage }) =
         Bolsas
         <span className="font-bold">{title}</span>
       </p>
-      <IconRoundedArrow classNames="z-10" fill="#fff" />
+      <IconRoundedArrow classNames="w-8 z-10" fill="#fff" />
     </Link>
   );
 };
