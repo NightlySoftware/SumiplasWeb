@@ -50,12 +50,12 @@ export default function Home() {
           <InfoCard
             title="Productos de Calidad"
             description="Contamos con una amplia gama de productos para cubrir las necesidades de cada uno de nuestros clientes."
-            image="/images/info_card/quality.jpg"
+            image="/images/info_card/quality.webp"
           />
           <InfoCard
             title="Tecnología de Vanguardia"
             description="Contamos con tecnología y maquinaria de vanguardia para de esta manera poder realizar un trabajo de calidad."
-            image="/images/info_card/technology.jpg"
+            image="/images/info_card/technology.webp"
           />
           <ArrowButton href="/nosotros" text="Conócenos más" />
         </div>
@@ -105,7 +105,7 @@ export default function Home() {
             <div className="flex w-full px-8">
               <div className="relative h-10 w-full">
                 <Image
-                  src="/images/logos/zkw.png"
+                  src="/images/logos/zkw.webp"
                   alt="logo"
                   className="saturate-0 brightness-0 h-10 w-auto"
                   style={{ objectFit: 'contain' }}
@@ -114,7 +114,7 @@ export default function Home() {
               </div>
               <div className="relative h-10 w-full">
                 <Image
-                  src="/images/logos/campo_fresco.png"
+                  src="/images/logos/campo_fresco.webp"
                   alt="logo"
                   className="saturate-0 brightness-0"
                   style={{ objectFit: 'contain' }}
@@ -125,7 +125,7 @@ export default function Home() {
             <div className="flex w-full px-8">
               <div className="relative h-10 w-full">
                 <Image
-                  src="/images/logos/nifco.png"
+                  src="/images/logos/nifco.webp"
                   alt="logo"
                   className="saturate-0"
                   style={{ objectFit: 'contain' }}
@@ -134,7 +134,7 @@ export default function Home() {
               </div>
               <div className="relative h-10 w-full">
                 <Image
-                  src="/images/logos/almacenes_vaca.png"
+                  src="/images/logos/almacenes_vaca.webp"
                   alt="logo"
                   className="saturate-0 brightness-0"
                   style={{ objectFit: 'contain' }}
@@ -143,7 +143,7 @@ export default function Home() {
               </div>
               <div className="relative h-10 w-full">
                 <Image
-                  src="/images/logos/trimex.png"
+                  src="/images/logos/trimex.webp"
                   alt="logo"
                   className="saturate-0 brightness-0"
                   style={{ objectFit: 'contain' }}
@@ -154,7 +154,7 @@ export default function Home() {
             <div className="flex w-full px-8">
               <div className="relative h-10 w-full">
                 <Image
-                  src="/images/logos/vallen.png"
+                  src="/images/logos/vallen.webp"
                   alt="logo"
                   className="saturate-0 brightness-0"
                   style={{ objectFit: 'contain' }}
@@ -174,7 +174,7 @@ export default function Home() {
           <InfoCard
             title="Envíos a domicilio"
             description="Somos fabricantes de bolsa situados en Irapuato Guanajuato. Contamos con transporte propio y entrega en la Zona del Bajío mexicano."
-            image="/images/info_card/transportation.jpeg"
+            image="/images/info_card/transportation.webp"
           />
           <div className="flex flex-col gap-2.5">
             <div className="flex items-center gap-2.5 leading-5 px-2.5">
@@ -205,7 +205,7 @@ export default function Home() {
           </div>
           <InfoCard
             description="¿Te interesaron nuestros productos y quieres saber más información sobre precios, medidas específicas o entregas? Envíanos tu información de contacto para responderte lo más pronto posible."
-            image="/images/info_card/contact.jpg"
+            image="/images/info_card/contact.webp"
           />
           <ArrowButton href="/contacto" text="Contáctanos" />
         </div>

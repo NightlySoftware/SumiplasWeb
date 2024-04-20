@@ -16,7 +16,7 @@ const SubProductsList = () => {
         onOpen={() => handleOpen('1')}
         headline1="Película Stretch"
         headline2="Para Emplayar"
-        image="/images/product_dropdown/stretch_roll.jpeg"
+        image="/images/product_dropdown/stretch_roll.webp"
         description="Maximiza la seguridad y estabilidad de tus cargas con nuestra Película Stretch de alta resistencia. Ideal para envolver palets y asegurar productos durante el transporte y almacenaje. Su flexibilidad y adherencia superior garantizan una protección eficaz contra polvo, humedad y daños."
       />
       <ProductDropdown
@@ -40,7 +40,7 @@ const SubProductsList = () => {
         onOpen={() => handleOpen('4')}
         headline1="Cinta PVC de Colores"
         headline2="Para Marcaje"
-        image="/images/product_dropdown/pvc_tape.png"
+        image="/images/product_dropdown/pvc_tape.webp"
         description="Ideal para señalización de áreas, identificación de equipos o demarcación de zonas de seguridad. Su durabilidad y variedad de colores vivos (Amarillo, Verde, Azul, Rojo, etc.) facilitan una visualización clara y duradera."
       />
       <ProductDropdown
@@ -56,7 +56,7 @@ const SubProductsList = () => {
         onOpen={() => handleOpen('6')}
         headline1="Poli Burbuja"
         headline2="Natural"
-        image="/images/product_dropdown/bubble.jpeg"
+        image="/images/product_dropdown/bubble.webp"
         description="Solución ideal para prevenir daños durante el transporte y almacenamiento. Disponible en rollos y láminas, proporciona una amortiguación superior para artículos frágiles, garantizando que lleguen en perfectas condiciones a sus destinatarios."
       />
       <ProductDropdown
@@ -64,7 +64,7 @@ const SubProductsList = () => {
         onOpen={() => handleOpen('7')}
         headline1="Poli Burbuja"
         headline2="Antiestático"
-        image="/images/product_dropdown/bubble_antistatic.jpg"
+        image="/images/product_dropdown/bubble_antistatic.webp"
         description="Diseñado para evitar daños por electricidad estática, este material es esencial para el embalaje seguro de productos tecnológicos, componentes electrónicos y dispositivos sensibles. Disponible en rollos y láminas para una máxima versatilidad."
       />
       <ProductDropdown
@@ -80,7 +80,7 @@ const SubProductsList = () => {
         onOpen={() => handleOpen('9')}
         headline1="Grapa Metálica"
         headline2="Para Fleje"
-        image="/images/product_dropdown/strap_clamp.jpeg"
+        image="/images/product_dropdown/strap_clamp.webp"
         description="Completa tu sistema de embalaje con nuestras Grapas Metálicas para Fleje. Diseñadas para unir de manera segura los extremos del fleje, estas grapas son esenciales para mantener la tensión y la integridad del embalaje durante el transporte."
       />
     </div>

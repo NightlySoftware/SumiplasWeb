@@ -54,7 +54,7 @@ const page = () => {
             headlineImage="/images/product_card/antistatic.webp"
             title="Antiestáticas"
             description="Ideal para uso en el sector automotriz, estas bolsas son Diseñadas para proteger componentes electrónicos y dispositivos sensibles de la descarga electroestática (ESD). Evitan la acumulación de cargas electrostáticas en el interior de la bolsa y protegen los componentes contra daños por descargas eléctricas."
-            centerImage="/images/product_card/center/antistatic.png"
+            centerImage="/images/product_card/center/antistatic.webp"
           />
           <ProductCard
             href="/productos/grado-alimenticio"
@@ -63,7 +63,7 @@ const page = () => {
             headlineImage="/images/product_card/food.webp"
             title="Para Alimentos "
             description="Este tipo de bolsa permite hacer un empaque adecuado de alimentos que se venden a granel en las áreas de panadería, salchichería, carnes y fruta. Nuestros productos están aprobado para uso comercial por las regulaciones de la FDA."
-            centerImage="/images/product_card/center/food.png"
+            centerImage="/images/product_card/center/food.webp"
           />
           <ProductCard
             href="/productos/industriales"
@@ -72,7 +72,7 @@ const page = () => {
             headlineImage="/images/product_card/industrial.webp"
             title="Uso Industrial"
             description="Bolsas de polietileno de alta densidad, resistentes y duraderas, ideales para uso en la industria. Disponibles en diferentes calibres y medidas, estas bolsas son perfectas para el manejo de residuos sólidos y líquidos, así como para el empaque de productos pesados."
-            centerImage="/images/product_card/center/industrial.png"
+            centerImage="/images/product_card/center/industrial.webp"
           />
           <ProductCard
             href="/productos/anticorrosivas"
@@ -81,7 +81,7 @@ const page = () => {
             headlineImage="/images/product_card/anticorrosive.webp"
             title="Anticorrosivas"
             description="Bolsas de polietileno con aditivo VCI (Volatile Corrosion Inhibitor) que protege de la corrosión a metales ferrosos y no ferrosos. Ideal para proteger piezas metálicas en tránsito o almacenamiento hasta por 12 meses."
-            centerImage="/images/product_card/center/anticorrosive.png"
+            centerImage="/images/product_card/center/anticorrosive.webp"
           />
           <ProductCard
             href="/productos/termoencogibles"
@@ -90,7 +90,7 @@ const page = () => {
             headlineImage="/images/product_card/shrinkable.webp"
             title="Termoencogibles"
             description="Cuenta con tecnología multicapa que protege el alimento y lo preserva con mayor vida de anaquel. La bolsa se adhiere como si fuera una segunda piel, adoptando la forma del producto para brindar una mejor presentación con brillo y claridad."
-            centerImage="/images/product_card/center/shrinkable.png"
+            centerImage="/images/product_card/center/shrinkable.webp"
           />
           <ProductCard
             href="/productos/lisas-pigmentadas"
@@ -99,7 +99,7 @@ const page = () => {
             headlineImage="/images/product_card/pigmented.webp"
             title="Lisas Pigmentadas"
             description="Utilizada comúnmente para clasificar la basura o para uso de color institucional, nuestro producto es elaborado a partir del reutilizamiento del Stretch compactado, por lo cual la calidad del producto es elevado, con gran resistencia y durabilidad. El sello de fondos que manejamos evita la fuga de sólidos y líquidos."
-            centerImage="/images/product_card/center/pigmented.png"
+            centerImage="/images/product_card/center/pigmented.webp"
           />
           <ProductCard
             href="/productos/comerciales"
@@ -108,7 +108,7 @@ const page = () => {
             headlineImage="/images/product_card/printable.webp"
             title="Comerciales"
             description="Bolsa de compras (Shopping bags) ideal para boutiques, zapaterias, tiendas de ropa, tiendas departamentales y exposiciones. La bolsa cuenta con tratamiento para poder ser serigrafiada de manera adecuada."
-            centerImage="/images/product_card/center/printable.png"
+            centerImage="/images/product_card/center/printable.webp"
           />
         </div>
         <div className="flex flex-col text-spblack text-center text-pretty gap-4">
