@@ -13,7 +13,13 @@ const InfoCard: React.FC<InfoCardProps> = ({ title, description, image, children
     <div className="flex flex-col w-full p-[5px] bg-spgradient rounded-lg gap-2.5">
       {image && (
         <div className="relative aspect-[2/1]">
-          <Image className="rounded-md" src={image} alt="info card" style={{ objectFit: 'cover' }} fill />
+          <Image
+            className="brightness-[80%] rounded-md"
+            src={image}
+            alt="info card"
+            style={{ objectFit: 'cover' }}
+            fill
+          />
         </div>
       )}
       {children}
