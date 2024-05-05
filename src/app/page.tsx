@@ -7,6 +7,7 @@ import ArrowButton from './components/ArrowButton';
 import ProductButton from './components/ProductButton';
 import Image from 'next/image';
 import MapComponent from './components/MapComponent';
+
 export default function Home() {
   return (
     <main className="flex flex-col items-center">

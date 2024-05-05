@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import React from 'react';
 import IconRoundedArrow from './IconRoundedArrow';
 import Image from 'next/image';
 

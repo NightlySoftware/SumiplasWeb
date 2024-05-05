@@ -1,11 +1,20 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-const Header = () => {
+interface HeaderProps {
+  color?: 'white' | 'black';
+}
+
+const Header: React.FC<HeaderProps> = ({ color = 'white' }) => {
   return (
-    <Link href={'/'} className="absolute flex w-full justify-center gap-2 font-bold text-spwhite text-xl p-5">
+    <Link
+      href={'/'}
+      className={`absolute flex w-full justify-center gap-2 font-bold ${
+        color === 'white' ? 'text-spwhite' : 'text-spblack'
+      } text-xl p-5`}
+    >
       <div className="relative aspect-square w-6">
-        <Image src="/icons/logo.svg" alt="Logo" style={{ objectFit: 'contain' }} fill />
+        <Image className={`object-contain ${color === 'black' && 'invert'}`} src="/icons/logo.svg" alt="Logo" fill />
       </div>
       <p>SUMIPLAS</p>
     </Link>
