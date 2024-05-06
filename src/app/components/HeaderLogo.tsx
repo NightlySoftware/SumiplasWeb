@@ -5,7 +5,7 @@ interface HeaderProps {
   color?: 'white' | 'black';
 }
 
-const Header: React.FC<HeaderProps> = ({ color = 'white' }) => {
+const HeaderLogo: React.FC<HeaderProps> = ({ color = 'white' }) => {
   return (
     <Link
       href={'/'}
@@ -21,4 +21,4 @@ const Header: React.FC<HeaderProps> = ({ color = 'white' }) => {
   );
 };
 
-export default Header;
+export default HeaderLogo;

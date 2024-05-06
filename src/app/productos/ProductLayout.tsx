@@ -1,5 +1,5 @@
 import Footer from '@/app/components/Footer';
-import Header from '@/app/components/Header';
+import HeaderLogo from '@/app/components/HeaderLogo';
 import Navbar from '@/app/components/Navbar';
 import Image from 'next/image';
 import ArrowButton from '@/app/components/ArrowButton';
@@ -19,33 +19,39 @@ interface ProductLayoutProps {
 const ProductLayout: React.FC<ProductLayoutProps> = ({ name, description, properties, cards, questionList }) => {
   return (
     <main className="flex flex-col items-center">
-      <Header color="black" />
-      <div className="flex flex-col w-full bg-spwhite p-5 pt-28 pb-20 gap-16">
+      <HeaderLogo color="black" />
+      <div className="flex flex-col w-full bg-spwhite p-5 pt-28 pb-20 gap-12">
+        {/* Cover photo */}
         <div className="flex relative items-center justify-center aspect-square w-full rounded-lg overflow-hidden">
           <Image className="object-cover brightness-[60%]" src="/images/product_card/antistatic.webp" alt="Logo" fill />
           <div className="relative object-contain flex w-[65%] h-[65%] p-2.5 gap-2.5">
             <Image src="/images/product_card/center/antistatic.webp" alt="Center image" fill />
           </div>
         </div>
-        <p className="text-3xl">
+
+        {/* Title */}
+        <p className="text-3xl leading-10">
           Bolsas de polietileno
           <br />
           <span className="font-bold">{name}</span>
         </p>
+
         <ArrowButton text="Cotiza Ahora" />
         <p className="leading-5">{description}</p>
-        <p className="font-bold">Características del producto</p>
 
         {/* Property List */}
-        <div className="flex flex-col gap-2 p-2">
-          {properties.map((property) => (
-            <div key={property.text} className="flex items-center gap-2">
-              <div className="relative aspect-square w-6">
-                <Image className={`object-contain invert`} src={property.icon} alt="Logo" fill />
+        <div className="flex flex-col gap-2">
+          <p className="font-bold">Características del producto</p>
+          <div className="flex flex-col gap-2 p-2">
+            {properties.map((property) => (
+              <div key={property.text} className="flex items-center gap-2">
+                <div className="relative aspect-square w-6">
+                  <Image className={`object-contain invert`} src={property.icon} alt="Logo" fill />
+                </div>
+                <p>{property.text}</p>
               </div>
-              <p>{property.text}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         {/* Cards List */}

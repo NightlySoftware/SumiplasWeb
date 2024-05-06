@@ -1,4 +1,4 @@
-import Header from '../components/Header';
+import HeaderLogo from '../components/HeaderLogo';
 import MainSection from '../components/MainSection';
 import Image from 'next/image';
 import Footer from '../components/Footer';
@@ -11,7 +11,7 @@ const page = () => {
     <main className="flex flex-col items-center">
       {/* Hero section */}
       <div className="flex flex-col w-full sticky -z-10 top-0">
-        <Header />
+        <HeaderLogo />
         <div className="flex flex-col relative w-full text-spwhite min-h-screen gap-8 py-16 pt-32">
           <p className="text-center text-[32px] font-semibold leading-10">
             Empresa <span className="font-serif italic font-normal">comprometida</span>
