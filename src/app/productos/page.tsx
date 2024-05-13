@@ -28,8 +28,7 @@ const page = () => {
             medidas comerciales y especiales
           </p>
           <Image
-            className="-z-10 brightness-[60%]"
-            style={{ objectFit: 'cover', objectPosition: 'left' }}
+            className="-z-10 brightness-[60%] object-cover object-left"
             src="/images/hero_bg/products.webp"
             alt="hero"
             quality={100}
@@ -43,12 +42,13 @@ const page = () => {
 
       <MainSection
         title="Bolsas que se adaptan a tus necesidades"
-        description="Entendemos que cada cliente es único, por eso nos adaptamos a tus medidas,tus requerimientos y a tu negocio. Ofrecemos un amplio catálogo de tipos de bolsas de polietileno, así como agregados."
+        description="Entendemos que cada cliente es único,por eso nos adaptamos a tus requerimientos, medidas y a tus procesos.
+        Ofrecemos un amplio catálogo de bolsas de polietileno, además de otros agregados."
         oneliner="Revisa nuestro catálogo completo de productos a continuación"
       >
         <div className="flex flex-col w-full gap-16">
           <ProductCard
-            href="/productos/anti-estaticas"
+            href="/productos/antiestaticas"
             headline1="Con protección ESD"
             headline2="para circuitos"
             headlineImage="/images/product_card/antistatic.webp"
@@ -59,11 +59,11 @@ const page = () => {
           <ProductCard
             href="/productos/grado-alimenticio"
             headline1="Grado Alimenticio"
-            headline2="para productos orgánicos"
-            headlineImage="/images/product_card/food.webp"
-            title="Para Alimentos "
-            description="Este tipo de bolsa permite hacer un empaque adecuado de alimentos que se venden a granel en las áreas de panadería, salchichería, carnes y fruta. Nuestros productos están aprobado para uso comercial por las regulaciones de la FDA."
-            centerImage="/images/product_card/center/food.webp"
+            headline2="de baja densidad"
+            headlineImage="/images/temp/printable.webp"
+            title="Para Alimentos"
+            description="Esta bolsa de polietileno de baja densidad es completamente transparente e ideal para el empaque adecuado de alimentos. Ofrece una excelente visualización del contenido y está aprobada para uso comercial según las regulaciones de la FDA, garantizando seguridad y calidad."
+            centerImage="/images/temp/bags.webp"
           />
           <ProductCard
             href="/productos/industriales"
@@ -71,51 +71,42 @@ const page = () => {
             headline2="para material inorgánico"
             headlineImage="/images/product_card/industrial.webp"
             title="Uso Industrial"
-            description="Bolsas de polietileno de alta densidad, resistentes y duraderas, ideales para uso en la industria. Disponibles en diferentes calibres y medidas, estas bolsas son perfectas para el manejo de residuos sólidos y líquidos, así como para el empaque de productos pesados."
+            description="Bolsa negra resistente para basura elaborada con material reciclado 100% propio, ideal para actividades que no tengan contacto con productos de consumo alimenticio, nuestra bolsa cuenta con alto grado de resistencia con un sello de fondo."
             centerImage="/images/product_card/center/industrial.webp"
           />
           <ProductCard
             href="/productos/anticorrosivas"
             headline1="Con protección VCI"
-            headline2="para metales"
+            headline2="ideal para embalajes"
             headlineImage="/images/product_card/anticorrosive.webp"
             title="Anticorrosivas"
-            description="Bolsas de polietileno con aditivo VCI (Volatile Corrosion Inhibitor) que protege de la corrosión a metales ferrosos y no ferrosos. Ideal para proteger piezas metálicas en tránsito o almacenamiento hasta por 12 meses."
+            description="Las bolsas VCI son la mejor solución para el embalaje y la protección de la corrosión en un simple paso, son la forma más rápida para permitir que el compuesto inhibidor de la bolsa se evapore para dar a las piezas un alto nivel de protección contra la corrosión hasta por 12 meses."
             centerImage="/images/product_card/center/anticorrosive.webp"
           />
           <ProductCard
-            href="/productos/termoencogibles"
-            headline1="Grado alimenticio"
-            headline2="ideal en carnes y quesos"
-            headlineImage="/images/product_card/shrinkable.webp"
-            title="Termoencogibles"
-            description="Cuenta con tecnología multicapa que protege el alimento y lo preserva con mayor vida de anaquel. La bolsa se adhiere como si fuera una segunda piel, adoptando la forma del producto para brindar una mejor presentación con brillo y claridad."
-            centerImage="/images/product_card/center/shrinkable.webp"
-          />
-          <ProductCard
             href="/productos/lisas-pigmentadas"
-            headline1="Ideal en clasificación"
-            headline2="para uso industrial"
+            headline1="Varios colores"
+            headline2="ideal para empaque"
             headlineImage="/images/product_card/pigmented.webp"
             title="Lisas Pigmentadas"
-            description="Utilizada comúnmente para clasificar la basura o para uso de color institucional, nuestro producto es elaborado a partir del reutilizamiento del Stretch compactado, por lo cual la calidad del producto es elevado, con gran resistencia y durabilidad. El sello de fondos que manejamos evita la fuga de sólidos y líquidos."
+            description="Utilizada comúnmente para clasificar productos, alimentos o para uso de color institucional, por lo cual la calidad del producto es elevado, con gran resistencia y durabilidad. El sello de fondo que manejamos evita la fuga de sólidos y líquidos."
             centerImage="/images/product_card/center/pigmented.webp"
           />
           <ProductCard
             href="/productos/comerciales"
-            headline1="Tratadas para impresión"
+            headline1="De asa"
             headline2="ideal en comercios"
             headlineImage="/images/product_card/printable.webp"
-            title="Comerciales"
-            description="Bolsa de compras (Shopping bags) ideal para boutiques, zapaterias, tiendas de ropa, tiendas departamentales y exposiciones. La bolsa cuenta con tratamiento para poder ser serigrafiada de manera adecuada."
+            title="Tipo Camiseta"
+            description="Bolsas tipo camiseta con asas, ideales para todo tipo de comercios. Disponibles en una variedad de colores, incluyendo transparente, y en medidas y calibres especiales para adaptarse a diversas necesidades."
             centerImage="/images/product_card/center/printable.webp"
           />
         </div>
         <div className="flex flex-col text-spblack text-center text-pretty gap-4">
           <p className="text-3xl font-medium py-8">Productos que comercializamos</p>
           <p className="leading-5">
-            Además de nuestros productos manufacturados, ofrecemos una gama de aditivos para una experiencia completa de
-            compra en un solo lugar.
+            Además de nuestros productos manufacturados, también ofrecemos una variedad de materiales para empaque y
+            embalaje. Así, puedes disfrutar de una experiencia completa de compra en un solo lugar.
           </p>
         </div>
         <SubProductsList />

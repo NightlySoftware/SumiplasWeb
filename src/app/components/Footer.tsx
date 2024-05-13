@@ -5,14 +5,14 @@ const Footer = () => {
   return (
     <footer className="flex flex-col w-full bg-spgradient text-spwhite p-5 pb-28 gap-10">
       <div className="flex flex-col w-full gap-4">
-        <p className="font-medium">
+        <p className="font-medium text-lg">
           Encuéntranos
           <span className="font-serif italic"> también </span>
           en:
         </p>
-        <div className="flex flex-col gap-2 text-xs">
+        <div className="flex flex-col gap-2">
           <Link href={'mailto:contacto@sumiplas.mx'} className="flex items-center gap-1.5">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="24" height="24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M18.3332 6.93335V15C18.3332 15.442 18.1576 15.866 17.845 16.1785C17.5325 16.4911 17.1085 16.6667 16.6665 16.6667H3.33317C2.89114 16.6667 2.46722 16.4911 2.15466 16.1785C1.8421 15.866 1.6665 15.442 1.6665 15V7.24168L3.33317 8.15002L9.59984 11.5667C9.72269 11.633 9.86023 11.6674 9.99984 11.6667C10.1466 11.6652 10.2903 11.6249 10.4165 11.55L16.6665 7.90835L18.3332 6.93335Z"
                 fill="#F2F7FB"
@@ -25,7 +25,7 @@ const Footer = () => {
             contacto@sumiplas.mx
           </Link>
           <Link href={'https://www.facebook.com/sumiplas.suministrosdeplasticos'} className="flex items-center gap-1.5">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="24" height="24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M18 1.90226V18.0526C17.9973 18.0874 17.9821 18.1197 17.9575 18.1429C17.9472 18.3547 17.8634 18.555 17.7221 18.705C17.5807 18.855 17.3921 18.944 17.1925 18.9549H12.73V12.0075H14.8125C14.94 12.0075 14.94 12.0075 14.9825 11.8722L15.11 10.7444C15.1525 10.2932 15.195 9.8421 15.28 9.39098C15.365 8.93985 15.28 9.25564 15.195 9.25564H12.73V7.49624C12.73 7.3609 12.7725 7.18045 12.7725 7.04511C12.791 6.86039 12.8685 6.68797 12.9923 6.55661C13.116 6.42526 13.2785 6.34291 13.4525 6.32331L14.005 6.23308H15.28C15.365 6.23308 15.365 6.23308 15.365 6.14286V3.8421C15.365 3.79699 15.365 3.75188 15.28 3.75188H13.325C12.8405 3.73777 12.3598 3.846 11.9225 4.06767C11.599 4.18324 11.3007 4.36657 11.0451 4.60679C10.7896 4.84702 10.5821 5.13925 10.435 5.46617C10.1926 5.96771 10.0755 6.52691 10.095 7.09023C10.0525 7.76692 10.095 8.48872 10.095 9.21053H7.9275C7.8425 9.21053 7.8425 9.25564 7.8425 9.30075V11.8722C7.8425 11.9624 7.8425 11.9624 7.9275 11.9624H10.095V18.9098C10.0704 18.9329 10.0552 18.9652 10.0525 19H1.8075C1.60793 18.9891 1.41925 18.9001 1.27795 18.7501C1.13664 18.6001 1.05275 18.3998 1.0425 18.188C1 18.188 1 18.1429 1 18.0977V1.90226C1 1.85714 1 1.81203 1.0425 1.81203C1.05275 1.60019 1.13664 1.39991 1.27795 1.24992C1.41925 1.09993 1.60793 1.01088 1.8075 1H17.1925C17.3921 1.01088 17.5807 1.09993 17.7221 1.24992C17.8634 1.39991 17.9472 1.60019 17.9575 1.81203L18 1.90226Z"
                 fill="#F2F7FB"
@@ -34,7 +34,7 @@ const Footer = () => {
             Facebook
           </Link>
           <Link href={'https://wa.me/+524621861193'} className="flex items-center gap-1.5">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg width="24" height="24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 fillRule="evenodd"
                 clipRule="evenodd"
@@ -47,18 +47,18 @@ const Footer = () => {
         </div>
       </div>
       <div className="flex flex-col gap-2">
-        <div className="flex w-full gap-2 font-bold text-spwhite text-xl">
-          <div className="relative aspect-square w-6">
-            <Image src="/icons/logo.svg" alt="Logo" style={{ objectFit: 'contain' }} fill />
+        <div className="flex w-full gap-2 font-bold text-spwhite text-2xl">
+          <div className="relative aspect-square w-8">
+            <Image className="object-contain" src="/icons/logo.svg" alt="Logo" fill />
           </div>
           SUMIPLAS
         </div>
-        <p className="font-medium">
+        <p className="font-medium text-lg">
           Bolsas a tu
           <span className="font-serif italic"> medida</span>
         </p>
       </div>
-      <p className="text-xs">Suministros de Plásticos S.A. de C.V. ©2024</p>
+      <p className="text-xs">Sumiplas ©2024</p>
       <Link href={'https://nightly.software'} className="text-center text-xs">
         Website by Nightly Software
       </Link>

@@ -30,15 +30,9 @@ const ProductCard: React.FC<ProductCardProps> = ({
           <br />
           {headline2}
         </p>
-        <Image
-          src={headlineImage}
-          alt="Product Background"
-          className="rounded-md brightness-[60%]"
-          style={{ objectFit: 'cover' }}
-          fill
-        />
+        <Image src={headlineImage} alt="Product Background" className="rounded-md brightness-[60%] object-cover" fill />
         <div className="relative flex w-auto -mb-32 h-32 p-2.5 gap-2.5 items-center">
-          <Image src={centerImage} alt="Center image" style={{ objectFit: 'contain' }} fill />
+          <Image className="object-contain" src={centerImage} alt="Center image" fill />
         </div>
       </div>
       <div className="flex w-full p-2.5 gap-2.5 items-center">

@@ -19,7 +19,7 @@ interface ProductLayoutProps {
 const ProductLayout: React.FC<ProductLayoutProps> = ({ name, description, properties, cards, questionList }) => {
   return (
     <main className="flex flex-col items-center">
-      <HeaderLogo color="black" />
+      <HeaderLogo color="blue" />
       <div className="flex flex-col w-full bg-spwhite p-5 pt-28 pb-20 gap-12">
         {/* Cover photo */}
         <div className="flex relative items-center justify-center aspect-square w-full rounded-lg overflow-hidden">
@@ -46,7 +46,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({ name, description, proper
             {properties.map((property) => (
               <div key={property.text} className="flex items-center gap-2">
                 <div className="relative aspect-square w-6">
-                  <Image className={`object-contain invert`} src={property.icon} alt="Logo" fill />
+                  <Image className={`object-contain`} src={property.icon} alt="Logo" fill />
                 </div>
                 <p>{property.text}</p>
               </div>
@@ -75,7 +75,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({ name, description, proper
             </div>
           </div>
           <ProductCard
-            href="/productos/anti-estaticas"
+            href="/productos/antiestaticas"
             headline1="Con protección ESD"
             headline2="para circuitos"
             headlineImage="/images/product_card/antistatic.webp"

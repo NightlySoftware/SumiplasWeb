@@ -32,13 +32,7 @@ const Dropdown: React.FC<DropdownProps> = ({
           </p>
           {image && (
             <div className="relative h-20 aspect-[140/80]">
-              <Image
-                className="rounded-md brightness-[80%]"
-                src={image}
-                alt="Product image"
-                style={{ objectFit: 'cover' }}
-                fill
-              />
+              <Image className="rounded-md brightness-[80%] object-cover" src={image} alt="Product image" fill />
             </div>
           )}
         </div>

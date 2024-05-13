@@ -24,13 +24,7 @@ const ProcessCard: React.FC<ProcessCardProps> = ({ title, subtitle, number, imag
         </p>
       </div>
       <div className="relative flex aspect-video w-full">
-        <Image
-          className="brightness-[80%] rounded-lg"
-          src={imageSrc}
-          alt="Imagen de proceso"
-          style={{ objectFit: 'cover' }}
-          fill
-        />
+        <Image className="brightness-[80%] rounded-lg object-cover" src={imageSrc} alt="Imagen de proceso" fill />
       </div>
       {textItems.map((item, index) => (
         <p key={index} className="flex flex-col leading-5">

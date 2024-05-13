@@ -29,8 +29,7 @@ export default function Home() {
             automotriz, industrial y de alimentos.
           </p>
           <Image
-            className="-z-10"
-            style={{ objectFit: 'cover' }}
+            className="-z-10 object-cover object-[20%] brightness-[70%]"
             src="/images/hero_bg/main.webp"
             alt="hero"
             quality={100}
@@ -44,7 +43,7 @@ export default function Home() {
 
       <MainSection
         title="Te contamos lo que hacemos"
-        description="En Sumiplas nos dedicamos a la fabricación y distribución de bolsas de polietileno, así como brindamos soluciones de empaque y embalaje excepcionales para el sector agropecuario, automotriz, de alimentos e industrial."
+        description="En Sumiplas nos dedicamos a la fabricación y distribución de bolsas de polietileno, así como brindamos soluciones de empaque y embalaje excepcionales para el sector alimenticio, automotriz, e industrial."
         oneliner="Establecidos en Irapuato, Guanajuato, lideramos el sector."
       >
         <div className="flex flex-col gap-8">
@@ -55,8 +54,9 @@ export default function Home() {
           />
           <InfoCard
             title="Tecnología de Vanguardia"
-            description="Contamos con tecnología y maquinaria de vanguardia para de esta manera poder realizar un trabajo de calidad."
-            image="/images/info_card/technology.webp"
+            description="Contamos con la tecnología y maquinaria para poder realizar un trabajo de calidad."
+            image="/images/info_card/maquina.webp"
+            imgClassNames="object-[50%,55%]"
           />
           <ArrowButton href="/nosotros" text="Conócenos más" />
         </div>
@@ -74,7 +74,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col gap-4">
             <ProductButton
-              href="/productos/anti-estaticas"
+              href="/productos/antiestaticas"
               title="Antiestáticas"
               bgImage="/images/product_card/antistatic.webp"
             />
@@ -84,9 +84,14 @@ export default function Home() {
               bgImage="/images/product_card/food.webp"
             />
             <ProductButton
-              href="/productos/comerciales"
-              title="Tratadas para Impresión"
-              bgImage="/images/product_card/printable.webp"
+              href="/productos/anticorrosivas"
+              title="Con protección VCI"
+              bgImage="/images/product_card/anticorrosive.webp"
+            />
+            <ProductButton
+              href="/productos/industriales"
+              title="Uso industrial"
+              bgImage="/images/product_card/industrial.webp"
             />
           </div>
           <ArrowButton href="/productos" text="Ver más productos" />
@@ -98,18 +103,17 @@ export default function Home() {
           <div className="flex flex-col text-spblack text-center text-pretty gap-4">
             <p className="text-3xl font-medium py-8">Nuestros clientes</p>
             <p className="leading-5">
-              Estos son algunos de los clientes, distribuidores con los que hemos trabajado y avalan nuestra calidad
-              como fabricantes
+              Estos son algunos de nuestros clientes, con los que hemos trabajado y avalan nuestra calidad, compromiso y
+              responsabilidad como fabricantes.
             </p>
           </div>
           <div className="flex flex-wrap justify-center gap-8 px-8">
-            <div className="flex w-full px-8">
+            <div className="flex w-full px-8 gap-4">
               <div className="relative h-10 w-full">
                 <Image
                   src="/images/logos/zkw.webp"
                   alt="logo"
-                  className="saturate-0 brightness-0 h-10 w-auto"
-                  style={{ objectFit: 'contain' }}
+                  className="saturate-0 brightness-0 h-10 w-auto object-contain"
                   fill
                 />
               </div>
@@ -117,28 +121,7 @@ export default function Home() {
                 <Image
                   src="/images/logos/campo_fresco.webp"
                   alt="logo"
-                  className="saturate-0 brightness-0"
-                  style={{ objectFit: 'contain' }}
-                  fill
-                />
-              </div>
-            </div>
-            <div className="flex w-full px-8">
-              <div className="relative h-10 w-full">
-                <Image
-                  src="/images/logos/nifco.webp"
-                  alt="logo"
-                  className="saturate-0"
-                  style={{ objectFit: 'contain' }}
-                  fill
-                />
-              </div>
-              <div className="relative h-10 w-full">
-                <Image
-                  src="/images/logos/almacenes_vaca.webp"
-                  alt="logo"
-                  className="saturate-0 brightness-0"
-                  style={{ objectFit: 'contain' }}
+                  className="saturate-0 brightness-0 object-contain"
                   fill
                 />
               </div>
@@ -146,19 +129,38 @@ export default function Home() {
                 <Image
                   src="/images/logos/trimex.webp"
                   alt="logo"
-                  className="saturate-0 brightness-0"
-                  style={{ objectFit: 'contain' }}
+                  className="saturate-0 brightness-0 object-contain"
                   fill
                 />
               </div>
             </div>
-            <div className="flex w-full px-8">
+            <div className="flex w-full px-8 gap-4">
+              <div className="relative h-10 w-full">
+                <Image
+                  src="/images/logos/sanoh.webp"
+                  alt="logo"
+                  className="saturate-0 brightness-0 object-contain"
+                  fill
+                />
+              </div>
+              <div className="relative h-10 w-full">
+                <Image src="/images/logos/nifco.webp" alt="logo" className="saturate-0 object-contain" fill />
+              </div>
+              <div className="relative h-10 w-[50%]">
+                <Image
+                  src="/images/logos/almacenes_vaca.webp"
+                  alt="logo"
+                  className="saturate-0 brightness-0 object-contain"
+                  fill
+                />
+              </div>
+            </div>
+            <div className="flex w-full px-8 gap-4">
               <div className="relative h-10 w-full">
                 <Image
                   src="/images/logos/vallen.webp"
                   alt="logo"
-                  className="saturate-0 brightness-0"
-                  style={{ objectFit: 'contain' }}
+                  className="saturate-0 brightness-0 object-contain"
                   fill
                 />
               </div>
@@ -171,12 +173,11 @@ export default function Home() {
         <div className="flex flex-col gap-8">
           <div className="flex flex-col text-spblack text-center text-pretty gap-4">
             <p className="text-3xl font-medium py-8">Entregamos hasta tu negocio</p>
+            <p className="leading-5">
+              Somos fabricantes de bolsa situados en Irapuato Guanajuato. Contamos con transporte propio y entrega en la
+              Zona del Bajío mexicano.
+            </p>
           </div>
-          <InfoCard
-            title="Envíos a domicilio"
-            description="Somos fabricantes de bolsa situados en Irapuato Guanajuato. Contamos con transporte propio y entrega en la Zona del Bajío mexicano."
-            image="/images/info_card/transportation.webp"
-          />
           <div className="flex flex-col gap-2.5">
             <div className="flex items-center gap-2.5 leading-5 px-2.5">
               <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -197,20 +198,36 @@ export default function Home() {
             </InfoCard>
           </div>
         </div>
-
-        {/* Contact section */}
-
-        <div className="flex flex-col gap-8">
-          <div className="flex flex-col text-spblack text-center text-pretty gap-4">
-            <p className="text-3xl font-medium py-8">Estamos a un click de distancia</p>
-          </div>
-          <InfoCard
-            description="¿Te interesaron nuestros productos y quieres saber más información sobre precios, medidas específicas o entregas? Envíanos tu información de contacto para responderte lo más pronto posible."
-            image="/images/info_card/contact.webp"
-          />
-          <ArrowButton href="/contacto" text="Contáctanos" />
-        </div>
       </MainSection>
+
+      {/* Contact section */}
+      <div className="flex flex-col w-full">
+        <div className="flex flex-col justify-between relative w-full text-spwhite min-h-screen py-48">
+          <div className="flex flex-col items-center gap-8">
+            <p className="text-center text-[32px] font-semibold leading-10">
+              Estamos
+              <br />a un <span className="font-serif italic font-normal">click</span>
+              <br /> de distancia
+            </p>
+            <p className="text-center max-w-[80%] text-[16px] leading-5">
+              ¿Te interesaron nuestros productos y quieres tener más información sobre ellos?
+              <br />
+              <br />
+              Para cotizaciones, medidas específicas o entregas, envíanos tu información de contacto para responderte lo
+              más pronto posible.
+            </p>
+          </div>
+          <ArrowButton href="/productos" text="Contáctanos" color="light" />
+          <Image
+            className="-z-10 object-cover brightness-[70%]"
+            src="/images/hero_bg/contact.webp"
+            alt="hero"
+            quality={100}
+            priority
+            fill
+          />
+        </div>
+      </div>
       <Footer />
       <div className="flex justify-center fixed bottom-5 z-50 w-full">
         <Navbar />
