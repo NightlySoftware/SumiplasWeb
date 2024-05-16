@@ -2,6 +2,8 @@ import ProductLayout from '../ProductLayout';
 
 const product = {
   name: 'Antiestáticas',
+  bgPhoto: '/images/product_card/antistatic.webp',
+  centerPhoto: '/images/product_card/center/antistatic.webp',
   description:
     'Embalaje utilizado para proteger componentes electrónicos sensibles al daño por descargas electrostáticas (ESD). Estas bolsas están diseñadas para prevenir la acumulación de cargas eléctricas en su superficie, creando un entorno seguro para  almacenar y transportar componentes como circuitos integrados, tarjetas  de memoria, y otros dispositivos electrónicos. ',
   properties: [
@@ -88,6 +90,8 @@ const page = () => {
   return (
     <ProductLayout
       name={product.name}
+      bgPhoto={product.bgPhoto}
+      centerPhoto={product.centerPhoto}
       description={product.description}
       properties={product.properties}
       cards={product.cards}

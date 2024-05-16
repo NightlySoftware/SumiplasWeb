@@ -10,14 +10,14 @@ const HeaderLogo: React.FC<HeaderProps> = ({ color = 'white' }) => {
     <Link
       href={'/'}
       className={`absolute flex w-full justify-center items-center gap-2 font-bold ${
-        color === 'white' ? 'text-spwhite' : color === 'black' ? 'text-spblack' : 'text-[#395ACC]'
+        color === 'white' ? 'text-spwhite' : color === 'black' ? 'text-spblack' : 'text-[#005482]'
       } text-xl p-5`}
     >
       <svg
         width="24"
         height="24"
         viewBox="0 0 32 32"
-        fill={color === 'white' ? '#FFF' : color === 'black' ? '#000' : '#395ACC'}
+        fill={color === 'white' ? '#FFF' : color === 'black' ? '#000' : '#005482'}
         xmlns="http://www.w3.org/2000/svg"
       >
         <path

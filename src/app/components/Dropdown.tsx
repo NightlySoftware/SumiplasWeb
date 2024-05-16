@@ -51,7 +51,7 @@ const Dropdown: React.FC<DropdownProps> = ({
           </div>
         )}
       </div>
-      <IconRoundedArrow onClick={onOpen} classNames="w-6" fill="#036" direction={isOpen ? 'up' : 'down'} />
+      <IconRoundedArrow onClick={onOpen} classNames="w-6" fill="#005482" direction={isOpen ? 'up' : 'down'} />
     </div>
   );
 };

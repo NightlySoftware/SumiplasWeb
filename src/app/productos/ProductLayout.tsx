@@ -10,22 +10,32 @@ import IconRoundedArrow from '@/app/components/IconRoundedArrow';
 
 interface ProductLayoutProps {
   name: string;
+  bgPhoto: string;
+  centerPhoto: string;
   description: string;
   properties: { icon: string; text: string }[];
   cards: { title: string; description: string; image: string }[];
   questionList: { question: string; answer: string }[];
 }
 
-const ProductLayout: React.FC<ProductLayoutProps> = ({ name, description, properties, cards, questionList }) => {
+const ProductLayout: React.FC<ProductLayoutProps> = ({
+  name,
+  description,
+  properties,
+  cards,
+  questionList,
+  bgPhoto,
+  centerPhoto,
+}) => {
   return (
     <main className="flex flex-col items-center">
       <HeaderLogo color="blue" />
       <div className="flex flex-col w-full bg-spwhite p-5 pt-28 pb-20 gap-12">
         {/* Cover photo */}
         <div className="flex relative items-center justify-center aspect-square w-full rounded-lg overflow-hidden">
-          <Image className="object-cover brightness-[60%]" src="/images/product_card/antistatic.webp" alt="Logo" fill />
+          <Image className="object-cover brightness-[60%]" src={bgPhoto} alt="Cover photo" fill />
           <div className="relative object-contain flex w-[65%] h-[65%] p-2.5 gap-2.5">
-            <Image src="/images/product_card/center/antistatic.webp" alt="Center image" fill />
+            <Image src={centerPhoto} alt="Center photo" fill />
           </div>
         </div>
 
@@ -70,12 +80,12 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({ name, description, proper
           <div className="flex justify-between items-center">
             <p className="font-bold">Explora más productos</p>
             <div className="flex gap-4">
-              <IconRoundedArrow classNames="w-8" fill="#036" direction="left" />
-              <IconRoundedArrow classNames="w-8" fill="#036" direction="right" />
+              <IconRoundedArrow classNames="w-8" fill="#005482" direction="left" />
+              <IconRoundedArrow classNames="w-8" fill="#005482" direction="right" />
             </div>
           </div>
           <ProductCard
-            href="/productos/antiestaticas"
+            href="/productos/bolsas-antiestaticas"
             headline1="Con protección ESD"
             headline2="para circuitos"
             headlineImage="/images/product_card/antistatic.webp"

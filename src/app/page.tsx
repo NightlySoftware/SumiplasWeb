@@ -14,7 +14,7 @@ export default function Home() {
       {/* Hero section */}
       <div className="flex flex-col w-full sticky -z-10 top-0">
         <HeaderLogo />
-        <div className="flex flex-col relative w-full text-spwhite min-h-screen gap-8 py-16 pt-32">
+        <div className="flex flex-col relative w-full text-spwhite h-lvh gap-8 py-16 pt-32">
           <p className="text-center text-[32px] font-semibold leading-10">
             Bolsas a tu <span className="font-serif italic font-normal">medida</span>
             <br />
@@ -74,22 +74,22 @@ export default function Home() {
           </div>
           <div className="flex flex-col gap-4">
             <ProductButton
-              href="/productos/antiestaticas"
+              href="/productos/bolsas-antiestaticas"
               title="Antiestáticas"
               bgImage="/images/product_card/antistatic.webp"
             />
             <ProductButton
-              href="/productos/grado-alimenticio"
+              href="/productos/bolsas-grado-alimenticio"
               title="Para Alimentos"
               bgImage="/images/product_card/food.webp"
             />
             <ProductButton
-              href="/productos/anticorrosivas"
+              href="/productos/bolsas-anticorrosivas"
               title="Con protección VCI"
               bgImage="/images/product_card/anticorrosive.webp"
             />
             <ProductButton
-              href="/productos/industriales"
+              href="/productos/bolsas-industriales"
               title="Uso industrial"
               bgImage="/images/product_card/industrial.webp"
             />
@@ -202,7 +202,7 @@ export default function Home() {
 
       {/* Contact section */}
       <div className="flex flex-col w-full">
-        <div className="flex flex-col justify-between relative w-full text-spwhite min-h-screen py-48">
+        <div className="flex flex-col justify-between relative w-full text-spwhite h-lvh py-48">
           <div className="flex flex-col items-center gap-8">
             <p className="text-center text-[32px] font-semibold leading-10">
               Estamos
@@ -217,7 +217,7 @@ export default function Home() {
               más pronto posible.
             </p>
           </div>
-          <ArrowButton href="/productos" text="Contáctanos" color="light" />
+          <ArrowButton text="Contáctanos" color="light" />
           <Image
             className="-z-10 object-cover brightness-[70%]"
             src="/images/hero_bg/contact.webp"

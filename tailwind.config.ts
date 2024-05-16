@@ -16,7 +16,7 @@ const config: Config = {
       colors: {
         spwhite: '#F2F7FB',
         spblack: '#0B151C',
-        spblue: '#003366',
+        spblue: '#005482',
       },
     },
   },
