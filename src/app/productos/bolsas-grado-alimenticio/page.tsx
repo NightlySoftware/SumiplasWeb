@@ -38,50 +38,50 @@ const product = {
   ],
   cards: [
     {
-      title: 'Circuitos integrados',
+      title: 'Frutas y verduras',
       description:
-        'Gracias a su composición especial, nuestras bolsas previenen la acumulación de cargas estáticas, asegurando la integridad de los dispositivos electrónicos durante su almacenamiento y transporte',
-      image: '/images/info_card/antiestaticas/1.webp',
+        'Las bolsas de polietileno grado alimenticio son ideales para el almacenamiento y transporte de frutas y verduras. Estas bolsas proporcionan una barrera eficaz contra la humedad y el oxígeno, lo que ayuda a prolongar la vida útil de los productos frescos.',
+      image: '/images/info_card/grado-alimenticio/1.webp',
     },
     {
-      title: 'Tarjetas de memoria',
+      title: 'Productos Lácteos',
       description:
-        'El polietileno de alta resistencia proporciona una barrera efectiva contra la humedad, el polvo y otros contaminantes ambientales, prolongando la vida útil de los productos empacados.',
-      image: '/images/info_card/antiestaticas/2.webp',
+        'Nuestras bolsas aseguran que los productos lácteos estén protegidos de contaminantes externos y de la deshidratación. Gracias a su capacidad de sellado hermético, las bolsas previenen la entrada de aire y humedad, lo que es crucial para mantener la frescura y calidad de los productos lácteos.',
+      image: '/images/info_card/grado-alimenticio/2.webp',
     },
     {
-      title: 'Componentes de computadora',
+      title: 'Pan y Productos de Panadería',
       description:
-        'Disponibles en una amplia gama de tamaños, se adaptan a una diversidad de aplicaciones, desde piezas pequeñas como microchips hasta dispositivos más grandes.',
-      image: '/images/info_card/antiestaticas/3.webp',
+        'Las bolsas de polietileno grado alimenticio son perfectas para conservar la frescura y la textura de productos de panadería, como panes, bollos, y pasteles. Estas bolsas evitan que los productos se sequen y se pongan duros.',
+      image: '/images/info_card/grado-alimenticio/3.webp',
     },
     {
-      title: 'Dispositivos móviles y sus accesorios',
+      title: 'Carnes y Pescados',
       description:
-        'Algunas variantes ofrecen transparencia para una fácil identificación del contenido sin necesidad de abrir la bolsa, facilitando la gestión del inventario.',
-      image: '/images/info_card/antiestaticas/4.webp',
+        'Las bolsas de polietileno grado alimenticio son fundamentales para el empaque de carnes y pescados, proporcionando una barrera segura contra contaminantes y manteniendo la frescura de estos productos perecederos.',
+      image: '/images/info_card/grado-alimenticio/4.webp',
     },
   ],
   questionList: [
     {
-      question: '¿Cómo puedo saber si necesito bolsas antiestáticas para mi producto?',
+      question: '¿Son seguras las bolsas para el contacto con alimentos?',
       answer:
-        'Si tu producto incluye componentes electrónicos sensibles a la electricidad estática, como circuitos integrados, tarjetas de memoria, o cualquier dispositivo electrónico susceptible, es recomendable utilizar bolsas antiestáticas para su almacenamiento y transporte.',
+        'Sí, las bolsas de polietileno grado alimenticio están fabricadas con materiales que cumplen con las normativas de seguridad alimentaria, garantizando que no liberan sustancias tóxicas que puedan contaminar los alimentos.',
     },
     {
-      question: '¿Son las bolsas antiestáticas reutilizables?',
+      question: '¿Puedo usar bolsas de polietileno grado alimenticio para congelar alimentos?',
       answer:
-        'Dependiendo del tipo y la calidad de la bolsa, algunas pueden ser reutilizables. Sin embargo, es importante verificar la integridad de la bolsa y asegurarse de que sus propiedades antiestáticas sigan siendo efectivas antes de reutilizarla.',
+        'Sí, las bolsas de polietileno de baja densidad son adecuadas para congelar alimentos, ya que ofrecen una barrera efectiva contra la humedad y el aire, ayudando a mantener la frescura y calidad de los productos durante el almacenamiento en el congelador.',
     },
     {
-      question: '¿Las bolsas antiestáticas protejen contra impactos y humedad?',
+      question: '¿Las bolsas de polietileno grado alimenticio son reutilizables?',
       answer:
-        'Mientras que todas las bolsas antiestáticas proporcionan una cierta medida de protección contra la humedad y el polvo, no todas están diseñadas para absorber impactos. Para una protección completa, busca bolsas con burbujas o acolchado adicional y verifica si ofrecen barreras contra la humedad.',
+        'Dependiendo del grosor que se elija, algunas pueden ser reutilizables. Es importante asegurarse de que la bolsa no presente daños o contaminaciones antes de su reutilización, para mantener la seguridad alimentaria.',
     },
     {
-      question: '¿Las bolsas antiestáticas tienen fecha de caducidad?',
+      question: '¿Estas bolsas pueden mantener la frescura de productos orgánicos?',
       answer:
-        'Las bolsas antiestáticas no tienen una fecha de caducidad per se, pero sus propiedades antiestáticas pueden disminuir con el tiempo, especialmente si se exponen a condiciones ambientales adversas. Es recomendable revisar y probar las bolsas regularmente para asegurarse de que sigan siendo efectivas.',
+        'Sí, las bolsas de polietileno grado alimenticio están diseñadas para mantener la frescura y calidad de productos orgánicos, protegiéndolos de la humedad, el aire y otros contaminantes externos que puedan acelerar su deterioro.',
     },
   ],
 };

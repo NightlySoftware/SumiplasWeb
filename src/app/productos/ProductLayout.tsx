@@ -30,7 +30,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
   return (
     <main className="flex flex-col items-center">
       <HeaderLogo color="blue" />
-      <div className="flex flex-col w-full bg-spwhite p-5 pt-28 pb-20 gap-12">
+      <div className="flex flex-col w-full bg-spwhite text-spblack p-5 pt-28 pb-20 gap-12">
         {/* Cover photo */}
         <div className="flex relative items-center justify-center aspect-square w-full rounded-lg overflow-hidden">
           <Image className="object-cover brightness-[60%]" src={bgPhoto} alt="Cover photo" fill />
@@ -41,7 +41,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
 
         {/* Title */}
         <p className="text-3xl leading-10">
-          Bolsas de polietileno
+          Bolsas
           <br />
           <span className="font-bold">{name}</span>
         </p>
