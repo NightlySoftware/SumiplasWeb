@@ -28,10 +28,6 @@ const product = {
       text: 'Material duradero',
     },
     {
-      icon: '/icons/multiuse.svg',
-      text: 'Versatilidad',
-    },
-    {
       icon: '/icons/stars.svg',
       text: 'Transparencia',
     },

@@ -1,11 +1,11 @@
 import ProductLayout from '../ProductLayout';
 
 const product = {
-  name: 'Antiestáticas',
-  bgPhoto: '/images/product_card/antistatic.webp',
-  centerPhoto: '/images/product_card/center/antistatic.webp',
+  name: 'Tipo camiseta',
+  bgPhoto: '/images/product_card/handle_bag.webp',
+  centerPhoto: '/images/product_card/center/handle_bag.webp',
   description:
-    'Embalaje utilizado para proteger componentes electrónicos sensibles al daño por descargas electrostáticas (ESD). Estas bolsas están diseñadas para prevenir la acumulación de cargas eléctricas en su superficie, creando un entorno seguro para  almacenar y transportar componentes como circuitos integrados, tarjetas  de memoria, y otros dispositivos electrónicos. ',
+    'Embalaje práctico y resistente, perfecto para el comercio minorista y el uso diario. Las bolsas de asa tipo camiseta están diseñadas para ofrecer una gran capacidad de carga y facilidad de transporte gracias a sus asas reforzadas y su diseño expandible. Fabricadas con materiales duraderos, estas bolsas son ideales para supermercados, tiendas de conveniencia y otros establecimientos comerciales que necesitan una solución de embalaje confiable y económica. Su forma ergonómica y su resistencia aseguran que los productos sean transportados de manera segura y cómoda, haciendo de estas bolsas una elección popular entre consumidores y comerciantes.',
   properties: [
     {
       icon: '/icons/ruler.svg',
@@ -20,14 +20,6 @@ const product = {
       text: 'Calibres de 100 a 500 micras',
     },
     {
-      icon: '/icons/no-shock.svg',
-      text: 'Protección antiestática',
-    },
-    {
-      icon: '/icons/diamond.svg',
-      text: 'Material duradero',
-    },
-    {
       icon: '/icons/multiuse.svg',
       text: 'Versatilidad',
     },
@@ -35,53 +27,57 @@ const product = {
       icon: '/icons/stars.svg',
       text: 'Transparencia',
     },
+    {
+      icon: '/icons/rainbow.svg',
+      text: 'Variedad de colores',
+    },
   ],
   cards: [
     {
-      title: 'Circuitos integrados',
+      title: 'Transporte de Compras Diarias',
       description:
-        'Gracias a su composición especial, nuestras bolsas previenen la acumulación de cargas estáticas, asegurando la integridad de los dispositivos electrónicos durante su almacenamiento y transporte',
-      image: '/images/info_card/antiestaticas/1.webp',
+        'Las bolsas de asa tipo camiseta son perfectas para supermercados y tiendas de comestibles. Su diseño resistente y práctico permite a los clientes transportar sus compras de manera segura y cómoda.',
+      image: '/images/info_card/tipo-camiseta/1.webp',
     },
     {
-      title: 'Tarjetas de memoria',
+      title: 'Empaque de Prendas y Accesorios',
       description:
-        'El polietileno de alta resistencia proporciona una barrera efectiva contra la humedad, el polvo y otros contaminantes ambientales, prolongando la vida útil de los productos empacados.',
-      image: '/images/info_card/antiestaticas/2.webp',
+        'En tiendas de ropa y boutiques, las bolsas de asa tipo camiseta son una opción popular para empaquetar prendas y accesorios. Estas bolsas pueden ser personalizadas con el logo de la tienda y están disponibles en colores atractivos que refuerzan la identidad de la marca.',
+      image: '/images/info_card/tipo-camiseta/2.webp',
     },
     {
-      title: 'Componentes de computadora',
+      title: 'Entrega de Pedidos y Comida para Llevar',
       description:
-        'Disponibles en una amplia gama de tamaños, se adaptan a una diversidad de aplicaciones, desde piezas pequeñas como microchips hasta dispositivos más grandes.',
-      image: '/images/info_card/antiestaticas/3.webp',
+        'En el sector de la restauración, las bolsas de asa tipo camiseta son una excelente opción para la entrega de pedidos y la comida para llevar. Estas bolsas son lo suficientemente resistentes para transportar múltiples contenedores de alimentos sin romperse.',
+      image: '/images/info_card/tipo-camiseta/3.webp',
     },
     {
-      title: 'Dispositivos móviles y sus accesorios',
+      title: 'Tiendas de Regalos y Papelerías',
       description:
-        'Algunas variantes ofrecen transparencia para una fácil identificación del contenido sin necesidad de abrir la bolsa, facilitando la gestión del inventario.',
-      image: '/images/info_card/antiestaticas/4.webp',
+        'Las bolsas de asa tipo camiseta son ideales para tiendas de regalos y papelerías. Su resistencia y versatilidad permiten empaquetar una amplia gama de productos, desde artículos de papelería como cuadernos y lápices hasta regalos como juguetes y decoraciones.',
+      image: '/images/info_card/tipo-camiseta/4.webp',
     },
   ],
   questionList: [
     {
-      question: '¿Cómo puedo saber si necesito bolsas antiestáticas para mi producto?',
+      question: '¿Qué ventajas ofrecen las bolsas de asa tipo camiseta para los comercios?',
       answer:
-        'Si tu producto incluye componentes electrónicos sensibles a la electricidad estática, como circuitos integrados, tarjetas de memoria, o cualquier dispositivo electrónico susceptible, es recomendable utilizar bolsas antiestáticas para su almacenamiento y transporte.',
+        'Las bolsas de asa tipo camiseta son muy prácticas y resistentes, ideales para cualquier tipo de comercio. Su diseño con asas permite un fácil transporte, mientras que su capacidad de carga las hace adecuadas para una amplia variedad de productos. Además, están disponibles en varios colores y tamaños, lo que facilita la personalización según las necesidades del comercio.',
     },
     {
-      question: '¿Son las bolsas antiestáticas reutilizables?',
+      question: '¿En qué colores y tamaños están disponibles las bolsas de asa tipo camiseta?',
       answer:
-        'Dependiendo del tipo y la calidad de la bolsa, algunas pueden ser reutilizables. Sin embargo, es importante verificar la integridad de la bolsa y asegurarse de que sus propiedades antiestáticas sigan siendo efectivas antes de reutilizarla.',
+        'Ofrecemos bolsas de asa tipo camiseta en una amplia variedad de colores y tamaños para satisfacer las necesidades específicas de nuestros clientes. Desde bolsas pequeñas y medianas hasta tamaños grandes, así como opciones transparentes, puede elegir la combinación que mejor se adapte a su negocio y productos.',
     },
     {
-      question: '¿Las bolsas antiestáticas protejen contra impactos y humedad?',
+      question: '¿Las bolsas de asa tipo camiseta son reciclables?',
       answer:
-        'Mientras que todas las bolsas antiestáticas proporcionan una cierta medida de protección contra la humedad y el polvo, no todas están diseñadas para absorber impactos. Para una protección completa, busca bolsas con burbujas o acolchado adicional y verifica si ofrecen barreras contra la humedad.',
+        'Sí, nuestras bolsas de asa tipo camiseta están fabricadas con materiales reciclables. Una vez que ya no sean útiles, pueden ser recicladas adecuadamente, contribuyendo a la sostenibilidad y reducción de residuos plásticos.',
     },
     {
-      question: '¿Las bolsas antiestáticas tienen fecha de caducidad?',
+      question: '¿Son las bolsas de asa tipo camiseta adecuadas para almacenar alimentos?',
       answer:
-        'Las bolsas antiestáticas no tienen una fecha de caducidad per se, pero sus propiedades antiestáticas pueden disminuir con el tiempo, especialmente si se exponen a condiciones ambientales adversas. Es recomendable revisar y probar las bolsas regularmente para asegurarse de que sigan siendo efectivas.',
+        'Sí, las bolsas de asa tipo camiseta pueden ser utilizadas para almacenar alimentos. Son prácticas para llevar compras de supermercados, incluyendo productos frescos y empaquetados, y están disponibles en versiones transparentes para una mejor visibilidad del contenido.',
     },
   ],
 };

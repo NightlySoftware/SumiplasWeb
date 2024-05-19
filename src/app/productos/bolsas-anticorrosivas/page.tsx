@@ -1,11 +1,11 @@
 import ProductLayout from '../ProductLayout';
 
 const product = {
-  name: 'Antiestáticas',
-  bgPhoto: '/images/product_card/antistatic.webp',
-  centerPhoto: '/images/product_card/center/antistatic.webp',
+  name: 'Anticorrosivas',
+  bgPhoto: '/images/product_card/anticorrosive.webp',
+  centerPhoto: '/images/product_card/center/anticorrosive.webp',
   description:
-    'Embalaje utilizado para proteger componentes electrónicos sensibles al daño por descargas electrostáticas (ESD). Estas bolsas están diseñadas para prevenir la acumulación de cargas eléctricas en su superficie, creando un entorno seguro para  almacenar y transportar componentes como circuitos integrados, tarjetas  de memoria, y otros dispositivos electrónicos. ',
+    'Embalaje especializado diseñado para proteger componentes metálicos y piezas industriales contra la corrosión durante el almacenamiento y transporte. Estas bolsas anticorrosivas están tratadas con inhibidores de corrosión que evitan la oxidación y el deterioro de los metales, creando una barrera protectora que prolonga la vida útil de los productos. Ideales para herramientas, maquinaria, piezas automotrices y otros elementos metálicos, estas bolsas aseguran que los productos permanezcan en perfectas condiciones sin necesidad de aplicar recubrimientos adicionales. Su diseño eficiente y protección confiable hacen de estas bolsas una solución esencial en entornos industriales donde la preservación de los metales es crucial.',
   properties: [
     {
       icon: '/icons/ruler.svg',
@@ -20,68 +20,64 @@ const product = {
       text: 'Calibres de 100 a 500 micras',
     },
     {
-      icon: '/icons/no-shock.svg',
-      text: 'Protección antiestática',
+      icon: '/icons/no-water-drop.svg',
+      text: 'Protección anticorrosiva',
     },
     {
       icon: '/icons/diamond.svg',
       text: 'Material duradero',
     },
     {
-      icon: '/icons/multiuse.svg',
-      text: 'Versatilidad',
-    },
-    {
-      icon: '/icons/stars.svg',
-      text: 'Transparencia',
+      icon: '/icons/calendar.svg',
+      text: 'Larga duración de proteccion',
     },
   ],
   cards: [
     {
-      title: 'Circuitos integrados',
+      title: 'Almacenamiento de Herramientas',
       description:
-        'Gracias a su composición especial, nuestras bolsas previenen la acumulación de cargas estáticas, asegurando la integridad de los dispositivos electrónicos durante su almacenamiento y transporte',
-      image: '/images/info_card/antiestaticas/1.webp',
+        'Estas bolsas liberan lentamente moléculas inhibidoras de corrosión que se adhieren a la superficie de las herramientas, formando una barrera protectora que previene la oxidación y corrosión',
+      image: '/images/info_card/anticorrosivas/1.webp',
     },
     {
-      title: 'Tarjetas de memoria',
+      title: 'Transporte de Componentes Automotrices',
       description:
-        'El polietileno de alta resistencia proporciona una barrera efectiva contra la humedad, el polvo y otros contaminantes ambientales, prolongando la vida útil de los productos empacados.',
-      image: '/images/info_card/antiestaticas/2.webp',
+        'El compuesto VCI se evapora dentro de la bolsa y se adhiere a la superficie de los componentes, protegiéndolos contra la humedad y otros factores ambientales que podrían causar corrosión. Esto es crucial para garantizar la calidad y funcionalidad de piezas como engranajes, ejes y otros componentes metálicos durante su transporte y almacenamiento intermedio.',
+      image: '/images/info_card/anticorrosivas/2.webp',
     },
     {
-      title: 'Componentes de computadora',
+      title: 'Almacenamiento de Maquinaria',
       description:
-        'Disponibles en una amplia gama de tamaños, se adaptan a una diversidad de aplicaciones, desde piezas pequeñas como microchips hasta dispositivos más grandes.',
-      image: '/images/info_card/antiestaticas/3.webp',
+        'Al encapsular la maquinaria en bolsas VCI, se evita la necesidad de aplicar recubrimientos adicionales y se garantiza que el equipo estará en perfectas condiciones operativas cuando se requiera.',
+      image: '/images/info_card/anticorrosivas/3.webp',
     },
     {
-      title: 'Dispositivos móviles y sus accesorios',
+      title: 'Embalaje de Productos Metálicos',
       description:
-        'Algunas variantes ofrecen transparencia para una fácil identificación del contenido sin necesidad de abrir la bolsa, facilitando la gestión del inventario.',
-      image: '/images/info_card/antiestaticas/4.webp',
+        'Las bolsas anticorrosivas con compuesto VCI son ideales para el embalaje de productos metálicos, como acero, aluminio y otros metales que son propensos a la oxidación. Estas bolsas ofrecen una protección duradera contra la corrosión, manteniendo los productos en buen estado durante el almacenamiento y transporte.',
+      image: '/images/info_card/anticorrosivas/4.webp',
     },
   ],
   questionList: [
     {
-      question: '¿Cómo puedo saber si necesito bolsas antiestáticas para mi producto?',
+      question: '¿Qué es la protección VCI y cómo funciona en las bolsas de polietileno?',
       answer:
-        'Si tu producto incluye componentes electrónicos sensibles a la electricidad estática, como circuitos integrados, tarjetas de memoria, o cualquier dispositivo electrónico susceptible, es recomendable utilizar bolsas antiestáticas para su almacenamiento y transporte.',
+        'La protección VCI (Inhibidor de Corrosión Volátil) es una tecnología que libera moléculas inhibidoras de corrosión dentro del embalaje, creando una barrera protectora en la superficie de los metales almacenados. Esto evita la oxidación y corrosión de los componentes metálicos durante el almacenamiento y transporte.',
     },
     {
-      question: '¿Son las bolsas antiestáticas reutilizables?',
+      question: '¿Puedo reutilizar las bolsas de polietileno con protección VCI?',
       answer:
-        'Dependiendo del tipo y la calidad de la bolsa, algunas pueden ser reutilizables. Sin embargo, es importante verificar la integridad de la bolsa y asegurarse de que sus propiedades antiestáticas sigan siendo efectivas antes de reutilizarla.',
+        'Dependiendo del tipo y las condiciones de uso, algunas bolsas de polietileno con protección VCI pueden ser reutilizadas. Sin embargo, es importante verificar que la capacidad inhibidora de corrosión siga siendo efectiva y que la bolsa no esté dañada antes de su reutilización.',
     },
     {
-      question: '¿Las bolsas antiestáticas protejen contra impactos y humedad?',
+      question: '¿Son las bolsas de polietileno con protección VCI adecuadas para todo tipo de metales?',
       answer:
-        'Mientras que todas las bolsas antiestáticas proporcionan una cierta medida de protección contra la humedad y el polvo, no todas están diseñadas para absorber impactos. Para una protección completa, busca bolsas con burbujas o acolchado adicional y verifica si ofrecen barreras contra la humedad.',
+        'Sí, las bolsas con protección VCI son adecuadas para una amplia gama de metales, incluyendo acero, hierro, cobre, y aluminio, entre otros. Estas bolsas ofrecen una protección eficaz contra la corrosión para diversos componentes metálicos.',
     },
     {
-      question: '¿Las bolsas antiestáticas tienen fecha de caducidad?',
+      question: '¿Estas bolsas proporcionan protección contra otros factores ambientales además de la corrosión?',
       answer:
-        'Las bolsas antiestáticas no tienen una fecha de caducidad per se, pero sus propiedades antiestáticas pueden disminuir con el tiempo, especialmente si se exponen a condiciones ambientales adversas. Es recomendable revisar y probar las bolsas regularmente para asegurarse de que sigan siendo efectivas.',
+        'Sí, además de la protección contra la corrosión, las bolsas de polietileno con protección VCI también ofrecen una barrera contra la humedad, el polvo y otros contaminantes ambientales, asegurando que los componentes metálicos se mantengan en óptimas condiciones durante el almacenamiento y transporte.',
     },
   ],
 };

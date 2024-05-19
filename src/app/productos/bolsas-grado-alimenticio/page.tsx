@@ -24,12 +24,8 @@ const product = {
       text: 'No tóxico',
     },
     {
-      icon: '/icons/diamond.svg',
-      text: 'Material duradero',
-    },
-    {
-      icon: '/icons/multiuse.svg',
-      text: 'Versatilidad',
+      icon: '/icons/recycle.svg',
+      text: 'Reciclable',
     },
     {
       icon: '/icons/stars.svg',

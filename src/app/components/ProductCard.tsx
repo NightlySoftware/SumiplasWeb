@@ -44,7 +44,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
           </p>
           <p className="text-spblack leading-5">{description}</p>
         </div>
-        <IconRoundedArrow classNames="w-[37.3px]" /* set to arbitrary value because svgs work weird */ fill="#000" />
+        <IconRoundedArrow classNames="w-[37.3px]" /* set to arbitrary value because svgs work weird */ fill="#005482" />
       </div>
     </Link>
   );

@@ -20,10 +20,6 @@ const product = {
       text: 'Calibres de 100 a 500 micras',
     },
     {
-      icon: '/icons/no-shock.svg',
-      text: 'Protección antiestática',
-    },
-    {
       icon: '/icons/diamond.svg',
       text: 'Material duradero',
     },
@@ -32,56 +28,56 @@ const product = {
       text: 'Versatilidad',
     },
     {
-      icon: '/icons/stars.svg',
-      text: 'Transparencia',
+      icon: '/icons/shield.svg',
+      text: 'Hermeticidad',
     },
   ],
   cards: [
     {
-      title: 'Circuitos integrados',
+      title: 'Residuos Domésticos',
       description:
-        'Gracias a su composición especial, nuestras bolsas previenen la acumulación de cargas estáticas, asegurando la integridad de los dispositivos electrónicos durante su almacenamiento y transporte',
-      image: '/images/info_card/antiestaticas/1.webp',
+        'Su alta resistencia y durabilidad aseguran que no se rasguen o perforen fácilmente, evitando derrames y facilitando el manejo seguro de la basura en el hogar. El color negro opaco ayuda a ocultar el contenido, ofreciendo una apariencia más limpia y ordenada.',
+      image: '/images/info_card/industrial/1.webp',
     },
     {
-      title: 'Tarjetas de memoria',
+      title: 'Deshechos de Construcción',
       description:
-        'El polietileno de alta resistencia proporciona una barrera efectiva contra la humedad, el polvo y otros contaminantes ambientales, prolongando la vida útil de los productos empacados.',
-      image: '/images/info_card/antiestaticas/2.webp',
+        'En la industria de la construcción, las bolsas negras de reciclaje son esenciales para el almacenamiento y transporte de escombros y otros materiales de construcción. Estas bolsas están diseñadas para soportar el peso y la abrasión de materiales pesados como ladrillos, cemento, y residuos de demolición.',
+      image: '/images/info_card/industrial/2.webp',
     },
     {
-      title: 'Componentes de computadora',
+      title: 'Residuos Industriales',
       description:
-        'Disponibles en una amplia gama de tamaños, se adaptan a una diversidad de aplicaciones, desde piezas pequeñas como microchips hasta dispositivos más grandes.',
-      image: '/images/info_card/antiestaticas/3.webp',
+        'Son indispensables en fábricas y talleres para la disposición segura y eficiente de residuos industriales inorgánicos. Estas bolsas son adecuadas para manejar una amplia gama de desechos, incluyendo piezas metálicas, residuos de producción y otros materiales inorgánicos.',
+      image: '/images/info_card/industrial/3.webp',
     },
     {
-      title: 'Dispositivos móviles y sus accesorios',
+      title: 'Materiales Plásticos',
       description:
-        'Algunas variantes ofrecen transparencia para una fácil identificación del contenido sin necesidad de abrir la bolsa, facilitando la gestión del inventario.',
-      image: '/images/info_card/antiestaticas/4.webp',
+        'Su alta resistencia y capacidad de carga facilitan el manejo de grandes volúmenes de plásticos, papel y otros materiales inorgánicos, asegurando que no se derramen o dispersen durante el almacenamiento y transporte.',
+      image: '/images/info_card/industrial/4.webp',
     },
   ],
   questionList: [
     {
-      question: '¿Cómo puedo saber si necesito bolsas antiestáticas para mi producto?',
+      question: '¿Son las bolsas de polietileno negra de reciclaje adecuadas para residuos pesados?',
       answer:
-        'Si tu producto incluye componentes electrónicos sensibles a la electricidad estática, como circuitos integrados, tarjetas de memoria, o cualquier dispositivo electrónico susceptible, es recomendable utilizar bolsas antiestáticas para su almacenamiento y transporte.',
+        'Sí, las bolsas de polietileno negra de reciclaje están diseñadas para ser altamente resistentes y duraderas, capaces de manejar residuos pesados y voluminosos sin rasgarse ni romperse.',
     },
     {
-      question: '¿Son las bolsas antiestáticas reutilizables?',
+      question: '¿Estas bolsas son reciclables?',
       answer:
-        'Dependiendo del tipo y la calidad de la bolsa, algunas pueden ser reutilizables. Sin embargo, es importante verificar la integridad de la bolsa y asegurarse de que sus propiedades antiestáticas sigan siendo efectivas antes de reutilizarla.',
+        'Sí, las bolsas de polietileno negra de reciclaje están fabricadas con materiales reciclables. Después de su uso, pueden ser recicladas nuevamente para fabricar nuevos productos de polietileno, contribuyendo así a la sostenibilidad ambiental.',
     },
     {
-      question: '¿Las bolsas antiestáticas protejen contra impactos y humedad?',
+      question: '¿Puedo usar estas bolsas para residuos orgánicos?',
       answer:
-        'Mientras que todas las bolsas antiestáticas proporcionan una cierta medida de protección contra la humedad y el polvo, no todas están diseñadas para absorber impactos. Para una protección completa, busca bolsas con burbujas o acolchado adicional y verifica si ofrecen barreras contra la humedad.',
+        'Aunque es posible usarlas para residuos orgánicos, las bolsas negras de reciclaje están específicamente diseñadas para manejar material inorgánico y residuos industriales. Para residuos orgánicos, se recomienda usar bolsas compostables o biodegradables.',
     },
     {
-      question: '¿Las bolsas antiestáticas tienen fecha de caducidad?',
+      question: '¿Las bolsas de polietileno negra de reciclaje son resistentes a perforaciones?',
       answer:
-        'Las bolsas antiestáticas no tienen una fecha de caducidad per se, pero sus propiedades antiestáticas pueden disminuir con el tiempo, especialmente si se exponen a condiciones ambientales adversas. Es recomendable revisar y probar las bolsas regularmente para asegurarse de que sigan siendo efectivas.',
+        'Sí, estas bolsas están fabricadas para ser altamente resistentes a perforaciones y rasgaduras, asegurando que los residuos inorgánicos y materiales afilados no las dañen durante el manejo y transporte.',
     },
   ],
 };
