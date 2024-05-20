@@ -229,7 +229,7 @@ export default function Home() {
         </div>
       </div>
       <Footer />
-      <div className="flex justify-center fixed bottom-5 z-50 w-full">
+      <div className="flex justify-center fixed bottom-5 g:bottom-auto g:top-5 z-50 w-full">
         <Navbar />
       </div>
     </main>
