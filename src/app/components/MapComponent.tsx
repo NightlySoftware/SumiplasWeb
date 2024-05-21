@@ -49,7 +49,7 @@ const MapComponent = () => {
         <Circle
           center={mapCenter}
           radius={75000}
-          onLoad={() => console.log('Circle Load...')}
+          onLoad={() => console.log('Circle Loaded')}
           options={{
             fillColor: '#7eb2e0',
             fillOpacity: 0.4,
