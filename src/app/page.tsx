@@ -14,7 +14,7 @@ export default function Home() {
       {/* Hero section */}
       <div className="flex flex-col w-full sticky -z-10 top-0">
         <HeaderLogo />
-        <div className="flex flex-col relative w-full text-spwhite min-safe-h-screen gap-8 py-16 pt-32">
+        <div className="flex flex-col relative w-full text-spwhite supports-[height:100cqh]:h-[100cqh] supports-[height:100svh]:h-[100svh] gap-8 py-16 pt-32">
           <p className="text-center text-[32px] font-semibold leading-10">
             Bolsas a tu <span className="font-serif italic font-normal">medida</span>
             <br />
