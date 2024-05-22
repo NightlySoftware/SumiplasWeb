@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import IconRoundedArrow from './IconRoundedArrow';
 import cn from 'classnames';
+import { HTMLProps } from 'react';
 
 interface ArrowButtonProps {
   type?: HTMLButtonElement['type'];
@@ -8,11 +9,22 @@ interface ArrowButtonProps {
   text: string;
   size?: 'small' | 'normal';
   color?: 'dark' | 'light';
+  reverse?: boolean;
   onClick?: () => void;
+  className?: string;
 }
 
-const ArrowButton: React.FC<ArrowButtonProps> = ({ type, href, text, onClick, size = 'normal', color = 'dark' }) => {
-  const buttonClasses = cn('flex w-fit self-center border-b justify-center p-2.5 gap-2.5 font-semibold', {
+const ArrowButton: React.FC<ArrowButtonProps> = ({
+  type,
+  href,
+  text,
+  onClick,
+  size = 'normal',
+  color = 'dark',
+  reverse = false,
+  className,
+}) => {
+  const buttonClasses = cn(className, 'flex w-fit self-center border-b justify-center p-2.5 gap-2.5 font-semibold', {
     'text-2xl': size === 'normal',
     [color === 'dark' ? 'text-spblack border-spblack' : 'text-spwhite border-spwhite']: true,
   });
@@ -24,14 +36,14 @@ const ArrowButton: React.FC<ArrowButtonProps> = ({ type, href, text, onClick, si
   const iconColor = color === 'light' ? '#F2F7FB' : '#005482';
 
   return href ? (
-    <Link href={href} className={buttonClasses}>
+    <Link href={href} className={cn(reverse && 'flex-row-reverse', buttonClasses)}>
       <div>{text}</div>
       <IconRoundedArrow classNames={iconSize} fill={iconColor} />
     </Link>
   ) : (
-    <button type={type} onClick={onClick} className={buttonClasses}>
+    <button type={type} onClick={onClick} className={cn(reverse && 'flex-row-reverse', buttonClasses)}>
       <div>{text}</div>
-      <IconRoundedArrow classNames={iconSize} fill={iconColor} />
+      <IconRoundedArrow classNames={iconSize} fill={iconColor} direction={reverse ? 'left' : 'right'} />
     </button>
   );
 };

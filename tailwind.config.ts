@@ -28,7 +28,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('postcss-100vh-fix')],
 };
 
 module.exports = withMT(config);

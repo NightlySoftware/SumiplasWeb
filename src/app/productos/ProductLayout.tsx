@@ -7,6 +7,7 @@ import InfoCard from '@/app/components/InfoCard';
 import FAQList from '@/app/components/FAQList';
 import ProductCard from '@/app/components/ProductCard';
 import IconRoundedArrow from '@/app/components/IconRoundedArrow';
+import HeroSection from '../components/HeroSection';
 
 interface ProductLayoutProps {
   name: string;
@@ -95,10 +96,10 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
           />
         </div>
       </div>
+
+      <HeroSection type="contact" />
       <Footer />
-      <div className="flex justify-center fixed bottom-5 z-50 w-full">
-        <Navbar />
-      </div>
+      <Navbar />
     </main>
   );
 };

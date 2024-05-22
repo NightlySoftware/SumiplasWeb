@@ -1,45 +1,28 @@
 import React from 'react';
-import Image from 'next/image';
-import HeaderLogo from '../components/HeaderLogo';
 import MainSection from '../components/MainSection';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import ProductCard from '../components/ProductCard';
 import SubProductsList from '../components/SubProductsList';
+import HeroSection from '../components/HeroSection';
 
 const page = () => {
   return (
     <main className="flex flex-col items-center">
       {/* Hero section */}
-      <div className="flex flex-col w-full sticky -z-10 top-0">
-        <HeaderLogo />
-        <div className="flex flex-col relative w-full text-spwhite h-lvh gap-8 py-16 pt-32">
-          <p className="text-center text-[32px] font-semibold leading-10">
-            Somos <span className="font-serif italic font-normal">fabricantes</span>
-            <br />
-            de bolsas plásticas
-            <br /> <span className="font-serif italic font-normal">líderes</span> en variedad
-          </p>
-          <p className="text-center text-[16px] leading-5">
-            Contamos con bolsas de todo tipo
-            <br />
-            fabricadas por nosotros en calibres y
-            <br />
-            medidas comerciales y especiales
-          </p>
-          <Image
-            className="-z-10 brightness-[60%] object-cover object-left"
-            src="/images/hero_bg/products.webp"
-            alt="hero"
-            quality={100}
-            priority
-            fill
-          />
-        </div>
-      </div>
+      <HeroSection
+        title={['Somos', 'fabricantes', 'de bolsas plásticas', 'líderes', 'en variedad']}
+        description={[
+          'Contamos con bolsas de todo tipo',
+          'fabricadas por nosotros en calibres y',
+          'medidas comerciales y especiales',
+        ]}
+        image="/images/hero_bg/products.webp"
+        imageClassNames="object-left"
+        type="hero"
+      />
 
       {/* Main content card */}
-
       <MainSection
         title="Bolsas que se adaptan a tus necesidades"
         description="Entendemos que cada cliente es único,por eso nos adaptamos a tus requerimientos, medidas y a tus procesos.
@@ -111,10 +94,10 @@ const page = () => {
         </div>
         <SubProductsList />
       </MainSection>
+
+      <HeroSection type="contact" />
       <Footer />
-      <div className="flex justify-center fixed bottom-5 z-50 w-full">
-        <Navbar />
-      </div>
+      <Navbar />
     </main>
   );
 };

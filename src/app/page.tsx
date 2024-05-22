@@ -1,4 +1,3 @@
-import HeaderLogo from './components/HeaderLogo';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import MainSection from './components/MainSection';
@@ -7,40 +6,25 @@ import ArrowButton from './components/ArrowButton';
 import ProductButton from './components/ProductButton';
 import Image from 'next/image';
 import MapComponent from './components/MapComponent';
+import HeroSection from './components/HeroSection';
 
 export default function Home() {
   return (
     <main className="flex flex-col items-center">
       {/* Hero section */}
-      <div className="flex flex-col w-full sticky -z-10 top-0">
-        <HeaderLogo />
-        <div className="flex flex-col relative w-full text-spwhite supports-[height:100cqh]:h-[100cqh] supports-[height:100svh]:h-[100svh] gap-8 py-16 pt-32">
-          <p className="text-center text-[32px] font-semibold leading-10">
-            Bolsas a tu <span className="font-serif italic font-normal">medida</span>
-            <br />
-            variedad de productos
-            <br /> <span className="font-serif italic font-normal">calidad</span> garantizada
-          </p>
-          <p className="text-center text-[16px] leading-5">
-            Bolsas hechas con polietileno fabricadas
-            <br />
-            por nosotros para usos en el sector
-            <br />
-            automotriz, industrial y de alimentos.
-          </p>
-          <Image
-            className="-z-10 object-cover object-[20%] brightness-[70%]"
-            src="/images/hero_bg/main.webp"
-            alt="hero"
-            quality={100}
-            priority
-            fill
-          />
-        </div>
-      </div>
+      <HeroSection
+        title={['Bolsas a tu', 'medida', 'variedad de productos', 'calidad', 'garantizada']}
+        description={[
+          'Bolsas hechas con polietileno fabricadas',
+          'por nosotros para usos en el sector',
+          'automotriz, industrial y de alimentos.',
+        ]}
+        image="/images/hero_bg/main.webp"
+        imageClassNames="object-[20%]"
+        type="hero"
+      />
 
       {/* Main content card */}
-
       <MainSection
         title="Te contamos lo que hacemos"
         description="En Sumiplas nos dedicamos a la fabricación y distribución de bolsas de polietileno, así como brindamos soluciones de empaque y embalaje excepcionales para el sector alimenticio, automotriz, e industrial."
@@ -62,7 +46,6 @@ export default function Home() {
         </div>
 
         {/* Products section */}
-
         <div className="flex flex-col gap-8">
           <div className="flex flex-col text-spblack text-center text-pretty gap-4">
             <p className="text-3xl font-medium py-8">Productos</p>
@@ -98,7 +81,6 @@ export default function Home() {
         </div>
 
         {/* Our clients section */}
-
         <div className="flex flex-col gap-8">
           <div className="flex flex-col text-spblack text-center text-pretty gap-4">
             <p className="text-3xl font-medium py-8">Nuestros clientes</p>
@@ -169,7 +151,6 @@ export default function Home() {
         </div>
 
         {/* Delivery section */}
-
         <div className="flex flex-col gap-8">
           <div className="flex flex-col text-spblack text-center text-pretty gap-4">
             <p className="text-3xl font-medium py-8">Entregamos hasta tu negocio</p>
@@ -200,38 +181,9 @@ export default function Home() {
         </div>
       </MainSection>
 
-      {/* Contact section */}
-      <div className="flex flex-col w-full">
-        <div className="flex flex-col justify-between relative w-full text-spwhite h-lvh py-48">
-          <div className="flex flex-col items-center gap-8">
-            <p className="text-center text-[32px] font-semibold leading-10">
-              Estamos
-              <br />a un <span className="font-serif italic font-normal">click</span>
-              <br /> de distancia
-            </p>
-            <p className="text-center max-w-[80%] text-[16px] leading-5">
-              ¿Te interesaron nuestros productos y quieres tener más información sobre ellos?
-              <br />
-              <br />
-              Para cotizaciones, medidas específicas o entregas, envíanos tu información de contacto para responderte lo
-              más pronto posible.
-            </p>
-          </div>
-          <ArrowButton text="Contáctanos" color="light" />
-          <Image
-            className="-z-10 object-cover brightness-[70%]"
-            src="/images/hero_bg/contact.webp"
-            alt="hero"
-            quality={100}
-            priority
-            fill
-          />
-        </div>
-      </div>
+      <HeroSection type="contact" />
       <Footer />
-      <div className="flex justify-center fixed bottom-5 g:bottom-auto g:top-5 z-50 w-full">
-        <Navbar />
-      </div>
+      <Navbar />
     </main>
   );
 }

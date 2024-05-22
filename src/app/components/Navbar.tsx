@@ -14,7 +14,7 @@ export default function Navbar() {
   };
 
   return (
-    <>
+    <div className="flex justify-center fixed bottom-5 g:bottom-auto g:top-5 z-50 w-full">
       <nav className="flex w-[90%] max-w-[500px] g:w-full g:max-w-[calc(100%-2.5rem)] justify-between items-center text-black bg-gradient-to-b from-spwhite/20 to-spwhite/10 backdrop-blur-2xl rounded-lg border border-spwhite/10 px-6 md:px-8 py-2 md:py-3 2xl:py-4 sticky bottom-5">
         <button className="flex items-center gap-2 xl:gap-3 px-2" onClick={toggleCard}>
           <div className=" g:rounded-full g:p-3 g:border g:border-black">
@@ -38,6 +38,6 @@ export default function Navbar() {
       <AnimatePresence>
         {isCardVisible && <HalfScreenCard isVisible={isCardVisible} onClose={toggleCard} />}
       </AnimatePresence>
-    </>
+    </div>
   );
 }

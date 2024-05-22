@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 
 interface HeaderProps {
@@ -9,7 +8,7 @@ const HeaderLogo: React.FC<HeaderProps> = ({ color = 'white' }) => {
   return (
     <Link
       href={'/'}
-      className={`absolute flex w-full justify-center items-center gap-2 font-bold ${
+      className={`absolute flex g:hidden w-full justify-center items-center gap-2 font-bold ${
         color === 'white' ? 'text-spwhite' : color === 'black' ? 'text-spblack' : 'text-[#005482]'
       } text-xl p-5`}
     >

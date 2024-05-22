@@ -1,44 +1,22 @@
-import HeaderLogo from '../components/HeaderLogo';
 import MainSection from '../components/MainSection';
-import Image from 'next/image';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import ProcessCard from '../components/ProcessCard';
 import InfoCard from '../components/InfoCard';
+import HeroSection from '../components/HeroSection';
 
 const page = () => {
   return (
     <main className="flex flex-col items-center">
       {/* Hero section */}
-      <div className="flex flex-col w-full sticky -z-10 top-0">
-        <HeaderLogo />
-        <div className="flex flex-col relative w-full text-spwhite h-lvh gap-8 py-16 pt-32">
-          <p className="text-center text-[32px] font-semibold leading-10">
-            Empresa <span className="font-serif italic font-normal">comprometida</span>
-            <br />
-            con sus trabajadores y
-            <br /> <span className="font-serif italic font-normal">nuestros</span> clientes
-          </p>
-          <p className="text-center text-[16px] leading-5">
-            Asi como la calidad de nuestros
-            <br />
-            productos es prioridad,
-            <br />
-            nuestro trato tambien lo es.
-          </p>
-          <Image
-            className="-z-10 brightness-[60%] object-cover"
-            src="/images/hero_bg/about_us.webp"
-            alt="hero"
-            quality={100}
-            priority
-            fill
-          />
-        </div>
-      </div>
+      <HeroSection
+        title={['Empresa', 'comprometida', 'con sus trabajadores y', 'nuestros', 'clientes']}
+        description={['Así como la calidad de nuestros', 'productos es prioridad,', 'nuestro trato también lo es.']}
+        image="/images/hero_bg/about_us.webp"
+        type="hero"
+      />
 
       {/* Main content card */}
-
       <MainSection
         title="Procesos e Infraestructura"
         description="Contamos con fábrica propia, donde realizamos todo el proceso de manufactura por nuestra cuenta, asegurando los más altos estándares de calidad y compromiso que nos distinguen, lo cual nos vuelve una empresa líder."
@@ -128,10 +106,10 @@ const page = () => {
           />
         </div>
       </MainSection>
+
+      <HeroSection type="contact" />
       <Footer />
-      <div className="flex justify-center fixed bottom-5 z-50 w-full">
-        <Navbar />
-      </div>
+      <Navbar />
     </main>
   );
 };

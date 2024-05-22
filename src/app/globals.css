@@ -28,12 +28,15 @@ body {
 }
 
 :root:has(.no-doc-scroll) {
+  max-height: 100vh;
+  max-height: 100svh;
   overflow: hidden;
 }
 
 .min-safe-h-screen {
   /* equivalent to 100dvh in major browsers */
   min-height: calc(100vh - env(safe-area-inset-bottom, 0) - env(safe-area-inset-top, 0));
+  min-height: 100lvh;
 }
 
 @supports (-webkit-touch-callout: none) {
@@ -41,4 +44,10 @@ body {
     /* for ios safari 15, safe-area-inset-bottom is 0, so a special fix apply here */
     min-height: -webkit-fill-available;
   }
+}
+
+html.fixed {
+  max-height: 100vh;
+  max-height: 100svh;
+  overflow: hidden;
 }

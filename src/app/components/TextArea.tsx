@@ -16,6 +16,7 @@ interface TextAreaProps {
   autoFocus?: boolean;
   disabled?: boolean;
   readOnly?: boolean;
+  size?: 'sm' | 'md' | 'lg';
   onChange: (name: string, value: string) => void;
   onBlur: (name: string, value: string) => void;
   onClick: (name: string) => void;
@@ -33,6 +34,7 @@ export default function TextArea({
   autoFocus = false,
   disabled = false,
   readOnly = false,
+  size = 'md',
   onChange,
   onBlur,
   onClick,
@@ -96,7 +98,9 @@ export default function TextArea({
         autoFocus={autoFocus}
         disabled={disabled}
         readOnly={readOnly}
-        className={cn('h-48 w-full px-5 py-2.5 rounded-lg border placeholder:text-neutral-400 focus:outline-spblue', {
+        className={cn('w-full px-5 py-2.5 rounded-lg border placeholder:text-neutral-400 focus:outline-spblue', {
+          'h-[46px] resize-none': size === 'sm',
+          'h-48 resize-none': size === 'lg',
           'border-red-500': hasError,
           'border-spblack': !hasError,
           'bg-gray-100': disabled || readOnly,
