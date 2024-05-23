@@ -29,7 +29,7 @@ const page = () => {
         Ofrecemos un amplio catálogo de bolsas de polietileno, además de otros agregados."
         oneliner="Revisa nuestro catálogo completo de productos a continuación"
       >
-        <div className="flex flex-col w-full gap-16">
+        <div className="grid grid-cols-1 g:grid-cols-2 gap-4">
           <ProductCard
             href="/productos/bolsas-antiestaticas"
             headline1="Con protección ESD"
