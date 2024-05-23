@@ -72,8 +72,9 @@ export default function TextArea({
             {label}
           </motion.label>
         )}
-        <AnimatePresence>
-          {hasError && (
+
+        {hasError && (
+          <AnimatePresence>
             <motion.div
               className="text-xs text-red-500"
               transition={{ duration: 0.1 }}
@@ -83,8 +84,8 @@ export default function TextArea({
             >
               {errorMessage}
             </motion.div>
-          )}
-        </AnimatePresence>
+          </AnimatePresence>
+        )}
       </div>
       <motion.textarea
         id={name}
@@ -109,8 +110,9 @@ export default function TextArea({
         animate={{ borderColor: hasError ? 'red' : 'black' }}
         transition={{ duration: 0.3 }}
       ></motion.textarea>
-      <AnimatePresence>
-        {helpText && (
+
+      {helpText && (
+        <AnimatePresence>
           <motion.p
             className="text-xs text-gray-500"
             initial={{ opacity: 0 }}
@@ -119,8 +121,8 @@ export default function TextArea({
           >
             {helpText}
           </motion.p>
-        )}
-      </AnimatePresence>
+        </AnimatePresence>
+      )}
     </div>
   );
 }

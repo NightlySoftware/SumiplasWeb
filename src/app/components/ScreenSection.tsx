@@ -8,7 +8,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import cn from 'classnames';
 
-interface HeroSectionProps {
+interface ScreenSectionProps {
   title?: string[];
   description?: string[];
   image?: string;
@@ -16,13 +16,13 @@ interface HeroSectionProps {
   imageClassNames?: string;
 }
 
-export default function HeroSection({
+export default function ScreenSection({
   title = [],
   description = [],
   type,
   image = '',
   imageClassNames,
-}: HeroSectionProps) {
+}: ScreenSectionProps) {
   const [isCardVisible, setCardVisible] = useState(false);
 
   if (type === 'contact') {
@@ -89,9 +89,12 @@ export default function HeroSection({
           />
         </div>
       </div>
-      <AnimatePresence>
-        {isCardVisible && <HalfScreenCard isVisible={isCardVisible} onClose={toggleCard} />}
-      </AnimatePresence>
+
+      {isCardVisible && (
+        <AnimatePresence>
+          <HalfScreenCard isVisible={isCardVisible} onClose={toggleCard} />
+        </AnimatePresence>
+      )}
     </>
   );
 }

@@ -3,13 +3,13 @@ import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import ProcessCard from '../components/ProcessCard';
 import InfoCard from '../components/InfoCard';
-import HeroSection from '../components/HeroSection';
+import ScreenSection from '../components/ScreenSection';
 
 const page = () => {
   return (
     <main className="flex flex-col items-center">
       {/* Hero section */}
-      <HeroSection
+      <ScreenSection
         title={['Empresa', 'comprometida', 'con sus trabajadores y', 'nuestros', 'clientes']}
         description={['Así como la calidad de nuestros', 'productos es prioridad,', 'nuestro trato también lo es.']}
         image="/images/hero_bg/about_us.webp"
@@ -107,7 +107,7 @@ const page = () => {
         </div>
       </MainSection>
 
-      <HeroSection type="contact" />
+      <ScreenSection type="contact" />
       <Footer />
       <Navbar />
     </main>

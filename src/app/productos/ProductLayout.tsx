@@ -7,7 +7,7 @@ import InfoCard from '@/app/components/InfoCard';
 import FAQList from '@/app/components/FAQList';
 import ProductCard from '@/app/components/ProductCard';
 import IconRoundedArrow from '@/app/components/IconRoundedArrow';
-import HeroSection from '../components/HeroSection';
+import ScreenSection from '../components/ScreenSection';
 
 interface ProductLayoutProps {
   name: string;
@@ -97,7 +97,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
         </div>
       </div>
 
-      <HeroSection type="contact" />
+      <ScreenSection type="contact" />
       <Footer />
       <Navbar />
     </main>

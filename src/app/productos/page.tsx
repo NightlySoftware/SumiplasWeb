@@ -4,13 +4,13 @@ import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import ProductCard from '../components/ProductCard';
 import SubProductsList from '../components/SubProductsList';
-import HeroSection from '../components/HeroSection';
+import ScreenSection from '../components/ScreenSection';
 
 const page = () => {
   return (
     <main className="flex flex-col items-center">
       {/* Hero section */}
-      <HeroSection
+      <ScreenSection
         title={['Somos', 'fabricantes', 'de bolsas plásticas', 'líderes', 'en variedad']}
         description={[
           'Contamos con bolsas de todo tipo',
@@ -95,7 +95,7 @@ const page = () => {
         <SubProductsList />
       </MainSection>
 
-      <HeroSection type="contact" />
+      <ScreenSection type="contact" />
       <Footer />
       <Navbar />
     </main>

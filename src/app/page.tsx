@@ -6,13 +6,13 @@ import ArrowButton from './components/ArrowButton';
 import ProductButton from './components/ProductButton';
 import Image from 'next/image';
 import MapComponent from './components/MapComponent';
-import HeroSection from './components/HeroSection';
+import ScreenSection from './components/ScreenSection';
 
 export default function Home() {
   return (
     <main className="flex flex-col items-center">
       {/* Hero section */}
-      <HeroSection
+      <ScreenSection
         title={['Bolsas a tu', 'medida', 'variedad de productos', 'calidad', 'garantizada']}
         description={[
           'Bolsas hechas con polietileno fabricadas',
@@ -181,7 +181,7 @@ export default function Home() {
         </div>
       </MainSection>
 
-      <HeroSection type="contact" />
+      <ScreenSection type="contact" />
       <Footer />
       <Navbar />
     </main>
