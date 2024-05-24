@@ -23,7 +23,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
 }) => {
   return (
     <Link href={href} className="flex flex-col w-full gap-10">
-      <div className="flex flex-col relative aspect-[2/1] g:aspect-auto g:h-64 xl:h-80 rounded-t-lg p-4 gap-2.5">
+      <div className="flex flex-col relative aspect-[2/1] max-w-full g:aspect-auto g:h-64 xl:h-80 rounded-t-lg p-4 gap-2.5">
         <p className="text-spwhite leading-5 z-[1]">
           Bolsas de polietileno <br />
           <span className="font-bold">{headline1}</span>
@@ -32,7 +32,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
         </p>
         <Image src={headlineImage} alt="Product Background" className="rounded-md brightness-[60%] object-cover" fill />
         {/* <div className="flex self-center w-64"> */}
-        <div className="relative flex min-w-64 max-w-[400px] h-32 xs:h-40 m:h-[220px] g:h-[170px] top-[25%] m:top-[35%] g:top-[30%] xl:left-[30%] p-2.5 gap-2.5 self-center">
+        <div className="relative flex min-w-64 max-w-[400px] min-h-24 xs:h-40 m:h-[220px] g:h-[170px] top-[-20%] xxs:top-[25%] m:top-[35%] g:top-[30%] xl:left-[30%] p-2.5 gap-2.5 self-center">
           <Image className="object-contain" src={centerImage} alt="Center image" fill />
         </div>
       </div>

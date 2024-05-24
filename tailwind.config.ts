@@ -11,8 +11,8 @@ const config: Config = {
   theme: {
     extend: {
       screens: {
-        xs: '480px',
         xxs: '320px',
+        xs: '480px',
         m: '720px',
         custom: { min: '720px', max: '1139px' },
         g: '920px',
