@@ -44,6 +44,9 @@ body {
     /* for ios safari 15, safe-area-inset-bottom is 0, so a special fix apply here */
     min-height: -webkit-fill-available;
   }
+  body {
+    -webkit-transform: translate3d(0, 0, 0);
+  }
 }
 
 html.fixed {

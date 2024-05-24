@@ -100,11 +100,14 @@ const Input: React.FC<InputProps> = ({
         autoFocus={autoFocus}
         disabled={disabled}
         readOnly={readOnly}
-        className={cn('flex w-full px-5 py-2.5 rounded-lg border placeholder:text-neutral-400 focus:outline-spblue', {
-          'border-red-500': hasError,
-          'border-spblack': !hasError,
-          'bg-gray-100': disabled || readOnly,
-        })}
+        className={cn(
+          'flex w-full px-5 py-2.5 rounded-lg border placeholder:text-neutral-400 text-spblack focus:outline-spblue',
+          {
+            'border-red-500': hasError,
+            'border-spblack': !hasError,
+            'bg-gray-100': disabled || readOnly,
+          }
+        )}
         initial={{ borderColor: hasError ? 'transparent' : 'transparent' }}
         animate={{ borderColor: hasError ? 'red' : 'black' }}
         transition={{ duration: 0.3 }}

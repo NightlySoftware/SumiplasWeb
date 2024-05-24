@@ -16,13 +16,76 @@ interface FormErrors {
   [key: string]: string;
 }
 
+const validCities = [
+  'Aguascalientes',
+  'Baja California',
+  'Baja California Sur',
+  'Campeche',
+  'Chiapas',
+  'Chihuahua',
+  'Coahuila',
+  'Colima',
+  'Ciudad de México',
+  'Durango',
+  'Guanajuato',
+  'Guerrero',
+  'Hidalgo',
+  'Jalisco',
+  'México',
+  'Michoacán',
+  'Morelos',
+  'Nayarit',
+  'Nuevo León',
+  'Oaxaca',
+  'Puebla',
+  'Querétaro',
+  'Quintana Roo',
+  'San Luis Potosí',
+  'Sinaloa',
+  'Sonora',
+  'Tabasco',
+  'Tamaulipas',
+  'Tlaxcala',
+  'Veracruz',
+  'Yucatán',
+  'Zacatecas',
+];
+
+const validProducts = [
+  'Bolsa Transparente para Alimentos',
+  'Bolsa Antiestática',
+  'Bolsa Anticorrosiva',
+  'Bolsa Negra / Uso Industrial',
+  'Bolsa Lisa Pigmentada',
+  'Bolsa de Asa tipo Camiseta',
+
+  'Película Stretch',
+  'Cinta Transparente',
+  'Cinta Canela',
+  'Cinta PVC de Colores',
+  'Rollo de Plástico',
+  'Poli Burbuja Natural',
+  'Poli Burbuja Antiestático',
+  'Fleje Negro',
+  'Grapa Metálica',
+];
+
+//TODO: Implement Dropdown lists for city and product fields
+
 const schema = z.object({
-  nombre: z.string().min(1, 'Campo obligatorio'),
+  nombre: z
+    .string()
+    .regex(/^[a-zA-Z\s]+$/, 'Nombre inválido')
+    .min(1, 'Campo obligatorio'),
   correo: z.string().email('Correo electrónico inválido'),
-  telefono: z.string().optional(),
-  negocio: z.string().optional(),
+  //make sure telefono supports only number values and 10 digits
+  telefono: z
+    .string()
+    .regex(/^\d{10}$/, 'Número de teléfono inválido')
+    .optional(),
+  negocio: z.string().max(50, 'Máximo 50 caracteres').optional(),
   interes: z.string().min(1, 'Campo obligatorio'),
-  ciudad: z.string().optional(),
+  ciudad: z.string().max(20, 'Ingresa una ciudad válida'),
   comentarios: z.string().optional(),
 });
 
@@ -116,7 +179,7 @@ export default function HalfScreenCard({ isVisible, onClose }: HalfScreenCardPro
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/50 flex justify-center items-center" onClick={onClose}>
+    <div className="fixed inset-0 z-[7] bg-black/50 flex justify-center items-center" onClick={onClose}>
       <motion.div
         ref={cardRef}
         initial="hidden"

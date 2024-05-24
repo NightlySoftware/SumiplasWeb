@@ -20,7 +20,7 @@ export default function ScreenSection({
   title = [],
   description = [],
   type,
-  image = '',
+  image = 'hero',
   imageClassNames,
 }: ScreenSectionProps) {
   const [isCardVisible, setCardVisible] = useState(false);
@@ -43,11 +43,16 @@ export default function ScreenSection({
 
   return (
     <>
-      <div className={cn('flex flex-col w-full top-0 z-10', { sticky: type === 'hero' })}>
+      <div className={cn('flex flex-col w-full top-0', { 'sticky z-[-1]': type === 'hero' })}>
         {type === 'hero' && <HeaderLogo />}
-        <div className="relative text-spwhite supports-[height:100cqh]:h-[100cqh] supports-[height:100svh]:h-[100svh] pt-32 g:pt-64">
+        <div
+          className={cn(
+            'relative text-spwhite supports-[height:100cqh]:h-[100cqh] supports-[height:100svh]:h-[100svh] pt-32 g:pt-64',
+            { 'z-[2]': type === 'contact' }
+          )}
+        >
           <div className="flex flex-col h-full justify-end g:px-12 lg:px-[100px]">
-            <div className="flex flex-col lg:items-end lg:flex-row lg:justify-between py-16 h-full gap-8 g:gap-12 lg:gap-16">
+            <div className="flex flex-col lg:items-end lg:flex-row lg:justify-between g:py-16 h-full gap-8 g:gap-12 lg:gap-16">
               {type === 'hero' ? (
                 <p className="text-center text-nowrap lg:text-start text-[32px] xl:text-[40px] font-semibold leading-10 xl:leading-[48px]">
                   {title[0]} <span className="font-serif italic font-normal">{title[1]}</span>
@@ -80,7 +85,7 @@ export default function ScreenSection({
             )}
           </div>
           <Image
-            className={cn('-z-10 object-cover brightness-[70%]', imageClassNames)}
+            className={cn('z-[-1] object-cover brightness-[70%]', imageClassNames)}
             src={image}
             alt="hero"
             quality={100}
