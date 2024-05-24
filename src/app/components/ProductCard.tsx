@@ -23,7 +23,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
 }) => {
   return (
     <Link href={href} className="flex flex-col w-full gap-10">
-      <div className="flex flex-col relative aspect-[2/1] g:aspect-auto g:h-80 rounded-t-lg p-4 gap-2.5">
+      <div className="flex flex-col relative aspect-[2/1] g:aspect-auto g:h-64 xl:h-80 rounded-t-lg p-4 gap-2.5">
         <p className="text-spwhite leading-5 z-[1]">
           Bolsas de polietileno <br />
           <span className="font-bold">{headline1}</span>

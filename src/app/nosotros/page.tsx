@@ -7,7 +7,7 @@ import ScreenSection from '../components/ScreenSection';
 
 const page = () => {
   return (
-    <main className="flex flex-col items-center">
+    <main className="flex flex-col items-center no-scrollbar">
       {/* Hero section */}
       <ScreenSection
         title={['Empresa', 'comprometida', 'con sus trabajadores y', 'nuestros', 'clientes']}

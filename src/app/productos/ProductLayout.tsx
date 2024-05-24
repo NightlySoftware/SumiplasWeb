@@ -29,7 +29,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
   centerPhoto,
 }) => {
   return (
-    <main className="flex flex-col items-center">
+    <main className="flex flex-col items-center no-scrollbar">
       <HeaderLogo color="blue" />
       <div className="flex flex-col w-full bg-spwhite text-spblack p-5 pt-28 pb-20 gap-12">
         {/* Cover photo */}

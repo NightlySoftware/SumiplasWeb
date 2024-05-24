@@ -73,8 +73,8 @@ const Input: React.FC<InputProps> = ({
           </motion.label>
         )}
 
-        {hasError && (
-          <AnimatePresence>
+        <AnimatePresence>
+          {hasError && (
             <motion.div
               className="text-xs text-red-500"
               transition={{ duration: 0.1 }}
@@ -84,8 +84,8 @@ const Input: React.FC<InputProps> = ({
             >
               {errorMessage}
             </motion.div>
-          </AnimatePresence>
-        )}
+          )}
+        </AnimatePresence>
       </div>
       <motion.input
         id={name}
@@ -113,8 +113,8 @@ const Input: React.FC<InputProps> = ({
         transition={{ duration: 0.3 }}
       />
 
-      {helpText && (
-        <AnimatePresence>
+      <AnimatePresence>
+        {helpText && (
           <motion.p
             className="text-xs text-gray-500"
             initial={{ opacity: 0 }}
@@ -123,8 +123,8 @@ const Input: React.FC<InputProps> = ({
           >
             {helpText}
           </motion.p>
-        </AnimatePresence>
-      )}
+        )}
+      </AnimatePresence>
     </div>
   );
 };

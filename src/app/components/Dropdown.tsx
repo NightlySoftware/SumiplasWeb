@@ -1,6 +1,11 @@
+'use client';
+
 import IconRoundedArrow from './IconRoundedArrow';
 import Image from 'next/image';
 import ArrowButton from './ArrowButton';
+import { useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import HalfScreenCard from './HalfScreenCard';
 
 interface DropdownProps {
   isOpen: boolean;
@@ -21,10 +26,15 @@ const Dropdown: React.FC<DropdownProps> = ({
   description,
   textOnly = false,
 }) => {
+  const [isCardVisible, setCardVisible] = useState(false);
+
+  const toggleCard = () => {
+    setCardVisible(!isCardVisible);
+  };
   return (
-    <div className="flex items-start gap-2.5">
-      <div className="flex flex-col w-full gap-5">
-        <div className="flex gap-2" onClick={onOpen}>
+    <>
+      <div className="flex flex-col w-full items-start gap-5">
+        <div className="flex w-full gap-2 cursor-pointer" onClick={onOpen}>
           <p className="w-full border-t border-spblack text-spblack font-medium pt-2 leading-5">
             {title}
             {title && boldTitle && <br />}
@@ -36,23 +46,20 @@ const Dropdown: React.FC<DropdownProps> = ({
             </div>
           )}
         </div>
-        {isOpen && (
-          <div className="flex flex-col h-fit gap-2.5">
-            <p className="text-spblack text-base font-normal leading-5">{description}</p>
-            {!textOnly && (
-              <ArrowButton
-                text="Cotiza ahora"
-                size="small"
-                onClick={() => {
-                  /* TODO: add functionality (toggle cotizar menu)*/
-                }}
-              />
-            )}
-          </div>
-        )}
+        <motion.div
+          initial={{ height: 0, opacity: 0 }}
+          animate={{ height: isOpen ? 'auto' : 0, opacity: isOpen ? 1 : 0, pointerEvents: isOpen ? 'auto' : 'none' }}
+          transition={{ duration: 0.2 }}
+          className="flex flex-col h-fit gap-2.5"
+        >
+          <p className="text-spblack text-base font-normal leading-5">{description}</p>
+          {!textOnly && <ArrowButton text="Cotiza ahora" size="small" onClick={toggleCard} />}
+        </motion.div>
       </div>
-      <IconRoundedArrow onClick={onOpen} classNames="w-6" fill="#005482" direction={isOpen ? 'up' : 'down'} />
-    </div>
+      <AnimatePresence>
+        {isCardVisible && <HalfScreenCard isVisible={isCardVisible} onClose={toggleCard} />}{' '}
+      </AnimatePresence>
+    </>
   );
 };
 

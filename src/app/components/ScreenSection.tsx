@@ -95,11 +95,9 @@ export default function ScreenSection({
         </div>
       </div>
 
-      {isCardVisible && (
-        <AnimatePresence>
-          <HalfScreenCard isVisible={isCardVisible} onClose={toggleCard} />
-        </AnimatePresence>
-      )}
+      <AnimatePresence>
+        {isCardVisible && <HalfScreenCard isVisible={isCardVisible} onClose={toggleCard} />}
+      </AnimatePresence>
     </>
   );
 }

@@ -8,7 +8,7 @@ import ScreenSection from '../components/ScreenSection';
 
 const page = () => {
   return (
-    <main className="flex flex-col items-center">
+    <main className="flex flex-col items-center no-scrollbar">
       {/* Hero section */}
       <ScreenSection
         title={['Somos', 'fabricantes', 'de bolsas plásticas', 'líderes', 'en variedad']}
@@ -29,7 +29,7 @@ const page = () => {
         Ofrecemos un amplio catálogo de bolsas de polietileno, además de otros agregados."
         oneliner="Revisa nuestro catálogo completo de productos a continuación"
       >
-        <div className="grid grid-cols-1 g:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 g:grid-cols-2 max-w-[1600px] self-center gap-4 xl:gap-16">
           <ProductCard
             href="/productos/bolsas-antiestaticas"
             headline1="Con protección ESD"

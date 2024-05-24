@@ -35,11 +35,9 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {isCardVisible && (
-        <AnimatePresence>
-          <HalfScreenCard isVisible={isCardVisible} onClose={toggleCard} />
-        </AnimatePresence>
-      )}
+      <AnimatePresence>
+        {isCardVisible && <HalfScreenCard isVisible={isCardVisible} onClose={toggleCard} />}{' '}
+      </AnimatePresence>
     </div>
   );
 }

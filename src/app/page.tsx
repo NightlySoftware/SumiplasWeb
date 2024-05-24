@@ -10,7 +10,7 @@ import ScreenSection from './components/ScreenSection';
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center">
+    <main className="flex flex-col items-center no-scrollbar">
       {/* Hero section */}
       <ScreenSection
         title={['Bolsas a tu', 'medida', 'variedad de productos', 'calidad', 'garantizada']}

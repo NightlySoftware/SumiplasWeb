@@ -14,6 +14,7 @@ const config: Config = {
         xs: '480px',
         xxs: '320px',
         m: '720px',
+        custom: { min: '720px', max: '1139px' },
         g: '920px',
         '3xl': '2000px',
       },
