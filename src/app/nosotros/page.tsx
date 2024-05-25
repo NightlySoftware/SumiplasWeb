@@ -22,7 +22,7 @@ const page = () => {
         description="Contamos con fábrica propia, donde realizamos todo el proceso de manufactura por nuestra cuenta, asegurando los más altos estándares de calidad y compromiso que nos distinguen, lo cual nos vuelve una empresa líder."
         oneliner="Nuestro proceso consta de Extrusion y Bolseo."
       >
-        <div className="flex flex-col w-full gap-16">
+        <div className="flex flex-col w-full max-w-[1500px] self-center gap-16 m:gap-20">
           <ProcessCard
             title="Extrusión"
             subtitle="Transformación del Pellet al Plástico"
@@ -57,9 +57,10 @@ const page = () => {
             ]}
           />
           <ProcessCard
+            reverse
             title="Bolseo"
             subtitle="El Paso hacia el Producto Final"
-            number="03"
+            number="02"
             imageSrc="/images/info_card/bagging.webp"
             textItems={[
               {
@@ -85,10 +86,10 @@ const page = () => {
             ]}
           />
         </div>
-        <div className="flex flex-col gap-8">
-          <div className="flex flex-col text-spblack text-center text-pretty gap-4">
-            <p className="text-3xl font-medium py-8">Nuestro compromiso como empresa</p>
-          </div>
+        <div className="flex flex-col text-spblack text-center text-pretty gap-4">
+          <p className="text-3xl font-medium py-8">Nuestro compromiso como empresa</p>
+        </div>
+        <div className="flex w-full flex-wrap justify-center gap-8">
           <InfoCard
             title="Misión"
             description="Garantizar nuestros productos con estrategias de acuerdo a la necesidades especificas de nuestros clientes, demostrando calidad, confiabilidad, tranquilidad y responsabilidad."

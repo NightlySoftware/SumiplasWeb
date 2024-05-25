@@ -40,7 +40,11 @@ export default function ScreenSection({
   return (
     <>
       <div className={cn('flex flex-col w-full top-0', { 'sticky z-[-1]': type === 'hero' })}>
-        {type === 'hero' && <HeaderLogo />}
+        {type === 'hero' && (
+          <div className="flex g:hidden">
+            <HeaderLogo />
+          </div>
+        )}
         <div
           className={cn(
             'relative text-spwhite supports-[height:100cqh]:h-[100cqh] supports-[height:100svh]:h-[100svh] pt-32 g:pt-64',
