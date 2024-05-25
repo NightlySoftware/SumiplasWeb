@@ -5,8 +5,8 @@ import ArrowButton from './ArrowButton';
 import HalfScreenCard from './HalfScreenCard';
 import HeaderLogo from './HeaderLogo';
 import Image from 'next/image';
-import { useState } from 'react';
 import cn from 'classnames';
+import { useCardVisibility } from '../utils/cardVisibillity';
 
 interface ScreenSectionProps {
   title?: string[];
@@ -23,7 +23,7 @@ export default function ScreenSection({
   image = 'hero',
   imageClassNames,
 }: ScreenSectionProps) {
-  const [isCardVisible, setCardVisible] = useState(false);
+  const { isCardVisible, toggleCard } = useCardVisibility();
 
   if (type === 'contact') {
     description = [
@@ -37,10 +37,6 @@ export default function ScreenSection({
     image = '/images/hero_bg/contact.webp';
   }
 
-  const toggleCard = () => {
-    setCardVisible(!isCardVisible);
-  };
-
   return (
     <>
       <div className={cn('flex flex-col w-full top-0', { 'sticky z-[-1]': type === 'hero' })}>
@@ -51,7 +47,7 @@ export default function ScreenSection({
             { 'z-[2]': type === 'contact' }
           )}
         >
-          <div className="flex flex-col h-full justify-end g:px-12 lg:px-[100px]">
+          <div className="flex flex-col h-full justify-end g:px-12 lg:px-[100px] pb-32">
             <div className="flex flex-col lg:items-end lg:flex-row lg:justify-between g:py-16 h-full gap-8 g:gap-12 lg:gap-16">
               {type === 'hero' ? (
                 <p className="text-center text-nowrap lg:text-start text-[32px] xl:text-[40px] font-semibold leading-10 xl:leading-[48px]">
@@ -76,13 +72,13 @@ export default function ScreenSection({
                 ))}
               </p>
             </div>
-            {type === 'hero' ? (
-              <div className="hidden lg:flex justify-center border-t border-spwhite py-6 xl:py-8">
-                Baja para explorar
-              </div>
-            ) : (
-              <ArrowButton className="mb-40" text="Contáctanos" onClick={toggleCard} color="light" />
-            )}
+            <div className="hidden lg:flex justify-center border-t border-spwhite py-6 xl:py-8">
+              {type === 'hero' ? (
+                'Baja para explorar'
+              ) : (
+                <ArrowButton className="mb-40" text="Contáctanos" onClick={toggleCard} color="light" />
+              )}
+            </div>
           </div>
           <Image
             className={cn('z-[-1] object-cover brightness-[70%]', imageClassNames)}

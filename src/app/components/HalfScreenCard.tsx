@@ -95,9 +95,9 @@ export default function HalfScreenCard({ isVisible, onClose }: HalfScreenCardPro
   const [formErrors, setFormErrors] = useState<FormErrors>({});
 
   const variants = {
-    hidden: { y: '200%' },
-    visible: { y: '10%' },
-    exit: { y: '200%' },
+    hidden: { y: '100%' },
+    visible: { y: '6%' },
+    exit: { y: '100%' },
   };
 
   useEffect(() => {
@@ -179,7 +179,7 @@ export default function HalfScreenCard({ isVisible, onClose }: HalfScreenCardPro
   };
 
   return (
-    <div className="fixed inset-0 z-[7] bg-black/50 flex justify-center items-center" onClick={onClose}>
+    <div className="modal-classes z-[7]" onClick={onClose}>
       <motion.div
         ref={cardRef}
         initial="hidden"
@@ -187,7 +187,7 @@ export default function HalfScreenCard({ isVisible, onClose }: HalfScreenCardPro
         exit="exit"
         variants={variants}
         transition={{ ease: 'easeOut', duration: 0.3 }}
-        className="fixed bottom-0 g:bottom-[12%] flex flex-col self-center w-full max-w-[calc(650px+1.25rem)] h-[100lvh] max-h-[1150px] bg-spwhite rounded-t-2xl g:rounded-2xl p-5 pb-[120px] xl:pb-5 g:-mb-6 gap-4 no-doc-scroll overflow-auto"
+        className="flex flex-col self-center w-full max-w-[calc(650px+1.25rem)] bg-spwhite rounded-t-2xl g:rounded-2xl p-5 pb-[120px] xl:pb-5 gap-4 no-doc-scroll overflow-auto"
         onClick={(e) => e.stopPropagation()}
       >
         <button className="self-end" onClick={onClose}>

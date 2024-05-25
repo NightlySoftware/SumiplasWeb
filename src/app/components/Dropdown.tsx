@@ -3,9 +3,9 @@
 import IconRoundedArrow from './IconRoundedArrow';
 import Image from 'next/image';
 import ArrowButton from './ArrowButton';
-import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import HalfScreenCard from './HalfScreenCard';
+import { useCardVisibility } from '../utils/cardVisibillity';
 
 interface DropdownProps {
   isOpen: boolean;
@@ -26,15 +26,11 @@ const Dropdown: React.FC<DropdownProps> = ({
   description,
   textOnly = false,
 }) => {
-  const [isCardVisible, setCardVisible] = useState(false);
-
-  const toggleCard = () => {
-    setCardVisible(!isCardVisible);
-  };
+  const { isCardVisible, toggleCard } = useCardVisibility();
   return (
     <>
       <div className="flex flex-col w-full items-start gap-5">
-        <div className="flex w-full gap-2 cursor-pointer" onClick={onOpen}>
+        <div className="flex w-full gap-2 items-start cursor-pointer" onClick={onOpen}>
           <p className="w-full border-t border-spblack text-spblack font-medium pt-2 leading-5">
             {title}
             {title && boldTitle && <br />}
@@ -45,6 +41,7 @@ const Dropdown: React.FC<DropdownProps> = ({
               <Image className="rounded-md brightness-[80%] object-cover" src={image} alt="Product image" fill />
             </div>
           )}
+          <IconRoundedArrow onClick={onOpen} classNames="min-w-6" fill="#000" direction={isOpen ? 'up' : 'down'} />
         </div>
         <motion.div
           initial={{ height: 0, opacity: 0 }}

@@ -17,6 +17,8 @@
 }
 
 body {
+  scroll-behavior: smooth;
+  transition: scroll-top 0.2s;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }

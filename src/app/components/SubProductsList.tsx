@@ -93,7 +93,7 @@ const SubProductsList = () => {
   };
 
   return (
-    <div className="flex max-w-[1600px] min-h-[1200px] m:min-h-[800px] g:min-h-[600px] self-center gap-4">
+    <div className="flex max-w-[1600px] min-h-[1210px] m:min-h-[750px] self-center gap-4">
       <div className="flex m:hidden flex-col gap-4">
         {dropdownData.map((item) => (
           <Dropdown
