@@ -74,7 +74,7 @@ export const useCardVisibility = () => {
           saveScroll(); // Save the original scroll position
           smoothScrollTo(2800, 500); // Scroll to 2800 in 0.5 seconds (500 milliseconds)
         }
-      } else {
+      } else if (scrollY > 2800) {
         scrollToPrevious(); // Scroll back to the original position
       }
     }

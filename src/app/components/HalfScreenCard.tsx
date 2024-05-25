@@ -187,7 +187,7 @@ export default function HalfScreenCard({ isVisible, onClose }: HalfScreenCardPro
         exit="exit"
         variants={variants}
         transition={{ ease: 'easeOut', duration: 0.3 }}
-        className="flex flex-col self-center w-full max-w-[calc(650px+1.25rem)] bg-spwhite rounded-t-2xl g:rounded-2xl p-5 pb-[120px] xl:pb-5 gap-4 no-doc-scroll overflow-auto"
+        className="flex flex-col self-center w-full max-w-[calc(650px+1.25rem)] bg-spwhite rounded-t-2xl g:rounded-2xl p-5 pb-[120px] gap-4 no-doc-scroll overflow-auto"
         onClick={(e) => e.stopPropagation()}
       >
         <button className="self-end" onClick={onClose}>
