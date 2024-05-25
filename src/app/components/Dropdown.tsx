@@ -4,8 +4,8 @@ import IconRoundedArrow from './IconRoundedArrow';
 import Image from 'next/image';
 import ArrowButton from './ArrowButton';
 import { AnimatePresence, motion } from 'framer-motion';
-import HalfScreenCard from './HalfScreenCard';
-import { useCardVisibility } from '../utils/cardVisibillity';
+import QuoteModal from './QuoteModal';
+import { useModalVisibility } from '../utils/modalVisibility';
 
 interface DropdownProps {
   isOpen: boolean;
@@ -26,7 +26,7 @@ const Dropdown: React.FC<DropdownProps> = ({
   description,
   textOnly = false,
 }) => {
-  const { isCardVisible, toggleCard } = useCardVisibility();
+  const { visibleModal, toggleModal } = useModalVisibility();
   return (
     <>
       <div className="flex flex-col w-full items-start gap-5">
@@ -50,12 +50,10 @@ const Dropdown: React.FC<DropdownProps> = ({
           className="flex flex-col h-fit gap-2.5"
         >
           <p className="text-spblack text-base font-normal leading-5">{description}</p>
-          {!textOnly && <ArrowButton text="Cotiza ahora" size="small" onClick={toggleCard} />}
+          {!textOnly && <ArrowButton text="Cotiza ahora" size="small" onClick={() => toggleModal('bug')} />}
         </motion.div>
       </div>
-      <AnimatePresence>
-        {isCardVisible && <HalfScreenCard isVisible={isCardVisible} onClose={toggleCard} />}{' '}
-      </AnimatePresence>
+      <AnimatePresence>{visibleModal === 'bug' && <QuoteModal onClose={() => toggleModal('bug')} />}∂</AnimatePresence>
     </>
   );
 };

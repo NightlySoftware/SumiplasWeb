@@ -7,8 +7,7 @@ import TextArea from './TextArea';
 import * as z from 'zod';
 import ArrowButton from './ArrowButton';
 
-interface HalfScreenCardProps {
-  isVisible: boolean;
+interface QuoteModalProps {
   onClose: () => void;
 }
 
@@ -89,7 +88,7 @@ const schema = z.object({
   comentarios: z.string().optional(),
 });
 
-export default function HalfScreenCard({ isVisible, onClose }: HalfScreenCardProps) {
+export default function QuoteModal({ onClose }: QuoteModalProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const [formValues, setFormValues] = useState<{ [key: string]: string }>({});
   const [formErrors, setFormErrors] = useState<FormErrors>({});
@@ -183,7 +182,7 @@ export default function HalfScreenCard({ isVisible, onClose }: HalfScreenCardPro
       <motion.div
         ref={cardRef}
         initial="hidden"
-        animate={isVisible ? 'visible' : 'hidden'}
+        animate={'visible'}
         exit="exit"
         variants={variants}
         transition={{ ease: 'easeOut', duration: 0.3 }}

@@ -56,10 +56,39 @@ const config: Config = {
           left: '0 !important',
           zIndex: '1000 !important',
         },
+        '.menu-modal': {
+          transform: 'translate3d(0,0,0)',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          position: 'fixed',
+          overflow: 'auto',
+          height: '100svh',
+          backgroundColor: 'rgba(0, 0, 0, 0.5)',
+          width: '100%',
+          paddingTop: '100%',
+          /* if the screen height is bigger than 800px, set paddingTop to 0px */
+          '@media (min-height: 901px)': {
+            paddingTop: '0px',
+            paddingLeft: '20px',
+            paddingRight: '20px',
+            '> div': {
+              borderRadius: '1rem',
+            },
+          },
+          '@media (min-width: 500px)': {
+            paddingTop: '0px',
+            '> div': {
+              borderRadius: '1rem',
+            },
+          },
+          top: '0 !important',
+          left: '0 !important',
+          zIndex: '1000 !important',
+        },
       };
       addUtilities(newUtilities);
     },
-
     require('postcss-100vh-fix'),
   ],
 };

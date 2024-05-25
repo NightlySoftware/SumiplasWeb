@@ -2,11 +2,11 @@
 
 import { AnimatePresence } from 'framer-motion';
 import ArrowButton from './ArrowButton';
-import HalfScreenCard from './HalfScreenCard';
+import QuoteModal from './QuoteModal';
 import HeaderLogo from './HeaderLogo';
 import Image from 'next/image';
 import cn from 'classnames';
-import { useCardVisibility } from '../utils/cardVisibillity';
+import { useModalVisibility } from '../utils/modalVisibility';
 
 interface ScreenSectionProps {
   title?: string[];
@@ -23,7 +23,7 @@ export default function ScreenSection({
   image = 'hero',
   imageClassNames,
 }: ScreenSectionProps) {
-  const { isCardVisible, toggleCard } = useCardVisibility();
+  const { visibleModal, toggleModal } = useModalVisibility();
 
   if (type === 'contact') {
     description = [
@@ -72,13 +72,16 @@ export default function ScreenSection({
                 ))}
               </p>
             </div>
-            <div className="hidden lg:flex justify-center border-t border-spwhite py-6 xl:py-8">
-              {type === 'hero' ? (
-                'Baja para explorar'
-              ) : (
-                <ArrowButton className="mb-40" text="Contáctanos" onClick={toggleCard} color="light" />
-              )}
-            </div>
+
+            {type === 'hero' ? (
+              <div className="hidden lg:flex justify-center border-t border-spwhite py-6 xl:py-8">
+                Baja para explorar
+              </div>
+            ) : (
+              <div className="flex justify-center lg:border-t lg:border-spwhite pt-16 -mb-32">
+                <ArrowButton className="mb-40" text="Contáctanos" onClick={() => toggleModal('quote')} color="light" />
+              </div>
+            )}
           </div>
           <Image
             className={cn('z-[-1] object-cover brightness-[70%]', imageClassNames)}
@@ -92,7 +95,7 @@ export default function ScreenSection({
       </div>
 
       <AnimatePresence>
-        {isCardVisible && <HalfScreenCard isVisible={isCardVisible} onClose={toggleCard} />}
+        {visibleModal === 'quote' && <QuoteModal onClose={() => toggleModal('quote')} />}
       </AnimatePresence>
     </>
   );

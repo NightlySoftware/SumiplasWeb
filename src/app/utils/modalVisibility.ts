@@ -1,5 +1,3 @@
-'use client';
-
 import { useState, useEffect } from 'react';
 
 // Utility function to detect iOS devices
@@ -42,9 +40,10 @@ export const smoothScrollTo = (target: number, duration: number): void => {
   animateScroll();
 };
 
-// Custom hook for managing card visibility and scroll positions
-export const useCardVisibility = () => {
-  const [isCardVisible, setCardVisible] = useState(false);
+type ModalType = 'quote' | 'menu' | 'bug' | null;
+
+export const useModalVisibility = () => {
+  const [visibleModal, setVisibleModal] = useState<ModalType>(null);
   const [scrollY, setScrollY] = useState(0);
   const [isIOSDevice, setIsIOSDevice] = useState(false);
 
@@ -61,25 +60,25 @@ export const useCardVisibility = () => {
     smoothScrollTo(scrollY, 500); // Scroll to previous position in 0.5 seconds (500 milliseconds)
   };
 
-  const toggleCard = (): void => {
+  const toggleModal = (modalType: ModalType, cancelled?: boolean): void => {
+    if (cancelled === undefined) cancelled = false;
+
     if (isIOSDevice) {
-      if (!isCardVisible) {
+      if (!visibleModal || (modalType === 'menu' && !cancelled)) {
         saveScroll();
       } else {
         scrollToPrevious();
       }
     } else {
-      if (!isCardVisible) {
-        if (window.scrollY > 2800) {
-          saveScroll(); // Save the original scroll position
-          smoothScrollTo(2800, 500); // Scroll to 2800 in 0.5 seconds (500 milliseconds)
-        }
-      } else if (scrollY > 2800) {
+      if (!visibleModal && window.scrollY > 2800 && modalType === 'bug') {
+        saveScroll(); // Save the original scroll position
+        smoothScrollTo(2800, 500); // Scroll to 2800 in 0.5 seconds (500 milliseconds)
+      } else if (visibleModal === 'bug') {
         scrollToPrevious(); // Scroll back to the original position
       }
     }
-    setCardVisible(!isCardVisible);
+    setVisibleModal(visibleModal === modalType ? null : modalType);
   };
 
-  return { isCardVisible, toggleCard };
+  return { visibleModal, toggleModal };
 };

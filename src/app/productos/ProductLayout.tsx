@@ -1,3 +1,5 @@
+'use client';
+
 import Footer from '@/app/components/Footer';
 import HeaderLogo from '@/app/components/HeaderLogo';
 import Navbar from '@/app/components/Navbar';
@@ -8,6 +10,9 @@ import FAQList from '@/app/components/FAQList';
 import ProductCard from '@/app/components/ProductCard';
 import IconRoundedArrow from '@/app/components/IconRoundedArrow';
 import ScreenSection from '../components/ScreenSection';
+import { AnimatePresence } from 'framer-motion';
+import { useModalVisibility } from '../utils/modalVisibility';
+import QuoteModal from '../components/QuoteModal';
 
 interface ProductLayoutProps {
   name: string;
@@ -28,6 +33,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
   bgPhoto,
   centerPhoto,
 }) => {
+  const { visibleModal, toggleModal } = useModalVisibility();
   return (
     <main className="flex flex-col items-center no-scrollbar">
       <HeaderLogo color="blue" />
@@ -47,7 +53,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
           <span className="font-bold">{name}</span>
         </p>
 
-        <ArrowButton text="Cotiza Ahora" />
+        <ArrowButton text="Cotiza Ahora" onClick={() => toggleModal('quote')} />
         <p className="leading-5">{description}</p>
 
         {/* Property List */}
@@ -96,6 +102,10 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
           />
         </div>
       </div>
+
+      <AnimatePresence>
+        {visibleModal === 'quote' && <QuoteModal onClose={() => toggleModal('quote')} />}
+      </AnimatePresence>
 
       <ScreenSection type="contact" />
       <Footer />
