@@ -34,7 +34,7 @@ const Dropdown: React.FC<DropdownProps> = ({
           <p className="w-full border-t border-spblack text-spblack font-medium pt-2 leading-5">
             {title}
             {title && boldTitle && <br />}
-            <span className="font-bold">{boldTitle}</span>
+            <p className="font-bold max-w-[350px]">{boldTitle}</p>
           </p>
           {image && (
             <div className="relative h-20 aspect-[140/80]">

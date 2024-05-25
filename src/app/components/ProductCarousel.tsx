@@ -1,22 +1,11 @@
-import React from 'react';
-import MainSection from '../components/MainSection';
-import Footer from '../components/Footer';
-import Navbar from '../components/Navbar';
-import ProductCard from '../components/ProductCard';
-import SubProductsList from '../components/SubProductsList';
-import ScreenSection from '../components/ScreenSection';
+'use client';
 
-interface ProductCardData {
-  href: string;
-  headline1: string;
-  headline2: string;
-  title: string;
-  description: string;
-  headlineImage: string;
-  centerImage: string;
-}
+import React, { useState, useEffect } from 'react';
+import IconRoundedArrow from './IconRoundedArrow';
+import ProductCard from './ProductCard';
+import { AnimatePresence, motion } from 'framer-motion';
 
-export const productCardsData: ProductCardData[] = [
+const productCardsData = [
   {
     href: '/productos/bolsas-antiestaticas',
     headline1: 'Con protección ESD',
@@ -79,58 +68,83 @@ export const productCardsData: ProductCardData[] = [
   },
 ];
 
-const page = () => {
+const ProductCarousel = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [productsPerPage, setProductsPerPage] = useState(1); // Default to 1 product per page
+  const [direction, setDirection] = useState(0); // 1 for next, -1 for prev
+
+  // Update the number of products per page based on screen size
+  useEffect(() => {
+    const updateProductsPerPage = () => {
+      if (window.innerWidth >= 1024) {
+        setProductsPerPage(2); // Show 2 products per page on larger screens
+      } else {
+        setProductsPerPage(1); // Show 1 product per page on smaller screens
+      }
+    };
+
+    window.addEventListener('resize', updateProductsPerPage);
+    updateProductsPerPage(); // Initial check
+
+    return () => window.removeEventListener('resize', updateProductsPerPage);
+  }, []);
+
+  const nextPage = () => {
+    setDirection(1);
+    setCurrentIndex((prevIndex) => (prevIndex + productsPerPage) % productCardsData.length);
+  };
+
+  const prevPage = () => {
+    setDirection(-1);
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? productCardsData.length - productsPerPage : prevIndex - productsPerPage
+    );
+  };
+
+  const visibleProducts = productCardsData.slice(currentIndex, currentIndex + productsPerPage);
+
   return (
-    <main className="flex flex-col items-center no-scrollbar">
-      {/* Hero section */}
-      <ScreenSection
-        title={['Somos', 'fabricantes', 'de bolsas plásticas', 'líderes', 'en variedad']}
-        description={[
-          'Contamos con bolsas de todo tipo',
-          'fabricadas por nosotros en calibres y',
-          'medidas comerciales y especiales',
-        ]}
-        image="/images/hero_bg/products.webp"
-        imageClassNames="object-left"
-        type="hero"
-      />
-
-      {/* Main content card */}
-      <MainSection
-        title="Bolsas que se adaptan a tus necesidades"
-        description="Entendemos que cada cliente es único,por eso nos adaptamos a tus requerimientos, medidas y a tus procesos.
-        Ofrecemos un amplio catálogo de bolsas de polietileno, además de otros agregados."
-        oneliner="Revisa nuestro catálogo completo de productos a continuación"
-      >
-        <div className="grid grid-cols-1 g:grid-cols-2 max-w-[1600px] self-center gap-4 m:gap-16 g:gap-6 2xl:gap-16">
-          {productCardsData.map((product, index) => (
-            <ProductCard
-              key={index}
-              href={product.href}
-              headline1={product.headline1}
-              headline2={product.headline2}
-              title={product.title}
-              description={product.description}
-              headlineImage={product.headlineImage}
-              centerImage={product.centerImage}
-            />
-          ))}
+    <div className="flex flex-col gap-2 max-w-full xl:max-w-[1400px] self-center">
+      <div className="flex justify-between items-center">
+        <p className="font-bold">Explora más productos</p>
+        <div className="flex gap-4">
+          <button onClick={prevPage}>
+            <IconRoundedArrow classNames="w-8" fill="#005482" direction="left" />
+          </button>
+          <button onClick={nextPage}>
+            <IconRoundedArrow classNames="w-8" fill="#005482" direction="right" />
+          </button>
         </div>
-        <div className="flex flex-col text-spblack text-center text-pretty gap-4">
-          <p className="text-3xl font-medium py-8">Productos que comercializamos</p>
-          <p className="leading-5">
-            Además de nuestros productos manufacturados, también ofrecemos una variedad de materiales para empaque y
-            embalaje. Así, puedes disfrutar de una experiencia completa de compra en un solo lugar.
-          </p>
+      </div>
+      <div className="relative w-full overflow-hidden">
+        <div className="flex">
+          <AnimatePresence initial={false} custom={direction}>
+            {visibleProducts.map((product, index) => (
+              <motion.div
+                key={product.href} // Use unique key for each product
+                custom={direction}
+                initial={{ opacity: 0, x: direction === 1 ? -200 : 200 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: direction === 1 ? -200 : 200 }}
+                transition={{ duration: 0.2 }}
+                className="w-full"
+              >
+                <ProductCard
+                  href={product.href}
+                  headline1={product.headline1}
+                  headline2={product.headline2}
+                  title={product.title}
+                  description={product.description}
+                  headlineImage={product.headlineImage}
+                  centerImage={product.centerImage}
+                />
+              </motion.div>
+            ))}
+          </AnimatePresence>
         </div>
-        <SubProductsList />
-      </MainSection>
-
-      <ScreenSection type="contact" />
-      <Footer />
-      <Navbar />
-    </main>
+      </div>
+    </div>
   );
 };
 
-export default page;
+export default ProductCarousel;
