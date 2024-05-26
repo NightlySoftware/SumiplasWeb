@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import IconRoundedArrow from './IconRoundedArrow';
 import cn from 'classnames';
-import { HTMLProps } from 'react';
 
 interface ArrowButtonProps {
   type?: HTMLButtonElement['type'];

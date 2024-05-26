@@ -7,15 +7,10 @@ import Image from 'next/image';
 import ArrowButton from '@/app/components/ArrowButton';
 import InfoCard from '@/app/components/InfoCard';
 import FAQList from '@/app/components/FAQList';
-import ProductCard from '@/app/components/ProductCard';
-import IconRoundedArrow from '@/app/components/IconRoundedArrow';
 import ScreenSection from '../components/ScreenSection';
 import { AnimatePresence } from 'framer-motion';
 import { useModalVisibility } from '../utils/modalVisibility';
 import QuoteModal from '../components/QuoteModal';
-
-import { productCardsData } from './page';
-import CarouselWithContent from '../components/CarouselWithContent';
 import ProductCarousel from '../components/ProductCarousel';
 
 interface ProductLayoutProps {

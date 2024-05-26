@@ -60,22 +60,22 @@ const product = {
   ],
   questionList: [
     {
-      question: '¿Son las bolsas de polietileno negra de reciclaje adecuadas para residuos pesados?',
+      question: '¿Son las bolsas de polietileno negra adecuadas para residuos pesados?',
       answer:
-        'Sí, las bolsas de polietileno negra de reciclaje están diseñadas para ser altamente resistentes y duraderas, capaces de manejar residuos pesados y voluminosos sin rasgarse ni romperse.',
+        'Sí, las bolsas de polietileno negra están diseñadas para ser altamente resistentes y duraderas, capaces de manejar residuos pesados y voluminosos sin rasgarse ni romperse.',
     },
     {
-      question: '¿Estas bolsas son reciclables?',
+      question: '¿Son las bolsas de polietileno negra reciclables?',
       answer:
-        'Sí, las bolsas de polietileno negra de reciclaje están fabricadas con materiales reciclables. Después de su uso, pueden ser recicladas nuevamente para fabricar nuevos productos de polietileno, contribuyendo así a la sostenibilidad ambiental.',
+        'Sí, las bolsas de polietileno negra están fabricadas con materiales reciclables. Después de su uso, pueden ser recicladas nuevamente para fabricar nuevos productos de polietileno, contribuyendo así a la sostenibilidad ambiental.',
     },
     {
-      question: '¿Puedo usar estas bolsas para residuos orgánicos?',
+      question: '¿Puedo usar las bolsas de polietileno negra para residuos orgánicos?',
       answer:
-        'Aunque es posible usarlas para residuos orgánicos, las bolsas negras de reciclaje están específicamente diseñadas para manejar material inorgánico y residuos industriales. Para residuos orgánicos, se recomienda usar bolsas compostables o biodegradables.',
+        'Aunque es posible usarlas para residuos orgánicos, las bolsas negras están específicamente diseñadas para manejar material inorgánico y residuos industriales. Para residuos orgánicos, se recomienda usar bolsas compostables o biodegradables.',
     },
     {
-      question: '¿Las bolsas de polietileno negra de reciclaje son resistentes a perforaciones?',
+      question: '¿Las bolsas de polietileno negra son resistentes a perforaciones?',
       answer:
         'Sí, estas bolsas están fabricadas para ser altamente resistentes a perforaciones y rasgaduras, asegurando que los residuos inorgánicos y materiales afilados no las dañen durante el manejo y transporte.',
     },
