@@ -5,12 +5,11 @@ import Navbar from '../components/Navbar';
 import ProductCard from '../components/ProductCard';
 import SubProductsList from '../components/SubProductsList';
 import ScreenSection from '../components/ScreenSection';
-import { productCardsData } from '../utils/productCardsData';
+import { productsData } from '../utils/productsData';
 
 const page = () => {
   return (
     <main className="flex flex-col items-center no-scrollbar">
-      {/* Hero section */}
       <ScreenSection
         title={['Somos', 'fabricantes', 'de bolsas plásticas', 'líderes', 'en variedad']}
         description={[
@@ -22,8 +21,6 @@ const page = () => {
         imageClassNames="object-left"
         type="hero"
       />
-
-      {/* Main content card */}
       <MainSection
         title="Bolsas que se adaptan a tus necesidades"
         description="Entendemos que cada cliente es único,por eso nos adaptamos a tus requerimientos, medidas y a tus procesos.
@@ -31,7 +28,7 @@ const page = () => {
         oneliner="Revisa nuestro catálogo completo de productos a continuación"
       >
         <div className="grid grid-cols-1 g:grid-cols-2 max-w-[1600px] self-center gap-4 m:gap-16 g:gap-6 2xl:gap-16">
-          {productCardsData.map((product, index) => (
+          {productsData.map((product, index) => (
             <ProductCard
               key={index}
               href={product.href}
@@ -53,7 +50,6 @@ const page = () => {
         </div>
         <SubProductsList />
       </MainSection>
-
       <ScreenSection type="contact" />
       <Footer />
       <Navbar />

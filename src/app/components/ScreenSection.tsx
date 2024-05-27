@@ -24,7 +24,6 @@ export default function ScreenSection({
   imageClassNames,
 }: ScreenSectionProps) {
   const { visibleModal, toggleModal } = useModalVisibility();
-
   if (type === 'contact') {
     description = [
       '¿Te interesaron nuestros productos',
@@ -97,7 +96,6 @@ export default function ScreenSection({
           />
         </div>
       </div>
-
       <AnimatePresence>
         {visibleModal === 'quote' && <QuoteModal onClose={() => toggleModal('quote')} />}
       </AnimatePresence>

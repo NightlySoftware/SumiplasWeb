@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import cn from 'classnames';
-import { reverse } from 'dns';
 
 interface TextItem {
   title: string;

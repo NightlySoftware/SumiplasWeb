@@ -31,12 +31,10 @@ const ProductCard: React.FC<ProductCardProps> = ({
           {headline2}
         </p>
         <Image src={headlineImage} alt="Product Background" className="rounded-md brightness-[60%] object-cover" fill />
-        {/* <div className="flex self-center w-64"> */}
         <div className="relative flex min-w-64 max-w-[400px] min-h-24 xs:h-40 m:h-[220px] g:h-[170px] top-[-20%] xxs:top-[25%] m:top-[35%] g:top-[30%] xl:left-[30%] p-2.5 gap-2.5 self-center">
           <Image className="object-contain" src={centerImage} alt="Center image" fill />
         </div>
       </div>
-      {/* </div> */}
       <div className="flex w-full p-2.5 gap-2.5 items-center">
         <div className="flex flex-col w-full gap-2.5">
           <p className="text-spblack text-xl font-normal leading-5">

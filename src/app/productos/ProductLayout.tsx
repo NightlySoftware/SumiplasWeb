@@ -38,7 +38,6 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
       <HeaderLogo color="blue" />
       <div className="flex flex-col w-full bg-spwhite text-spblack p-5 m:p-10 m:pt-28 pt-28 pb-20 gap-12">
         <div className="flex flex-col lg:flex-row-reverse lg:justify-center gap-12">
-          {/* Cover photo */}
           <div className="flex relative lg:sticky lg:top-5 xl:top-10 3xl:top-16 w-full max-w-[600px] items-center justify-center self-center lg:self-start aspect-square rounded-lg overflow-hidden">
             <Image className="object-cover brightness-[60%]" src={bgPhoto} alt="Cover photo" fill />
             <div className="relative object-contain flex w-[65%] h-[65%] p-2.5 gap-2.5">
@@ -53,19 +52,14 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
               </p>
             </div>
           </div>
-
           <div className="flex flex-col self-center gap-12 lg:min-w-[50%] max-w-[700px] 3xl:min-w-[700px]">
-            {/* Title */}
             <p className="text-3xl leading-10">
               Bolsas
               <br />
               <span className="font-bold">{name}</span>
             </p>
-
             <p className="leading-5">{description}</p>
             <ArrowButton className="lg:self-start" text="Cotiza Ahora" onClick={() => toggleModal('quote')} />
-
-            {/* Property List */}
             <div className="flex flex-col gap-2 xl:gap-4">
               <p className="font-bold xl:text-xl">Características del producto</p>
               <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-2 lg:gap-4 xl:gap-8 p-2">
@@ -79,8 +73,6 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
                 ))}
               </div>
             </div>
-
-            {/* Cards List */}
             <div className="flex flex-col gap-2 xl:gap-4">
               <p className="font-bold xl:text-center xl:text-xl">Aplicaciones comunes</p>
               {cards.map((card, index) => (
@@ -89,18 +81,12 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
             </div>
           </div>
         </div>
-
-        {/* FAQ List */}
         <FAQList questionList={questionList} />
-
-        {/* More products section */}
         <ProductCarousel />
       </div>
-
       <AnimatePresence>
         {visibleModal === 'quote' && <QuoteModal onClose={() => toggleModal('quote')} />}
       </AnimatePresence>
-
       <ScreenSection type="contact" />
       <Footer />
       <Navbar />

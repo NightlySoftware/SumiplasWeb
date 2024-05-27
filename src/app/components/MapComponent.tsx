@@ -1,4 +1,5 @@
 'use client';
+
 import { GoogleMap, Marker, Circle, useLoadScript } from '@react-google-maps/api';
 import { useMemo } from 'react';
 
@@ -15,7 +16,7 @@ const MapComponent = () => {
   );
 
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string,
+    googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY as string,
     libraries: libraries as any,
   });
 
@@ -31,11 +32,11 @@ const MapComponent = () => {
         center={mapCenter}
         mapTypeId={google.maps.MapTypeId.ROADMAP}
         mapContainerStyle={{ width: '100%', height: '100%', borderRadius: 'inherit' }}
-        onLoad={(map) => console.log('Map Loaded')}
+        /* onLoad={(map) => console.log('Map Loaded')} */
       >
         <Marker
           position={mapCenter}
-          onLoad={() => console.log('Marker Loaded')}
+          /* onLoad={() => console.log('Marker Loaded')} */
           icon={{
             path: google.maps.SymbolPath.CIRCLE,
             fillColor: 'red',
@@ -49,7 +50,7 @@ const MapComponent = () => {
         <Circle
           center={mapCenter}
           radius={75000}
-          onLoad={() => console.log('Circle Loaded')}
+          /* onLoad={() => console.log('Circle Loaded')} */
           options={{
             fillColor: '#7eb2e0',
             fillOpacity: 0.4,

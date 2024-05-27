@@ -1,5 +1,7 @@
+'use client';
+
 import { Carousel } from '@material-tailwind/react';
-import { productCardsData } from '../utils/productCardsData';
+import { productsData } from '../utils/productsData';
 import ProductCard from './ProductCard';
 import IconRoundedArrow from './IconRoundedArrow';
 import { useState } from 'react';
@@ -42,7 +44,7 @@ export default function ProductCarousel() {
           </button>
         )}
       >
-        {productCardsData.map((product, index) => (
+        {productsData.map((product, index) => (
           <ProductCard
             key={index}
             href={product.href}

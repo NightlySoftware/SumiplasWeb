@@ -77,7 +77,6 @@ const schema = z.object({
     .regex(/^[a-zA-Z\s]+$/, 'Nombre inválido')
     .min(1, 'Campo obligatorio'),
   correo: z.string().email('Correo electrónico inválido'),
-  //make sure telefono supports only number values and 10 digits
   telefono: z
     .string()
     .regex(/^\d{10}$/, 'Número de teléfono inválido')
@@ -120,10 +119,7 @@ export default function QuoteModal({ onClose }: QuoteModalProps) {
   const handleChange = (name: string, value: string) => {
     setFormValues((prevValues) => {
       const newValues = { ...prevValues, [name]: value };
-
-      // Validate the updated form values
       const validation = schema.safeParse(newValues);
-
       if (validation.success) {
         setFormErrors((prevErrors) => ({
           ...prevErrors,
@@ -136,14 +132,12 @@ export default function QuoteModal({ onClose }: QuoteModalProps) {
           [name]: fieldError ? fieldError.message : '',
         }));
       }
-
       return newValues;
     });
   };
 
   const handleBlur = (name: string, value: string) => {
     const validation = schema.safeParse({ ...formValues, [name]: value });
-
     if (!validation.success) {
       const fieldError = validation.error.errors.find((err) => err.path[0] === name);
       setFormErrors((prevErrors) => ({
@@ -168,26 +162,19 @@ export default function QuoteModal({ onClose }: QuoteModalProps) {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-
     const currentDate = new Date();
-
-    // Format the date and time
     const formattedDate = currentDate.toLocaleDateString('es-ES', {
       day: '2-digit',
       month: '2-digit',
       year: '2-digit',
     });
-
     const formattedTime = currentDate.toLocaleTimeString('en-US', {
       hour: '2-digit',
       minute: '2-digit',
       hour12: true,
     });
-
     const formValuesWithDate = { ...formValues, fecha: formattedDate, hora: formattedTime };
-
     const validation = schema.safeParse(formValuesWithDate);
-
     if (validation.success) {
       const sendRequest = async () => {
         const response = await fetch('/api/send', {
@@ -197,14 +184,11 @@ export default function QuoteModal({ onClose }: QuoteModalProps) {
           },
           body: JSON.stringify(formValuesWithDate),
         });
-
         if (!response.ok) {
           throw new Error('Error al enviar el correo');
         }
-
         return response;
       };
-
       toast
         .promise(sendRequest(), {
           loading: 'Enviando correo...',
@@ -221,15 +205,15 @@ export default function QuoteModal({ onClose }: QuoteModalProps) {
     } else {
       const errors: FormErrors = {};
       validation.error.errors.forEach((error) => {
-        // Usamos error.message para obtener el mensaje personalizado
         errors[error.path[0] as string] = error.message;
       });
       setFormErrors(errors);
+      setIsSubmitting(false);
     }
   };
 
   return (
-    <div className="modal-classes z-[7]" onClick={onClose}>
+    <div className="modal quote-modal z-[7]" onClick={onClose}>
       <motion.div
         ref={cardRef}
         initial="hidden"
@@ -321,9 +305,10 @@ export default function QuoteModal({ onClose }: QuoteModalProps) {
             disabled={isSubmitting}
           />
           <Input
-            label="Ciudad / Municipio"
-            placeholder="Ciudad / Municipio"
+            label="Ciudad / Municipio*"
+            placeholder="Ciudad / Municipio*"
             name="ciudad"
+            required
             value={formValues.ciudad || ''}
             onChange={handleChange}
             onBlur={handleBlur}

@@ -31,7 +31,7 @@ export default function MenuModal({ onClose, onCancel }: MenuModalProps) {
   }, [onClose]);
 
   return (
-    <div className="menu-modal z-[7]" onClick={onCancel}>
+    <div className="modal menu-modal z-[7]" onClick={onCancel}>
       <motion.div
         ref={cardRef}
         initial="hidden"

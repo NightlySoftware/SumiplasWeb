@@ -33,7 +33,7 @@ const config: Config = {
   plugins: [
     function ({ addUtilities }: { addUtilities: (utilities: Record<string, any>) => void }) {
       const newUtilities = {
-        '.modal-classes': {
+        '.modal': {
           transform: 'translate3d(0,0,0)',
           display: 'flex',
           justifyContent: 'center',
@@ -43,31 +43,21 @@ const config: Config = {
           height: '100svh',
           backgroundColor: 'rgba(0, 0, 0, 0.5)',
           width: '100%',
-          paddingTop: '550px',
-          /* if the screen is smaller than 640px, set paddingTop to 500px, otherwise set it to 300px */
-          '@media (min-width: 640px)': {
-            paddingTop: '300px',
-          },
-          /* If the height is bigger than 1000px, set paddingTop to 0px */
-          '@media (min-height: 1020px)': {
-            paddingTop: '0px',
-          },
           top: '0 !important',
           left: '0 !important',
           zIndex: '1000 !important',
         },
+        '.quote-modal': {
+          paddingTop: '550px',
+          '@media (min-width: 640px)': {
+            paddingTop: '300px',
+          },
+          '@media (min-height: 1020px)': {
+            paddingTop: '0px',
+          },
+        },
         '.menu-modal': {
-          transform: 'translate3d(0,0,0)',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          position: 'fixed',
-          overflow: 'auto',
-          height: '100svh',
-          backgroundColor: 'rgba(0, 0, 0, 0.5)',
-          width: '100%',
           paddingTop: '100%',
-          /* if the screen height is bigger than 800px, set paddingTop to 0px */
           '@media (min-height: 901px)': {
             paddingTop: '0px',
             paddingLeft: '20px',
@@ -82,9 +72,6 @@ const config: Config = {
               borderRadius: '1rem',
             },
           },
-          top: '0 !important',
-          left: '0 !important',
-          zIndex: '1000 !important',
         },
       };
       addUtilities(newUtilities);

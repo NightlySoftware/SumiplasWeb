@@ -10,7 +10,6 @@ import ScreenSection from './components/ScreenSection';
 export default function Home() {
   return (
     <main className="flex flex-col items-center no-scrollbar">
-      {/* Hero section */}
       <ScreenSection
         title={['Bolsas a tu', 'medida', 'variedad de productos', 'calidad', 'garantizada']}
         description={[
@@ -22,8 +21,6 @@ export default function Home() {
         imageClassNames="object-[20%]"
         type="hero"
       />
-
-      {/* Main content card */}
       <div className="flex flex-col w-full bg-spwhite rounded-t-2xl g:rounded-t-[32px] xl:rounded-t-[80px] p-5 m:p-10 g:p-16 pb-20 gap-16 z-[2]">
         <div className="flex flex-col max-w-[600px] lg:max-w-[60%] self-center text-spblack text-center text-pretty gap-4">
           <p className="text-3xl font-medium py-8">Te contamos lo que hacemos</p>
@@ -48,8 +45,6 @@ export default function Home() {
           />
           <ArrowButton href="/nosotros" text="Conócenos más" />
         </div>
-
-        {/* Products section */}
         <div className="flex flex-col gap-8">
           <div className="flex flex-col text-spblack text-center text-pretty gap-4">
             <p className="text-3xl font-medium py-8">Productos</p>
@@ -83,8 +78,6 @@ export default function Home() {
           </div>
           <ArrowButton href="/productos" text="Ver más productos" />
         </div>
-
-        {/* Our clients section */}
         <div className="flex flex-col gap-8">
           <div className="flex flex-col text-spblack text-center text-pretty gap-4">
             <p className="text-3xl font-medium py-8">Nuestros clientes</p>
@@ -153,8 +146,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-
-        {/* Delivery section */}
         <div className="flex flex-col gap-8">
           <div className="flex flex-col text-spblack text-center text-pretty gap-4">
             <p className="text-3xl font-medium py-8">Entregamos hasta tu negocio</p>
@@ -184,7 +175,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
       <ScreenSection type="contact" />
       <Footer />
       <Navbar />

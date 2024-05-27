@@ -1,5 +1,17 @@
-import EmailTemplate, { EmailTemplateProps } from '@/app/components/EmailTemplate';
+import EmailTemplate from '@/app/components/EmailTemplate';
 import { Resend } from 'resend';
+
+export interface EmailTemplateProps {
+  nombre: string;
+  correo: string;
+  telefono?: string;
+  negocio?: string;
+  interes: string;
+  ciudad: string;
+  comentarios?: string;
+  fecha: string;
+  hora: string;
+}
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
