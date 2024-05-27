@@ -5,7 +5,7 @@ const product = {
   bgPhoto: '/images/product_card/pigmented.webp',
   centerPhoto: '/images/product_card/center/pigmented.webp',
   description:
-    'Embalaje versátil y atractivo diseñado para una amplia variedad de usos. Estas bolsas lisas pigmentadas están fabricadas con materiales de alta calidad y teñidas con colores vibrantes y duraderos. Su superficie lisa ofrece una apariencia estética y profesional, haciéndolas ideales para tiendas, eventos, y promociones. Disponibles en una gama de colores, estas bolsas no solo proporcionan una solución práctica para el embalaje y transporte de productos, sino que también sirven como una herramienta efectiva para reforzar la imagen de marca y captar la atención de los clientes.',
+    'Embalaje versátil y atractivo diseñado para una amplia variedad de usos. Las bolsas lisas pigmentadas están fabricadas con materiales de alta calidad y teñidas con colores vibrantes y duraderos. Su superficie lisa ofrece una apariencia estética y profesional, haciéndolas ideales para tiendas, eventos, y promociones. Disponibles en una gama de colores, estas bolsas no solo proporcionan una solución práctica para el embalaje y transporte de productos, sino que también sirven como una herramienta efectiva para reforzar la imagen de marca y captar la atención de los clientes.',
   properties: [
     {
       icon: '/icons/ruler.svg',
@@ -70,7 +70,7 @@ const product = {
         'Sí, las bolsas lisas pigmentadas que fabricamos son aptas para el contacto con alimentos, cumpliendo con todas las normativas de seguridad alimentaria. Ofrecen una solución segura y efectiva para el empaque y transporte de productos alimenticios.',
     },
     {
-      question: '¿Qué tipo de resistencia y durabilidad tienen estas bolsas?',
+      question: '¿Qué tipo de resistencia y durabilidad tienen las bolsas lisas pigmentadas?',
       answer:
         'Nuestras bolsas lisas pigmentadas están diseñadas para ser altamente resistentes y duraderas, capaces de soportar el manejo y transporte de productos pesados sin romperse. El material de alta calidad y el sello de fondo robusto evitan la fuga de sólidos y líquidos, garantizando la integridad del contenido.',
     },

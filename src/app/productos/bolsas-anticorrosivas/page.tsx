@@ -5,7 +5,7 @@ const product = {
   bgPhoto: '/images/product_card/anticorrosive.webp',
   centerPhoto: '/images/product_card/center/anticorrosive.webp',
   description:
-    'Embalaje especializado diseñado para proteger componentes metálicos y piezas industriales contra la corrosión durante el almacenamiento y transporte. Estas bolsas anticorrosivas están tratadas con inhibidores de corrosión que evitan la oxidación y el deterioro de los metales, creando una barrera protectora que prolonga la vida útil de los productos. Ideales para herramientas, maquinaria, piezas automotrices y otros elementos metálicos, estas bolsas aseguran que los productos permanezcan en perfectas condiciones sin necesidad de aplicar recubrimientos adicionales. Su diseño eficiente y protección confiable hacen de estas bolsas una solución esencial en entornos industriales donde la preservación de los metales es crucial.',
+    'Embalaje especializado diseñado para proteger componentes metálicos y piezas industriales contra la corrosión durante el almacenamiento y transporte. Las bolsas de polietileno con protección VCI anticorrosivas están tratadas con inhibidores de corrosión que evitan la oxidación y el deterioro de los metales, creando una barrera protectora que prolonga la vida útil de los productos. Ideales para herramientas, maquinaria, piezas automotrices y otros elementos metálicos, estas bolsas aseguran que los productos permanezcan en perfectas condiciones sin necesidad de aplicar recubrimientos adicionales. Su diseño eficiente y protección confiable hacen de estas bolsas una solución esencial en entornos industriales donde la preservación de los metales es crucial.',
   properties: [
     {
       icon: '/icons/ruler.svg',
@@ -36,7 +36,7 @@ const product = {
     {
       title: 'Almacenamiento de Herramientas',
       description:
-        'Estas bolsas liberan lentamente moléculas inhibidoras de corrosión que se adhieren a la superficie de las herramientas, formando una barrera protectora que previene la oxidación y corrosión',
+        'Las bolsas de polietileno con protección VCI liberan lentamente moléculas inhibidoras de corrosión que se adhieren a la superficie de las herramientas, formando una barrera protectora que previene la oxidación y corrosión',
       image: '/images/info_card/anticorrosivas/1.webp',
     },
     {
@@ -75,7 +75,8 @@ const product = {
         'Sí, las bolsas con protección VCI son adecuadas para una amplia gama de metales, incluyendo acero, hierro, cobre, y aluminio, entre otros. Estas bolsas ofrecen una protección eficaz contra la corrosión para diversos componentes metálicos.',
     },
     {
-      question: '¿Estas bolsas proporcionan protección contra otros factores ambientales además de la corrosión?',
+      question:
+        '¿Las bolsas de polietileno con protección VCI proporcionan protección contra otros factores ambientales además de la corrosión?',
       answer:
         'Sí, además de la protección contra la corrosión, las bolsas de polietileno con protección VCI también ofrecen una barrera contra la humedad, el polvo y otros contaminantes ambientales, asegurando que los componentes metálicos se mantengan en óptimas condiciones durante el almacenamiento y transporte.',
     },

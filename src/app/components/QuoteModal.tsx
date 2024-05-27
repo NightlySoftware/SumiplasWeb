@@ -6,6 +6,7 @@ import Input from './Input';
 import TextArea from './TextArea';
 import * as z from 'zod';
 import ArrowButton from './ArrowButton';
+import toast from 'react-hot-toast';
 
 interface QuoteModalProps {
   onClose: () => void;
@@ -57,7 +58,6 @@ const validProducts = [
   'Bolsa Negra / Uso Industrial',
   'Bolsa Lisa Pigmentada',
   'Bolsa de Asa tipo Camiseta',
-
   'Película Stretch',
   'Cinta Transparente',
   'Cinta Canela',
@@ -86,12 +86,17 @@ const schema = z.object({
   interes: z.string().min(1, 'Campo obligatorio'),
   ciudad: z.string().max(20, 'Ingresa una ciudad válida'),
   comentarios: z.string().optional(),
+  fecha: z
+    .string()
+    .regex(/^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[012])\/([0-9]{2})$/, 'La fecha debe estar en el formato DD/MM/YY'),
+  hora: z.string().regex(/^(0[1-9]|1[012]):[0-5][0-9] (AM|PM)$/, 'La hora debe estar en el formato HH:MM AM/PM'),
 });
 
 export default function QuoteModal({ onClose }: QuoteModalProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const [formValues, setFormValues] = useState<{ [key: string]: string }>({});
   const [formErrors, setFormErrors] = useState<FormErrors>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const variants = {
     hidden: { y: '100%' },
@@ -160,13 +165,59 @@ export default function QuoteModal({ onClose }: QuoteModalProps) {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
-    const validation = schema.safeParse(formValues);
+    const currentDate = new Date();
+
+    // Format the date and time
+    const formattedDate = currentDate.toLocaleDateString('es-ES', {
+      day: '2-digit',
+      month: '2-digit',
+      year: '2-digit',
+    });
+
+    const formattedTime = currentDate.toLocaleTimeString('en-US', {
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: true,
+    });
+
+    const formValuesWithDate = { ...formValues, fecha: formattedDate, hora: formattedTime };
+
+    const validation = schema.safeParse(formValuesWithDate);
 
     if (validation.success) {
-      // Aquí puedes manejar el caso de éxito del formulario
+      const sendRequest = async () => {
+        const response = await fetch('/api/send', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formValuesWithDate),
+        });
+
+        if (!response.ok) {
+          throw new Error('Error al enviar el correo');
+        }
+
+        return response;
+      };
+
+      toast
+        .promise(sendRequest(), {
+          loading: 'Enviando correo...',
+          success: 'Correo enviado correctamente',
+          error: 'Error al enviar el correo',
+        })
+        .then(() => {
+          setIsSubmitting(false);
+        })
+        .catch((error) => {
+          console.error(error);
+          setIsSubmitting(false);
+        });
     } else {
       const errors: FormErrors = {};
       validation.error.errors.forEach((error) => {
@@ -189,7 +240,7 @@ export default function QuoteModal({ onClose }: QuoteModalProps) {
         className="flex flex-col self-center w-full max-w-[calc(650px+1.25rem)] bg-spwhite rounded-t-2xl g:rounded-2xl p-5 pb-[120px] gap-4 no-doc-scroll overflow-auto"
         onClick={(e) => e.stopPropagation()}
       >
-        <button className="self-end" onClick={onClose}>
+        <button className="self-end" onClick={onClose} disabled={isSubmitting}>
           <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M16 0C24.8368 0 32 7.1632 32 16C32 24.8368 24.8368 32 16 32C7.1632 32 0 24.8368 0 16C0 7.1632 7.1632 0 16 0ZM12.6064 10.3424C12.3191 10.0524 11.9319 9.88315 11.5239 9.86931C11.116 9.85547 10.7181 9.99807 10.4119 10.2679C10.1056 10.5378 9.91408 10.9145 9.87647 11.321C9.83887 11.7275 9.95804 12.1329 10.2096 12.4544L10.344 12.6064L13.736 15.9984L10.344 19.3936C10.054 19.6809 9.88475 20.0681 9.87091 20.4761C9.85707 20.884 9.99968 21.2819 10.2695 21.5881C10.5394 21.8944 10.9161 22.0859 11.3226 22.1235C11.7291 22.1611 12.1345 22.042 12.456 21.7904L12.6064 21.6576L16 18.2624L19.3936 21.6576C19.6809 21.9476 20.0681 22.1169 20.4761 22.1307C20.884 22.1445 21.2819 22.0019 21.5881 21.7321C21.8944 21.4622 22.0859 21.0855 22.1235 20.679C22.1611 20.2725 22.042 19.8671 21.7904 19.5456L21.6576 19.3936L18.2624 16L21.6576 12.6064C21.9476 12.3191 22.1169 11.9319 22.1307 11.5239C22.1445 11.116 22.0019 10.7181 21.7321 10.4119C21.4622 10.1056 21.0855 9.91408 20.679 9.87647C20.2725 9.83887 19.8671 9.95804 19.5456 10.2096L19.3936 10.3424L16 13.7376L12.6064 10.3424Z"
@@ -216,6 +267,7 @@ export default function QuoteModal({ onClose }: QuoteModalProps) {
             onClick={handleClick}
             hasError={!!formErrors.nombre}
             errorMessage={formErrors.nombre}
+            disabled={isSubmitting}
           />
           <Input
             label="Correo Electrónico*"
@@ -229,6 +281,7 @@ export default function QuoteModal({ onClose }: QuoteModalProps) {
             onClick={handleClick}
             hasError={!!formErrors.correo}
             errorMessage={formErrors.correo}
+            disabled={isSubmitting}
           />
           <Input
             label="Número de Teléfono"
@@ -240,6 +293,7 @@ export default function QuoteModal({ onClose }: QuoteModalProps) {
             onClick={handleClick}
             hasError={!!formErrors.telefono}
             errorMessage={formErrors.telefono}
+            disabled={isSubmitting}
           />
           <Input
             label="Negocio / Empresa"
@@ -251,6 +305,7 @@ export default function QuoteModal({ onClose }: QuoteModalProps) {
             onClick={handleClick}
             hasError={!!formErrors.negocio}
             errorMessage={formErrors.negocio}
+            disabled={isSubmitting}
           />
           <Input
             label="¿En qué estás interesado?*"
@@ -263,6 +318,7 @@ export default function QuoteModal({ onClose }: QuoteModalProps) {
             onClick={handleClick}
             hasError={!!formErrors.interes}
             errorMessage={formErrors.interes}
+            disabled={isSubmitting}
           />
           <Input
             label="Ciudad / Municipio"
@@ -274,6 +330,7 @@ export default function QuoteModal({ onClose }: QuoteModalProps) {
             onClick={handleClick}
             hasError={!!formErrors.ciudad}
             errorMessage={formErrors.ciudad}
+            disabled={isSubmitting}
           />
           <TextArea
             label="Comentarios Adicionales"
@@ -286,8 +343,9 @@ export default function QuoteModal({ onClose }: QuoteModalProps) {
             hasError={!!formErrors.comentarios}
             errorMessage={formErrors.comentarios}
             size="lg"
+            disabled={isSubmitting}
           />
-          <ArrowButton type="submit" text="Enviar" />
+          <ArrowButton type="submit" text="Enviar" disabled={isSubmitting} />
         </form>
       </motion.div>
     </div>

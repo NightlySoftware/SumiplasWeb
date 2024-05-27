@@ -1,6 +1,5 @@
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import MainSection from './components/MainSection';
 import InfoCard from './components/InfoCard';
 import ArrowButton from './components/ArrowButton';
 import ProductButton from './components/ProductButton';
@@ -25,11 +24,16 @@ export default function Home() {
       />
 
       {/* Main content card */}
-      <MainSection
-        title="Te contamos lo que hacemos"
-        description="En Sumiplas nos dedicamos a la fabricación y distribución de bolsas de polietileno, así como brindamos soluciones de empaque y embalaje excepcionales para el sector alimenticio, automotriz, e industrial."
-        oneliner="Establecidos en Irapuato, Guanajuato, lideramos el sector."
-      >
+      <div className="flex flex-col w-full bg-spwhite rounded-t-2xl g:rounded-t-[32px] xl:rounded-t-[80px] p-5 m:p-10 g:p-16 pb-20 gap-16 z-[2]">
+        <div className="flex flex-col max-w-[600px] lg:max-w-[60%] self-center text-spblack text-center text-pretty gap-4">
+          <p className="text-3xl font-medium py-8">Te contamos lo que hacemos</p>
+          <p className="leading-5">
+            En Sumiplas nos dedicamos a la fabricación y distribución de bolsas de polietileno, así como brindamos
+            soluciones de empaque y embalaje excepcionales para el sector alimenticio, automotriz, e industrial.
+            <br /> <br />
+            Establecidos en Irapuato, Guanajuato, lideramos el sector.
+          </p>
+        </div>
         <div className="flex flex-col gap-8">
           <InfoCard
             title="Productos de Calidad"
@@ -179,7 +183,7 @@ export default function Home() {
             </InfoCard>
           </div>
         </div>
-      </MainSection>
+      </div>
 
       <ScreenSection type="contact" />
       <Footer />

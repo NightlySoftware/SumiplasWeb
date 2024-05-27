@@ -60,7 +60,7 @@ const product = {
   ],
   questionList: [
     {
-      question: '¿Son seguras las bolsas para el contacto con alimentos?',
+      question: '¿Son seguras las bolsas de polietileno grado alimenticio para el contacto con alimentos?',
       answer:
         'Sí, las bolsas de polietileno grado alimenticio están fabricadas con materiales que cumplen con las normativas de seguridad alimentaria, garantizando que no liberan sustancias tóxicas que puedan contaminar los alimentos.',
     },
@@ -75,7 +75,7 @@ const product = {
         'Dependiendo del grosor que se elija, algunas pueden ser reutilizables. Es importante asegurarse de que la bolsa no presente daños o contaminaciones antes de su reutilización, para mantener la seguridad alimentaria.',
     },
     {
-      question: '¿Estas bolsas pueden mantener la frescura de productos orgánicos?',
+      question: 'Las bolsas de polietileno grado alimenticio pueden mantener la frescura de productos orgánicos?',
       answer:
         'Sí, las bolsas de polietileno grado alimenticio están diseñadas para mantener la frescura y calidad de productos orgánicos, protegiéndolos de la humedad, el aire y otros contaminantes externos que puedan acelerar su deterioro.',
     },
