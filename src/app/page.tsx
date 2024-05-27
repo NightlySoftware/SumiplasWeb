@@ -22,39 +22,43 @@ export default function Home() {
         type="hero"
       />
       <div className="flex flex-col w-full bg-spwhite rounded-t-2xl g:rounded-t-[32px] xl:rounded-t-[80px] p-5 m:p-10 g:p-16 pb-20 gap-16 z-[2]">
-        <div className="flex flex-col max-w-[600px] lg:max-w-[60%] self-center text-spblack text-center text-pretty gap-4">
-          <p className="text-3xl font-medium py-8">Te contamos lo que hacemos</p>
-          <p className="leading-5">
-            En Sumiplas nos dedicamos a la fabricación y distribución de bolsas de polietileno, así como brindamos
-            soluciones de empaque y embalaje excepcionales para el sector alimenticio, automotriz, e industrial.
-            <br /> <br />
-            Establecidos en Irapuato, Guanajuato, lideramos el sector.
-          </p>
+        <div className="flex flex-col w-full g:min-h-[564px] 2xl:min-h-[624px] max-w-[1400px] g:flex-row g:self-center gap-16 g:gap-8">
+          <div className="flex flex-col self-center text-spblack text-center g:text-start text-pretty gap-4">
+            <p className="text-3xl font-medium py-8">Te contamos lo que hacemos</p>
+            <p className="leading-5">
+              En Sumiplas nos dedicamos a la fabricación y distribución de bolsas de polietileno, así como brindamos
+              soluciones de empaque y embalaje excepcionales para el sector alimenticio, automotriz, e industrial.
+              <br /> <br />
+              Establecidos en Irapuato, Guanajuato, lideramos el sector.
+            </p>
+            <ArrowButton className="hidden g:flex g:self-start g:pt-8" href="/nosotros" text="Conócenos más" />
+          </div>
+          <div className="flex flex-col self-center w-full g:w-[450px] xl:min-w-[500px] 2xl:min-w-[600px] xl:max-w-[600px] gap-4">
+            <InfoCard
+              title="Productos de Calidad"
+              description="Contamos con una amplia gama de productos para cubrir las necesidades de cada uno de nuestros clientes."
+              image="/images/info_card/quality.webp"
+            />
+            <InfoCard
+              title="Tecnología de Vanguardia"
+              description="Contamos con la tecnología y maquinaria para poder realizar un trabajo de calidad."
+              image="/images/info_card/maquina.webp"
+              imgClassNames="object-[50%,55%]"
+            />
+            <ArrowButton className="g:hidden" href="/nosotros" text="Conócenos más" />
+          </div>
         </div>
-        <div className="flex flex-col gap-8">
-          <InfoCard
-            title="Productos de Calidad"
-            description="Contamos con una amplia gama de productos para cubrir las necesidades de cada uno de nuestros clientes."
-            image="/images/info_card/quality.webp"
-          />
-          <InfoCard
-            title="Tecnología de Vanguardia"
-            description="Contamos con la tecnología y maquinaria para poder realizar un trabajo de calidad."
-            image="/images/info_card/maquina.webp"
-            imgClassNames="object-[50%,55%]"
-          />
-          <ArrowButton href="/nosotros" text="Conócenos más" />
-        </div>
-        <div className="flex flex-col gap-8">
-          <div className="flex flex-col text-spblack text-center text-pretty gap-4">
+        <div className="flex flex-col w-full g:min-h-[564px] 2xl:min-h-[624px] max-w-[1400px] g:flex-row g:self-center gap-16 g:gap-8">
+          <div className="flex flex-col self-center text-spblack text-center g:text-start text-pretty gap-4">
             <p className="text-3xl font-medium py-8">Productos</p>
             <p className="leading-5">
               Nos enorgullece ser líderes en la solución integral de empaque, ofreciendo una diversidad de productos
               plásticos de alta calidad. Desde bolsas especializadas hasta soluciones de embalaje innovadoras, nuestra
               gama está diseñada para satisfacer las exigencias de diferentes industrias.
             </p>
+            <ArrowButton className="hidden g:flex g:self-start g:pt-8" href="/nosotros" text="Conócenos más" />
           </div>
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col self-center w-full g:w-[450px] xl:min-w-[500px] 2xl:min-w-[600px] xl:max-w-[600px] gap-4">
             <ProductButton
               href="/productos/bolsas-antiestaticas"
               title="Antiestáticas"
@@ -76,17 +80,17 @@ export default function Home() {
               bgImage="/images/product_card/industrial.webp"
             />
           </div>
-          <ArrowButton href="/productos" text="Ver más productos" />
+          <ArrowButton className="g:hidden" href="/productos" text="Ver más productos" />
         </div>
-        <div className="flex flex-col gap-8">
-          <div className="flex flex-col text-spblack text-center text-pretty gap-4">
+        <div className="flex flex-col w-full g:min-h-[564px] 2xl:min-h-[624px] max-w-[1400px] g:flex-row g:self-center gap-16 g:gap-8">
+          <div className="flex flex-col self-center text-spblack text-center g:text-start text-pretty gap-4">
             <p className="text-3xl font-medium py-8">Nuestros clientes</p>
             <p className="leading-5">
               Estos son algunos de nuestros clientes, con los que hemos trabajado y avalan nuestra calidad, compromiso y
               responsabilidad como fabricantes.
             </p>
           </div>
-          <div className="flex flex-wrap justify-center gap-8 px-8">
+          <div className="flex flex-col self-center w-full g:w-[450px] xl:min-w-[500px] 2xl:min-w-[600px] xl:max-w-[600px] gap-4">
             <div className="flex w-full px-8 gap-4">
               <div className="relative h-10 w-full">
                 <Image
@@ -146,8 +150,8 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-8">
-          <div className="flex flex-col text-spblack text-center text-pretty gap-4">
+        <div className="flex flex-col w-full g:min-h-[564px] 2xl:min-h-[624px] max-w-[1400px] g:flex-row g:self-center gap-16 g:gap-8">
+          <div className="flex flex-col self-center text-spblack text-center g:text-start text-pretty gap-4">
             <p className="text-3xl font-medium py-8">Entregamos hasta tu negocio</p>
             <p className="leading-5">
               Somos fabricantes de bolsa situados en Irapuato Guanajuato. Contamos con transporte propio y entrega en la
@@ -169,9 +173,11 @@ export default function Home() {
                 <p>Zona aproximada de envíos</p>
               </div>
             </div>
-            <InfoCard>
-              <MapComponent />
-            </InfoCard>
+            <div className="flex flex-col self-center w-full g:w-[450px] xl:min-w-[500px] 2xl:min-w-[600px] xl:max-w-[600px] gap-4">
+              <InfoCard>
+                <MapComponent />
+              </InfoCard>
+            </div>
           </div>
         </div>
       </div>

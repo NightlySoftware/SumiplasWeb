@@ -14,12 +14,10 @@ const MapComponent = () => {
     }),
     []
   );
-
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY as string,
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string,
     libraries: libraries as any,
   });
-
   if (!isLoaded) {
     return <div className="flex relative w-full items-center justify-center aspect-square rounded">Loading Map...</div>;
   }
@@ -46,7 +44,6 @@ const MapComponent = () => {
             scale: 5,
           }}
         />
-
         <Circle
           center={mapCenter}
           radius={75000}
