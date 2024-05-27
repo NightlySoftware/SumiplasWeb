@@ -1,5 +1,5 @@
 import { Carousel } from '@material-tailwind/react';
-import { productCardsData } from '../productos/page';
+import { productCardsData } from '../utils/productCardsData';
 import ProductCard from './ProductCard';
 import IconRoundedArrow from './IconRoundedArrow';
 import { useState } from 'react';
