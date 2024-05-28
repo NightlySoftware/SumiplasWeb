@@ -17,8 +17,8 @@ export default function Home() {
           'por nosotros para usos en el sector',
           'automotriz, industrial y de alimentos.',
         ]}
-        image="/images/hero_bg/main.webp"
-        imageClassNames="object-[20%]"
+        image="/images/hero_bg/extrusora.webp"
+        imageClassNames="object-left"
         type="hero"
       />
       <div className="flex flex-col w-full bg-spwhite rounded-t-2xl g:rounded-t-[32px] xl:rounded-t-[80px] p-5 m:p-10 g:p-16 pb-20 gap-16 z-[2]">
