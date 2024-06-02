@@ -21,7 +21,7 @@ export async function POST(request: Request) {
 
     const { data, error } = await resend.emails.send({
       from: formData.nombre + ' (' + formData.correo + ') <correos@sumiplas.mx>',
-      to: ['lololertrololer@gmail.com'],
+      to: ['correos@sumiplas.mx'],
       subject: 'Solicitud de Cotización - ' + formData.nombre,
       react: EmailTemplate({
         nombre: formData.nombre,
