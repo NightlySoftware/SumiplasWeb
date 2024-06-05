@@ -34,14 +34,19 @@ const Dropdown: React.FC<DropdownProps> = ({
           <p className="w-full border-t border-spblack text-spblack font-medium pt-2 leading-5">
             {title}
             {title && boldTitle && <br />}
-            <p className="font-bold max-w-[350px]">{boldTitle}</p>
+            <span className="font-bold max-w-[350px]">{boldTitle}</span>
           </p>
           {image && (
             <div className="relative h-20 aspect-[140/80]">
               <Image className="rounded-md brightness-[80%] object-cover" src={image} alt="Product image" fill />
             </div>
           )}
-          <IconRoundedArrow onClick={onOpen} classNames="min-w-6" fill="#000" direction={isOpen ? 'up' : 'down'} />
+          <IconRoundedArrow
+            onClick={onOpen}
+            classNames="min-w-6 w-6 max-w-6"
+            fill="#000"
+            direction={isOpen ? 'up' : 'down'}
+          />
         </div>
         <motion.div
           initial={{ height: 0, opacity: 0 }}
