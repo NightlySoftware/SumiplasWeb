@@ -42,7 +42,7 @@ const Footer = () => {
             </svg>
             Instagram
           </Link>
-          <Link href={'https://wa.me/+524621861193'} className="flex items-center gap-1.5">
+          <Link href={'https://wa.me/+524621708093'} className="flex items-center gap-1.5">
             <svg width="24" height="24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 fillRule="evenodd"
