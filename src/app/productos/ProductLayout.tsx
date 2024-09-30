@@ -12,6 +12,8 @@ import { AnimatePresence } from 'framer-motion';
 import { useModalVisibility } from '../utils/modalVisibility';
 import QuoteModal from '../components/QuoteModal';
 import ProductCarousel from '../components/ProductCarousel';
+import { Dialog, DialogTrigger } from '../components/Dialog';
+import { useState } from 'react';
 
 interface ProductLayoutProps {
   name: string;
@@ -32,7 +34,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
   bgPhoto,
   centerPhoto,
 }) => {
-  const { visibleModal, toggleModal } = useModalVisibility();
+  const [quoteOpen, setQuoteOpen] = useState(false);
   return (
     <main className="flex flex-col items-center no-scrollbar">
       <HeaderLogo color="blue" />
@@ -59,7 +61,12 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
               <span className="font-bold">{name}</span>
             </p>
             <p className="leading-5">{description}</p>
-            <ArrowButton className="lg:self-start" text="Cotiza Ahora" onClick={() => toggleModal('quote')} />
+            <Dialog open={quoteOpen} onOpenChange={setQuoteOpen}>
+              <DialogTrigger asChild>
+                <ArrowButton className="lg:self-start" text="Cotiza Ahora" />
+              </DialogTrigger>
+              <QuoteModal open={quoteOpen} onOpenChange={setQuoteOpen} />
+            </Dialog>
             <div className="flex flex-col gap-2 xl:gap-4">
               <p className="font-bold xl:text-xl">Características del producto</p>
               <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-2 lg:gap-4 xl:gap-8 p-2">
@@ -84,9 +91,6 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
         <FAQList questionList={questionList} />
         <ProductCarousel />
       </div>
-      <AnimatePresence>
-        {visibleModal === 'quote' && <QuoteModal onClose={() => toggleModal('quote')} />}
-      </AnimatePresence>
       <ScreenSection type="contact" />
       <Footer />
       <Navbar />

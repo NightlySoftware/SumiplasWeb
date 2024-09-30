@@ -3,9 +3,9 @@ import Footer from './components/Footer';
 import InfoCard from './components/InfoCard';
 import ArrowButton from './components/ArrowButton';
 import ProductButton from './components/ProductButton';
-import Image from 'next/image';
 import MapComponent from './components/MapComponent';
 import ScreenSection from './components/ScreenSection';
+import InfiniteLogoCarousel from './components/InfiniteLogoCarousel';
 
 export default function Home() {
   return (
@@ -22,7 +22,9 @@ export default function Home() {
         type="hero"
       />
       <div className="flex flex-col w-full bg-spwhite rounded-t-2xl g:rounded-t-[32px] xl:rounded-t-[80px] p-5 m:p-10 g:p-16 pb-20 gap-16 z-[2]">
+        {/* Section 1 */}
         <div className="flex flex-col w-full g:min-h-[564px] 2xl:min-h-[624px] max-w-[1400px] g:flex-row g:self-center gap-16 g:gap-8">
+          {/* Left content */}
           <div className="flex flex-col self-center text-spblack text-center g:text-start text-pretty gap-4">
             <p className="text-3xl font-medium py-8">Te contamos lo que hacemos</p>
             <p className="leading-5">
@@ -31,8 +33,9 @@ export default function Home() {
               <br /> <br />
               Establecidos en Irapuato, Guanajuato, lideramos el sector.
             </p>
-            <ArrowButton className="hidden g:flex g:self-start g:pt-8" href="/nosotros" text="Conócenos más" />
+            <ArrowButton className="g:self-start g:pt-8" href="/nosotros" text="Conócenos más" />
           </div>
+          {/* Right content */}
           <div className="flex flex-col self-center w-full g:w-[450px] xl:min-w-[500px] 2xl:min-w-[600px] xl:max-w-[600px] gap-4">
             <InfoCard
               title="Productos de Calidad"
@@ -48,7 +51,9 @@ export default function Home() {
             <ArrowButton className="g:hidden" href="/nosotros" text="Conócenos más" />
           </div>
         </div>
+        {/* Section 2 */}
         <div className="flex flex-col w-full g:min-h-[564px] 2xl:min-h-[624px] max-w-[1400px] g:flex-row g:self-center gap-16 g:gap-8">
+          {/* Left content */}
           <div className="flex flex-col self-center text-spblack text-center g:text-start text-pretty gap-4">
             <p className="text-3xl font-medium py-8">Productos</p>
             <p className="leading-5">
@@ -56,8 +61,9 @@ export default function Home() {
               plásticos de alta calidad. Desde bolsas especializadas hasta soluciones de embalaje innovadoras, nuestra
               gama está diseñada para satisfacer las exigencias de diferentes industrias.
             </p>
-            <ArrowButton className="hidden g:flex g:self-start g:pt-8" href="/nosotros" text="Conócenos más" />
+            <ArrowButton className="g:self-start g:pt-8" href="/nosotros" text="Conócenos más" />
           </div>
+          {/* Right content */}
           <div className="flex flex-col self-center w-full g:w-[450px] xl:min-w-[500px] 2xl:min-w-[600px] xl:max-w-[600px] gap-4">
             <ProductButton
               href="/productos/bolsas-antiestaticas"
@@ -82,7 +88,9 @@ export default function Home() {
           </div>
           <ArrowButton className="g:hidden" href="/productos" text="Ver más productos" />
         </div>
+        {/* Section 3 */}
         <div className="flex flex-col w-full g:min-h-[564px] 2xl:min-h-[624px] max-w-[1400px] g:flex-row g:self-center gap-16 g:gap-8">
+          {/* Left content */}
           <div className="flex flex-col self-center text-spblack text-center g:text-start text-pretty gap-4">
             <p className="text-3xl font-medium py-8">Nuestros clientes</p>
             <p className="leading-5">
@@ -90,67 +98,16 @@ export default function Home() {
               responsabilidad como fabricantes.
             </p>
           </div>
-          <div className="flex flex-col self-center w-full g:w-[450px] xl:min-w-[500px] 2xl:min-w-[600px] xl:max-w-[600px] gap-4">
-            <div className="flex w-full px-8 gap-4">
-              <div className="relative h-10 w-full">
-                <Image
-                  src="/images/logos/zkw.webp"
-                  alt="logo"
-                  className="saturate-0 brightness-0 h-10 w-auto object-contain"
-                  fill
-                />
-              </div>
-              <div className="relative h-10 w-full">
-                <Image
-                  src="/images/logos/campo_fresco.webp"
-                  alt="logo"
-                  className="saturate-0 brightness-0 object-contain"
-                  fill
-                />
-              </div>
-              <div className="relative h-10 w-full">
-                <Image
-                  src="/images/logos/trimex.webp"
-                  alt="logo"
-                  className="saturate-0 brightness-0 object-contain"
-                  fill
-                />
-              </div>
-            </div>
-            <div className="flex w-full px-8 gap-4">
-              <div className="relative h-10 w-full">
-                <Image
-                  src="/images/logos/sanoh.webp"
-                  alt="logo"
-                  className="saturate-0 brightness-0 object-contain"
-                  fill
-                />
-              </div>
-              <div className="relative h-10 w-full">
-                <Image src="/images/logos/nifco.webp" alt="logo" className="saturate-0 object-contain" fill />
-              </div>
-              <div className="relative h-10 w-[50%]">
-                <Image
-                  src="/images/logos/almacenes_vaca.webp"
-                  alt="logo"
-                  className="saturate-0 brightness-0 object-contain"
-                  fill
-                />
-              </div>
-            </div>
-            <div className="flex w-full px-8 gap-4">
-              <div className="relative h-10 w-full">
-                <Image
-                  src="/images/logos/vallen.webp"
-                  alt="logo"
-                  className="saturate-0 brightness-0 object-contain"
-                  fill
-                />
-              </div>
-            </div>
+          {/* Right content */}
+          <div className="flex flex-col self-center w-full g:w-[450px] xl:min-w-[500px] 2xl:min-w-[600px] xl:max-w-[600px] gap-16">
+            <InfiniteLogoCarousel offset={-10} />
+            <InfiniteLogoCarousel offset={0.2} direction="right" />
+            <InfiniteLogoCarousel offset={10} />
           </div>
         </div>
+        {/* Section 4 */}
         <div className="flex flex-col w-full g:min-h-[564px] 2xl:min-h-[624px] max-w-[1400px] g:flex-row g:self-center gap-16 g:gap-8">
+          {/* Left content */}
           <div className="flex flex-col self-center text-spblack text-center g:text-start text-pretty gap-4">
             <p className="text-3xl font-medium py-8">Entregamos hasta tu negocio</p>
             <p className="leading-5">
@@ -158,6 +115,7 @@ export default function Home() {
               Zona del Bajío mexicano.
             </p>
           </div>
+          {/* Right content */}
           <div className="flex flex-col gap-2.5">
             <div className="flex items-center gap-2.5 leading-5 px-2.5">
               <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">

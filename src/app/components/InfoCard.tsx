@@ -11,11 +11,11 @@ interface InfoCardProps {
 const InfoCard: React.FC<InfoCardProps> = ({ title, description, image, children, imgClassNames }) => {
   return (
     <>
-      <div className="hidden sm:flex flex-col self-center w-full min-w-[450px] max-w-[600px] p-[5px] bg-spgradient rounded-lg gap-2.5 relative overflow-clip">
+      <div className="hidden sm:flex flex-col self-center w-full min-w-[450px] max-w-[600px] p-[5px] bg-spgradient rounded-lg gap-2.5 relative overflow-visible">
         {image && (
-          <div className="relative aspect-[5/3]">
+          <div className="relative aspect-[5/3] group overflow-hidden rounded-md">
             <Image
-              className={`brightness-[60%] rounded-md object-cover ${imgClassNames}`}
+              className={`brightness-[60%] object-cover transition-transform duration-300 group-hover:scale-105 ${imgClassNames}`}
               src={image}
               alt="info card"
               fill
@@ -33,11 +33,11 @@ const InfoCard: React.FC<InfoCardProps> = ({ title, description, image, children
         )}
         {children}
       </div>
-      <div className="flex sm:hidden flex-col w-full p-[5px] bg-spgradient rounded-lg gap-2.5">
+      <div className="flex sm:hidden flex-col w-full p-[5px] bg-spgradient rounded-lg gap-2.5 overflow-visible">
         {image && (
-          <div className="relative aspect-[2/1]">
+          <div className="relative aspect-[2/1] group overflow-hidden rounded-md">
             <Image
-              className={`brightness-[80%] rounded-md object-cover ${imgClassNames}`}
+              className={`brightness-[80%] object-cover transition-transform duration-300 group-hover:scale-105 ${imgClassNames}`}
               src={image}
               alt="info card"
               fill
@@ -46,7 +46,7 @@ const InfoCard: React.FC<InfoCardProps> = ({ title, description, image, children
         )}
         {children}
         {(title || description) && (
-          <div className="flex flex-col p-5 gap-5 ">
+          <div className="flex flex-col p-5 gap-5">
             <div className="flex flex-col text-spwhite text-pretty leading-5 gap-5">
               {title && <p className="font-semibold">{title}</p>}
               {description && <p className="">{description}</p>}

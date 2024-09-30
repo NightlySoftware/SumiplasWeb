@@ -22,16 +22,23 @@ const ProductCard: React.FC<ProductCardProps> = ({
   centerImage,
 }) => {
   return (
-    <Link href={href} className="flex flex-col w-full gap-10">
-      <div className="flex flex-col relative aspect-[2/1] max-w-full g:aspect-auto g:h-64 xl:h-80 rounded-t-lg p-4 gap-2.5">
-        <p className="text-spwhite leading-5 z-[1]">
+    <Link href={href} className="flex flex-col w-full gap-10 group">
+      <div className="relative flex flex-col aspect-[2/1] max-w-full g:aspect-auto g:h-64 xl:h-80 rounded-t-lg p-4 gap-2.5">
+        <p className="text-spwhite leading-5 z-[1] relative">
           Bolsas de polietileno <br />
           <span className="font-bold">{headline1}</span>
           <br />
           {headline2}
         </p>
-        <Image src={headlineImage} alt="Product Background" className="rounded-md brightness-[60%] object-cover" fill />
-        <div className="relative flex min-w-64 max-w-[400px] min-h-24 xs:h-40 m:h-[220px] g:h-[170px] top-[-20%] xxs:top-[25%] m:top-[35%] g:top-[30%] xl:left-[30%] p-2.5 gap-2.5 self-center">
+        <div className="absolute inset-0 overflow-hidden rounded-md">
+          <Image
+            src={headlineImage}
+            alt="Product Background"
+            className="rounded-md brightness-[60%] object-cover transition-transform duration-300 group-hover:scale-105"
+            fill
+          />
+        </div>
+        <div className="relative flex min-w-64 max-w-[400px] min-h-24 xs:h-40 m:h-[220px] g:h-[170px] top-[-20%] xxs:top-[25%] m:top-[35%] g:top-[30%] xl:left-[30%] p-2.5 gap-2.5 self-center transition-all duration-300 group-hover:translate-y-[-10px]">
           <Image className="object-contain" src={centerImage} alt="Center image" fill />
         </div>
       </div>
@@ -44,7 +51,10 @@ const ProductCard: React.FC<ProductCardProps> = ({
           </p>
           <p className="text-spblack leading-5">{description}</p>
         </div>
-        <IconRoundedArrow classNames="w-[37.3px]" /* set to arbitrary value because svgs work weird */ fill="#005482" />
+        <IconRoundedArrow
+          classNames="w-[37.3px] transition-transform duration-300 transform -translate-x-2 group-hover:translate-x-0"
+          fill="#005482"
+        />
       </div>
     </Link>
   );

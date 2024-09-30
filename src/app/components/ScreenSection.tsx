@@ -1,12 +1,12 @@
 'use client';
 
-import { AnimatePresence } from 'framer-motion';
 import ArrowButton from './ArrowButton';
 import QuoteModal from './QuoteModal';
 import HeaderLogo from './HeaderLogo';
 import Image from 'next/image';
 import cn from 'classnames';
-import { useModalVisibility } from '../utils/modalVisibility';
+import { Dialog, DialogTrigger } from './Dialog';
+import { useState } from 'react';
 
 interface ScreenSectionProps {
   title?: string[];
@@ -23,7 +23,7 @@ export default function ScreenSection({
   image = 'hero',
   imageClassNames,
 }: ScreenSectionProps) {
-  const { visibleModal, toggleModal } = useModalVisibility();
+  const [quoteOpen, setQuoteOpen] = useState(false);
   if (type === 'contact') {
     description = [
       '¿Te interesaron nuestros productos',
@@ -82,7 +82,12 @@ export default function ScreenSection({
               </div>
             ) : (
               <div className="flex justify-center lg:border-t lg:border-spwhite pt-16 -mb-32">
-                <ArrowButton className="mb-40" text="Contáctanos" onClick={() => toggleModal('quote')} color="light" />
+                <Dialog open={quoteOpen} onOpenChange={setQuoteOpen}>
+                  <DialogTrigger asChild>
+                    <ArrowButton className="mb-40" text="Contáctanos" color="light" />
+                  </DialogTrigger>
+                  <QuoteModal open={quoteOpen} onOpenChange={setQuoteOpen} />
+                </Dialog>
               </div>
             )}
           </div>
@@ -96,9 +101,6 @@ export default function ScreenSection({
           />
         </div>
       </div>
-      <AnimatePresence>
-        {visibleModal === 'quote' && <QuoteModal onClose={() => toggleModal('quote')} />}
-      </AnimatePresence>
     </>
   );
 }

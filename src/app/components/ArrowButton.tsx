@@ -27,7 +27,7 @@ const ArrowButton: React.FC<ArrowButtonProps> = ({
 }) => {
   const buttonClasses = cn(
     className,
-    'flex w-fit self-center border-b justify-center p-2.5 gap-2.5 font-semibold transition-all duration-[200ms]',
+    'flex w-fit self-center border-b justify-center p-2.5 gap-2.5 font-semibold transition-all duration-[200ms] hover:border-b-2',
     {
       'text-2xl': size === 'normal',
       [color === 'dark' ? 'text-spblack border-spblack' : 'text-spwhite border-spwhite']: true,
@@ -42,8 +42,14 @@ const ArrowButton: React.FC<ArrowButtonProps> = ({
 
   return href ? (
     <Link href={href} className={cn(reverse && 'flex-row-reverse', buttonClasses)}>
-      <div>{text}</div>
-      <IconRoundedArrow classNames={iconSize} fill={iconColor} />
+      <div className="flex min-w-fit gap-4 relative group hover:text-spblue">
+        {text}
+        <IconRoundedArrow
+          classNames={`transition-transform duration-200 transform group-hover:translate-x-2 ${iconSize}`}
+          fill={iconColor}
+          direction={reverse ? 'left' : 'right'}
+        />
+      </div>
     </Link>
   ) : (
     <button
@@ -56,8 +62,14 @@ const ArrowButton: React.FC<ArrowButtonProps> = ({
         buttonClasses
       )}
     >
-      <div>{text}</div>
-      <IconRoundedArrow classNames={iconSize} fill={iconColor} direction={reverse ? 'left' : 'right'} />
+      <div className="flex min-w-fit gap-4 relative group hover:text-spblue transition-colors">
+        {text}
+        <IconRoundedArrow
+          classNames={`transition-transform duration-200 transform group-hover:translate-x-2 ${iconSize}`}
+          fill={iconColor}
+          direction={reverse ? 'left' : 'right'}
+        />
+      </div>
     </button>
   );
 };

@@ -2,6 +2,8 @@ import type { Config } from 'tailwindcss';
 
 const withMT = require('@material-tailwind/react/utils/withMT');
 
+const { default: flattenColorPalette } = require('tailwindcss/lib/util/flattenColorPalette');
+
 const config: Config = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -39,7 +41,6 @@ const config: Config = {
           justifyContent: 'center',
           alignItems: 'center',
           position: 'fixed',
-          overflow: 'auto',
           height: '100svh',
           backgroundColor: 'rgba(0, 0, 0, 0.5)',
           width: '100%',
@@ -77,7 +78,18 @@ const config: Config = {
       addUtilities(newUtilities);
     },
     require('postcss-100vh-fix'),
+    addVariablesForColors,
   ],
 };
+
+// This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).
+function addVariablesForColors({ addBase, theme }: any) {
+  let allColors = flattenColorPalette(theme('colors'));
+  let newVars = Object.fromEntries(Object.entries(allColors).map(([key, val]) => [`--${key}`, val]));
+
+  addBase({
+    ':root': newVars,
+  });
+}
 
 module.exports = withMT(config);
