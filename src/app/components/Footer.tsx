@@ -1,16 +1,27 @@
-import React from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebookF, faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebookF, faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 const Footer = () => {
   const socialLinks = [
-    { href: 'mailto:contacto@sumiplas.mx', icon: faEnvelope, label: 'contacto@sumiplas.mx' },
-    { href: 'https://www.facebook.com/sumiplas.mx/', icon: faFacebookF, label: 'Facebook' },
-    { href: 'https://www.instagram.com/sumiplas.mx/', icon: faInstagram, label: 'Instagram' },
-    { href: 'https://wa.me/+524621708093', icon: faWhatsapp, label: 'Whatsapp' },
+    {
+      href: "mailto:contacto@sumiplas.mx",
+      icon: faEnvelope,
+      label: "contacto@sumiplas.mx",
+    },
+    {
+      href: "https://www.facebook.com/sumiplas.mx/",
+      icon: faFacebookF,
+      label: "Facebook",
+    },
+    {
+      href: "https://www.instagram.com/sumiplas.mx/",
+      icon: faInstagram,
+      label: "Instagram",
+    },
   ];
 
   return (
@@ -37,9 +48,16 @@ const Footer = () => {
       <div className="flex flex-col gap-4">
         <div className="flex items-center gap-3 font-bold text-spwhite hover:text-gray-300 text-3xl">
           <div className="relative aspect-square w-10">
-            <Image className="object-contain" src="/icons/logo.svg" alt="Logo" fill />
+            <Image
+              className="object-contain"
+              src="/icons/logo.svg"
+              alt="Logo"
+              fill
+            />
           </div>
-          <span className="transition-all duration-300 ease-in-out">SUMIPLAS</span>
+          <span className="transition-all duration-300 ease-in-out">
+            SUMIPLAS
+          </span>
         </div>
         <p className="font-medium text-xl">
           Bolsas a tu
