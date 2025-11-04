@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import ProductLayout from '../ProductLayout';
 
 const product = {
@@ -80,6 +81,33 @@ const product = {
         'Sí, estas bolsas están fabricadas para ser altamente resistentes a perforaciones y rasgaduras, asegurando que los residuos inorgánicos y materiales afilados no las dañen durante el manejo y transporte.',
     },
   ],
+};
+
+const pageTitle = 'Bolsas Industriales | Sumiplas';
+const pageDescription =
+  'Bolsas industriales de polietileno reciclado con alta resistencia y sellos confiables para gestionar residuos pesados y aplicaciones fabriles.';
+const ogImage = product.centerPhoto;
+const ogImageAlt = 'Bolsas industriales Sumiplas';
+
+export const metadata: Metadata = {
+  title: pageTitle,
+  description: pageDescription,
+  openGraph: {
+    title: pageTitle,
+    description: pageDescription,
+    images: [
+      {
+        url: ogImage,
+        alt: ogImageAlt,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: pageTitle,
+    description: pageDescription,
+    images: [ogImage],
+  },
 };
 
 const page = () => {

@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import React from 'react';
 import MainSection from '../components/MainSection';
 import Footer from '../components/Footer';
@@ -6,6 +7,25 @@ import ProductCard from '../components/ProductCard';
 import SubProductsList from '../components/SubProductsList';
 import ScreenSection from '../components/ScreenSection';
 import { productsData } from '../utils/productsData';
+
+const pageTitle = 'Productos | Sumiplas';
+const pageDescription =
+  'Descubre el catálogo de bolsas plásticas Sumiplas: antiestáticas, grado alimenticio, industriales, anticorrosivas, pigmentadas y tipo camiseta.';
+
+export const metadata: Metadata = {
+  title: pageTitle,
+  description: pageDescription,
+  openGraph: {
+    title: pageTitle,
+    description: pageDescription,
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: pageTitle,
+    description: pageDescription,
+  },
+};
 
 const page = () => {
   return (

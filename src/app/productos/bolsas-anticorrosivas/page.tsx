@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import ProductLayout from '../ProductLayout';
 
 const product = {
@@ -81,6 +82,33 @@ const product = {
         'Sí, además de la protección contra la corrosión, las bolsas de polietileno con protección VCI también ofrecen una barrera contra la humedad, el polvo y otros contaminantes ambientales, asegurando que los componentes metálicos se mantengan en óptimas condiciones durante el almacenamiento y transporte.',
     },
   ],
+};
+
+const pageTitle = 'Bolsas Anticorrosivas | Sumiplas';
+const pageDescription =
+  'Protege piezas y componentes metálicos con bolsas VCI anticorrosivas de Sumiplas, fabricadas a medida para logística e industria.';
+const ogImage = product.centerPhoto;
+const ogImageAlt = 'Bolsas anticorrosivas Sumiplas';
+
+export const metadata: Metadata = {
+  title: pageTitle,
+  description: pageDescription,
+  openGraph: {
+    title: pageTitle,
+    description: pageDescription,
+    images: [
+      {
+        url: ogImage,
+        alt: ogImageAlt,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: pageTitle,
+    description: pageDescription,
+    images: [ogImage],
+  },
 };
 
 const page = () => {

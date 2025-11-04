@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import ProductLayout from '../ProductLayout';
 
 const product = {
@@ -80,6 +81,33 @@ const product = {
         'Sí, las bolsas de asa tipo camiseta pueden ser utilizadas para almacenar alimentos. Son prácticas para llevar compras de supermercados, incluyendo productos frescos y empaquetados, y están disponibles en versiones transparentes para una mejor visibilidad del contenido.',
     },
   ],
+};
+
+const pageTitle = 'Bolsas Tipo Camiseta | Sumiplas';
+const pageDescription =
+  'Bolsas tipo camiseta con asas reforzadas, personalizables en colores y calibres para comercios, entregas y uso diario confiable.';
+const ogImage = product.centerPhoto;
+const ogImageAlt = 'Bolsas tipo camiseta Sumiplas';
+
+export const metadata: Metadata = {
+  title: pageTitle,
+  description: pageDescription,
+  openGraph: {
+    title: pageTitle,
+    description: pageDescription,
+    images: [
+      {
+        url: ogImage,
+        alt: ogImageAlt,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: pageTitle,
+    description: pageDescription,
+    images: [ogImage],
+  },
 };
 
 const page = () => {

@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import ProductLayout from '../ProductLayout';
 
 const product = {
@@ -80,6 +81,33 @@ const product = {
         'Las bolsas antiestáticas no tienen una fecha de caducidad per se, pero sus propiedades antiestáticas pueden disminuir con el tiempo, especialmente si se exponen a condiciones ambientales adversas. Es recomendable revisar y probar las bolsas regularmente para asegurarse de que sigan siendo efectivas.',
     },
   ],
+};
+
+const pageTitle = 'Bolsas Antiestáticas | Sumiplas';
+const pageDescription =
+  'Bolsas antiestáticas con protección ESD para circuitos y dispositivos sensibles, disponibles en medidas personalizadas y calibres resistentes.';
+const ogImage = product.centerPhoto;
+const ogImageAlt = 'Bolsas antiestáticas Sumiplas';
+
+export const metadata: Metadata = {
+  title: pageTitle,
+  description: pageDescription,
+  openGraph: {
+    title: pageTitle,
+    description: pageDescription,
+    images: [
+      {
+        url: ogImage,
+        alt: ogImageAlt,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: pageTitle,
+    description: pageDescription,
+    images: [ogImage],
+  },
 };
 
 const page = () => {

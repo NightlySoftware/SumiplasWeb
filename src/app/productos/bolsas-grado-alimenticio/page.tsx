@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import ProductLayout from '../ProductLayout';
 
 const product = {
@@ -80,6 +81,33 @@ const product = {
         'Sí, las bolsas de polietileno grado alimenticio están diseñadas para mantener la frescura y calidad de productos orgánicos, protegiéndolos de la humedad, el aire y otros contaminantes externos que puedan acelerar su deterioro.',
     },
   ],
+};
+
+const pageTitle = 'Bolsas Grado Alimenticio | Sumiplas';
+const pageDescription =
+  'Bolsas de polietileno grado alimenticio aprobadas por FDA, transparentes y hechas a medida para conservar alimentos frescos y sensibles.';
+const ogImage = product.centerPhoto;
+const ogImageAlt = 'Bolsas grado alimenticio Sumiplas';
+
+export const metadata: Metadata = {
+  title: pageTitle,
+  description: pageDescription,
+  openGraph: {
+    title: pageTitle,
+    description: pageDescription,
+    images: [
+      {
+        url: ogImage,
+        alt: ogImageAlt,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: pageTitle,
+    description: pageDescription,
+    images: [ogImage],
+  },
 };
 
 const page = () => {

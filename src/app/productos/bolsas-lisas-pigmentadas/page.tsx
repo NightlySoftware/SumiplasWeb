@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import ProductLayout from '../ProductLayout';
 
 const product = {
@@ -80,6 +81,33 @@ const product = {
         'Sí, las bolsas lisas pigmentadas están diseñadas para ofrecer una excelente protección durante el almacenamiento a largo plazo. Su resistencia y durabilidad aseguran que los productos se mantengan seguros y en buen estado, mientras que el sello de fondo evita la fuga de sólidos y líquidos, protegiendo el contenido de factores externos.',
     },
   ],
+};
+
+const pageTitle = 'Bolsas Lisas Pigmentadas | Sumiplas';
+const pageDescription =
+  'Bolsas lisas pigmentadas en colores vibrantes para clasificar, exhibir y transportar productos comerciales con refuerzo de marca.';
+const ogImage = product.centerPhoto;
+const ogImageAlt = 'Bolsas lisas pigmentadas Sumiplas';
+
+export const metadata: Metadata = {
+  title: pageTitle,
+  description: pageDescription,
+  openGraph: {
+    title: pageTitle,
+    description: pageDescription,
+    images: [
+      {
+        url: ogImage,
+        alt: ogImageAlt,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: pageTitle,
+    description: pageDescription,
+    images: [ogImage],
+  },
 };
 
 const page = () => {
