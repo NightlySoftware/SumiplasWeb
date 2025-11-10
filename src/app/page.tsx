@@ -1,21 +1,27 @@
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import InfoCard from './components/InfoCard';
-import ArrowButton from './components/ArrowButton';
-import ProductButton from './components/ProductButton';
-import MapComponent from './components/MapComponent';
-import ScreenSection from './components/ScreenSection';
-import InfiniteLogoCarousel from './components/InfiniteLogoCarousel';
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import InfoCard from "./components/InfoCard";
+import ArrowButton from "./components/ArrowButton";
+import ProductButton from "./components/ProductButton";
+import MapComponent from "./components/MapComponent";
+import ScreenSection from "./components/ScreenSection";
+import InfiniteLogoCarousel from "./components/InfiniteLogoCarousel";
 
 export default function Home() {
   return (
     <main className="flex flex-col items-center no-scrollbar">
       <ScreenSection
-        title={['Bolsas a tu', 'medida', 'variedad de productos', 'calidad', 'garantizada']}
+        title={[
+          "Bolsas a tu",
+          "medida",
+          "variedad de productos",
+          "calidad",
+          "garantizada",
+        ]}
         description={[
-          'Bolsas hechas con polietileno fabricadas',
-          'por nosotros para usos en el sector',
-          'automotriz, industrial y de alimentos.',
+          "Bolsas hechas con polietileno fabricadas",
+          "por nosotros para usos en el sector",
+          "automotriz, industrial y de alimentos.",
         ]}
         image="/images/hero_bg/extrusora.webp"
         imageClassNames="object-left"
@@ -26,14 +32,22 @@ export default function Home() {
         <div className="flex flex-col w-full g:min-h-[564px] 2xl:min-h-[624px] max-w-[1400px] g:flex-row g:self-center gap-16 g:gap-8">
           {/* Left content */}
           <div className="flex flex-col self-center text-spblack text-center g:text-start text-pretty gap-4">
-            <p className="text-3xl font-medium py-8">Te contamos lo que hacemos</p>
-            <p className="leading-5">
-              En Sumiplas nos dedicamos a la fabricación y distribución de bolsas de polietileno, así como brindamos
-              soluciones de empaque y embalaje excepcionales para el sector alimenticio, automotriz, e industrial.
-              <br /> <br />
-              Establecidos en Irapuato, Guanajuato, lideramos el sector.
+            <p className="text-3xl font-medium py-8">
+              Te contamos lo que hacemos
             </p>
-            <ArrowButton className="g:self-start g:pt-8" href="/nosotros" text="Conócenos más" />
+            <p className="leading-5">
+              En Sumiplas nos dedicamos a la fabricación y distribución de
+              bolsas de polietileno, así como brindamos soluciones de empaque y
+              embalaje excepcionales para el sector alimenticio, automotriz, e
+              industrial.
+              <br /> <br />
+              Establecidos en la Zona del Bajío, lideramos el sector.
+            </p>
+            <ArrowButton
+              className="g:self-start g:pt-8"
+              href="/nosotros"
+              text="Conócenos más"
+            />
           </div>
           {/* Right content */}
           <div className="flex flex-col self-center w-full g:w-[450px] xl:min-w-[500px] 2xl:min-w-[600px] xl:max-w-[600px] gap-4">
@@ -48,7 +62,11 @@ export default function Home() {
               image="/images/info_card/maquina.webp"
               imgClassNames="object-[50%,55%]"
             />
-            <ArrowButton className="g:hidden" href="/nosotros" text="Conócenos más" />
+            <ArrowButton
+              className="g:hidden"
+              href="/nosotros"
+              text="Conócenos más"
+            />
           </div>
         </div>
         {/* Section 2 */}
@@ -57,11 +75,17 @@ export default function Home() {
           <div className="flex flex-col self-center text-spblack text-center g:text-start text-pretty gap-4">
             <p className="text-3xl font-medium py-8">Productos</p>
             <p className="leading-5">
-              Nos enorgullece ser líderes en la solución integral de empaque, ofreciendo una diversidad de productos
-              plásticos de alta calidad. Desde bolsas especializadas hasta soluciones de embalaje innovadoras, nuestra
-              gama está diseñada para satisfacer las exigencias de diferentes industrias.
+              Nos enorgullece ser líderes en la solución integral de empaque,
+              ofreciendo una diversidad de productos plásticos de alta calidad.
+              Desde bolsas especializadas hasta soluciones de embalaje
+              innovadoras, nuestra gama está diseñada para satisfacer las
+              exigencias de diferentes industrias.
             </p>
-            <ArrowButton className="g:self-start g:pt-8" href="/nosotros" text="Conócenos más" />
+            <ArrowButton
+              className="g:self-start g:pt-8"
+              href="/nosotros"
+              text="Conócenos más"
+            />
           </div>
           {/* Right content */}
           <div className="flex flex-col self-center w-full g:w-[450px] xl:min-w-[500px] 2xl:min-w-[600px] xl:max-w-[600px] gap-4">
@@ -86,7 +110,11 @@ export default function Home() {
               bgImage="/images/product_card/industrial.webp"
             />
           </div>
-          <ArrowButton className="g:hidden" href="/productos" text="Ver más productos" />
+          <ArrowButton
+            className="g:hidden"
+            href="/productos"
+            text="Ver más productos"
+          />
         </div>
         {/* Section 3 */}
         <div className="flex flex-col w-full g:min-h-[564px] 2xl:min-h-[624px] max-w-[1400px] g:flex-row g:self-center gap-16 g:gap-8">
@@ -94,8 +122,9 @@ export default function Home() {
           <div className="flex flex-col self-center text-spblack text-center g:text-start text-pretty gap-4">
             <p className="text-3xl font-medium py-8">Nuestros clientes</p>
             <p className="leading-5">
-              Estos son algunos de nuestros clientes, con los que hemos trabajado y avalan nuestra calidad, compromiso y
-              responsabilidad como fabricantes.
+              Estos son algunos de nuestros clientes, con los que hemos
+              trabajado y avalan nuestra calidad, compromiso y responsabilidad
+              como fabricantes.
             </p>
           </div>
           {/* Right content */}
@@ -109,16 +138,24 @@ export default function Home() {
         <div className="flex flex-col w-full g:min-h-[564px] 2xl:min-h-[624px] max-w-[1400px] g:flex-row g:self-center gap-16 g:gap-8">
           {/* Left content */}
           <div className="flex flex-col self-center text-spblack text-center g:text-start text-pretty gap-4">
-            <p className="text-3xl font-medium py-8">Entregamos hasta tu negocio</p>
+            <p className="text-3xl font-medium py-8">
+              Entregamos hasta tu negocio
+            </p>
             <p className="leading-5">
-              Somos fabricantes de bolsa situados en Irapuato Guanajuato. Contamos con transporte propio y entrega en la
-              Zona del Bajío mexicano.
+              Somos fabricantes de bolsa situados en la Zona del Bajío. Contamos
+              con transporte propio y entrega en la Zona del Bajío mexicano.
             </p>
           </div>
           {/* Right content */}
           <div className="flex flex-col gap-2.5">
             <div className="flex items-center gap-2.5 leading-5 px-2.5">
-              <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg
+                width="18"
+                height="20"
+                viewBox="0 0 18 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path
                   fillRule="evenodd"
                   clipRule="evenodd"
