@@ -208,7 +208,7 @@ export default function QuoteModal({ open, onOpenChange }: QuoteModalProps) {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[650px] bg-spwhite py-10 overflow-auto" onWheel={handleWheel}>
+      <DialogContent className="max-h-[90vh] sm:max-w-[650px] overflow-y-auto bg-spwhite py-10" onWheel={handleWheel}>
         <DialogHeader>
           <DialogTitle className="text-3xl font-medium text-center">Contáctanos en segundos</DialogTitle>
           <DialogDescription className="text-center">

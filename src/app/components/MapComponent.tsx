@@ -1,10 +1,11 @@
 'use client';
 
-import { GoogleMap, Marker, Circle, useLoadScript } from '@react-google-maps/api';
+import { GoogleMap, Marker, Circle, useLoadScript, type Libraries } from '@react-google-maps/api';
 import { useMemo } from 'react';
 
 const MapComponent = () => {
-  const libraries = useMemo(() => ['places'], []);
+  const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
+  const libraries = useMemo<Libraries>(() => ['places'], []);
   const mapCenter = useMemo(() => ({ lat: 20.675285, lng: -101.355475 }), []);
   const mapOptions = useMemo(
     () => ({
@@ -14,10 +15,20 @@ const MapComponent = () => {
     }),
     []
   );
+
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string,
-    libraries: libraries as any,
+    googleMapsApiKey: apiKey ?? '',
+    libraries,
   });
+
+  if (!apiKey) {
+    return (
+      <div className="relative flex aspect-square w-full items-center justify-center rounded text-center">
+        Mapa no disponible por configuración pendiente.
+      </div>
+    );
+  }
+
   if (!isLoaded) {
     return <div className="flex relative w-full items-center justify-center aspect-square rounded">Loading Map...</div>;
   }
@@ -30,11 +41,9 @@ const MapComponent = () => {
         center={mapCenter}
         mapTypeId={google.maps.MapTypeId.ROADMAP}
         mapContainerStyle={{ width: '100%', height: '100%', borderRadius: 'inherit' }}
-        /* onLoad={(map) => console.log('Map Loaded')} */
       >
         <Marker
           position={mapCenter}
-          /* onLoad={() => console.log('Marker Loaded')} */
           icon={{
             path: google.maps.SymbolPath.CIRCLE,
             fillColor: 'red',
@@ -47,7 +56,6 @@ const MapComponent = () => {
         <Circle
           center={mapCenter}
           radius={75000}
-          /* onLoad={() => console.log('Circle Loaded')} */
           options={{
             fillColor: '#7eb2e0',
             fillOpacity: 0.4,

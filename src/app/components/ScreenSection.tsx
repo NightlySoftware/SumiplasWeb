@@ -16,25 +16,41 @@ interface ScreenSectionProps {
   imageClassNames?: string;
 }
 
+const EMPTY_LINES: string[] = [];
+const CONTACT_DESCRIPTION = [
+  '¿Te interesaron nuestros productos',
+  'y quieres tener más información sobre',
+  'precios, medidas específicas o entregas?',
+  '',
+  'Envíanos tu información de contacto',
+  'para responderte lo más pronto posible.',
+];
+
+function getDescriptionLines(lines: string[]) {
+  const lineCounts = new Map<string, number>();
+
+  return lines.map((line) => {
+    const nextCount = (lineCounts.get(line) ?? 0) + 1;
+    lineCounts.set(line, nextCount);
+
+    return {
+      key: `${line || 'blank'}-${nextCount}`,
+      text: line,
+    };
+  });
+}
+
 export default function ScreenSection({
-  title = [],
-  description = [],
+  title = EMPTY_LINES,
+  description = EMPTY_LINES,
   type,
   image = 'hero',
   imageClassNames,
 }: ScreenSectionProps) {
   const [quoteOpen, setQuoteOpen] = useState(false);
-  if (type === 'contact') {
-    description = [
-      '¿Te interesaron nuestros productos',
-      'y quieres tener más información sobre',
-      'precios, medidas específicas o entregas?',
-      '',
-      'Envíanos tu información de contacto',
-      'para responderte lo más pronto posible.',
-    ];
-    image = '/images/hero_bg/contact.webp';
-  }
+  const sectionDescription = type === 'contact' ? CONTACT_DESCRIPTION : description;
+  const sectionDescriptionLines = getDescriptionLines(sectionDescription);
+  const sectionImage = type === 'contact' ? '/images/hero_bg/contact.webp' : image;
 
   return (
     <>
@@ -46,7 +62,7 @@ export default function ScreenSection({
         )}
         <div
           className={cn(
-            'relative text-spwhite supports-[height:100cqh]:h-[100cqh] supports-[height:100svh]:h-[100svh] pt-32 g:pt-64',
+            'relative h-safe-screen min-safe-h-screen pt-32 text-spwhite g:pt-64',
             { 'z-[2]': type === 'contact' }
           )}
         >
@@ -67,10 +83,10 @@ export default function ScreenSection({
                 </p>
               )}
               <p className="text-center text-nowrap text-[16px] xl:text-xl leading-5">
-                {description.map((paragraph, index) => (
-                  <span key={index}>
-                    {paragraph}
-                    {index !== description.length - 1 && <br />}
+                {sectionDescriptionLines.map((paragraph, index) => (
+                  <span key={paragraph.key}>
+                    {paragraph.text}
+                    {index !== sectionDescriptionLines.length - 1 && <br />}
                   </span>
                 ))}
               </p>
@@ -93,11 +109,12 @@ export default function ScreenSection({
           </div>
           <Image
             className={cn('z-[-1] object-cover brightness-[70%]', imageClassNames)}
-            src={image}
+            src={sectionImage}
             alt="hero"
             quality={100}
             priority
             fill
+            sizes="100vw"
           />
         </div>
       </div>
