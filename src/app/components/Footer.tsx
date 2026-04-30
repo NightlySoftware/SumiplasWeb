@@ -67,7 +67,7 @@ const Footer = () => {
       <div className="flex flex-col items-center gap-2 text-sm">
         <p className="text-gray-300">Sumiplas ©{new Date().getFullYear()}</p>
         <Link
-          href="https://nightly.software"
+          href="https://nightlysoftware.com"
           className="text-center transition-colors duration-300 ease-in-out hover:text-gray-500"
         >
           Website by Nightly Software
